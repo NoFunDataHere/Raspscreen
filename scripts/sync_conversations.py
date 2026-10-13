@@ -4,6 +4,7 @@ import sys
 import subprocess
 import json
 import glob
+import tempfile
 
 # Configuration
 PI_HOST = "192.168.0.17"
