@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=RaspEcran Kiosk
+Comment=Lancement du mode kiosque tactile
+Exec=/home/pi/RaspEcran/kiosk/kiosk.sh
+Terminal=false
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

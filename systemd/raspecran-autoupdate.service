@@ -1,0 +1,9 @@
+[Unit]
+Description=RaspEcran Auto-Update Service
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=pi
+WorkingDirectory=/home/pi/RaspEcran
+ExecStart=/home/pi/RaspEcran/scripts/autoupdate.sh

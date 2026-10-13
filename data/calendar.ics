@@ -1,0 +1,3305 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Famille
+X-WR-TIMEZONE:UTC
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+X-LIC-LOCATION:Europe/Paris
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:GMT+2
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:GMT+1
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART:20260217T134000Z
+DTEND:20260217T140000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:61j30dhi60r64b9i6pim6b9kcco30bb2coq64bb570pj6cb2ccs6adb66c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/xax-ejoi-dfg
+CLASS:PRIVATE
+CREATED:20260209T074725Z
+DESCRIPTION:Informations pratiques :\n* Au Rez-de-chaussée\n* Sans ascenseu
+ r\n* Avec entrée accessible\n* Interphone: Dr Sauvage Rigal \n\nAutres info
+ rmations :\n* L'entrée du cabinet médical se situe au 16 rue Victor Duruy.\
+ n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous :\nh
+ ttps://www.doctolib.fr/sessions/anonymous/1QyafYcd\n\nVia Doctolib\n\n-::~:
+ ~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ :~:~::-\nJoin with Google Meet: https://meet.google.com/xax-ejoi-dfg\n\nLea
+ rn more about Meet at: https://support.google.com/a/users/answer/9282720\n\
+ nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260209T074726Z
+LOCATION:1 Rue Olivier de Serres\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Sophie Sauvage Rigal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261010T123000Z
+DTEND:20261010T153000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6ksjce9m61h34b9n6sqm4b9k6cojabb1coq3cb9gcco6ad3269h62cj5ck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260922T062422Z
+LAST-MODIFIED:20260925T160708Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Clothilde
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260403T183000Z
+DTEND:20260403T205100Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:61ijgopi6li6abb36dim6b9k6ph32bb168pjeb9pcop32d1h68pm4pj26o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/hdj-jtru-cfc
+CREATED:20260330T180120Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/hd
+ j-jtru-cfc\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260330T204100Z
+LOCATION:Pathé Parnasse\, 3 Rue d'Odessa\, 75014 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cinéma
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250912T160000Z
+DTEND:20250912T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:scmpkd8u168b3r9fm9d7qvgkro@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20250909T201251Z
+LAST-MODIFIED:20250909T201455Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cross Training (18h30)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260921T070000Z
+DTEND:20260921T080000Z
+DTSTAMP:20261011T151914Z
+UID:5k8c4t5du6iogonlnnqbkjt07o@google.com
+CREATED:20260910T063638Z
+LAST-MODIFIED:20260914T061713Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Semaine B
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250719T063000Z
+DTEND:20250719T064500Z
+DTSTAMP:20261011T151914Z
+UID:6hi3aphkcosmabb36gp34b9kcorjcbb2coq30b9pcdim4o9i6hi36dr16c@google.com
+CREATED:20250622T162731Z
+LAST-MODIFIED:20250627T194158Z
+LOCATION:74 Av. d'Italie\, 75013 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:RDV Passeport Franck
+TRANSP:OPAQUE
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-APPLE-MAPKIT-HANDLE=CAES6QEI2TIaEgl
+ LIvsgy2lIQBEEdjV5ytoCQCJkCgZGcmFuY2USAkZSGg7DjmxlLWRlLUZyYW5jZSoFUGFyaXMyBV
+ BhcmlzOgU3NTAxM0IIMTNlIEFyci5SD0F2ZW51ZSBkJ0l0YWxpZVoCNzRiEjc0IEF2ZW51ZSBkJ
+ 0l0YWxpZSoSNzQgQXZlbnVlIGQnSXRhbGllMhI3NCBBdmVudWUgZCdJdGFsaWUyCzc1MDEzIFBh
+ cmlzMgZGcmFuY2U4OUAAUAFaJwolEhIJSyL7IMtpSEARBHY1ecraAkAY2TIgk778oPH9prDaAZA
+ DAQ==;X-APPLE-RADIUS=70.5873668745985;X-APPLE-REFERENCEFRAME=1;X-TITLE="74 
+ Av. d'Italie, 75013 Paris, France":geo:48.826512,2.356832
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250901T170000Z
+DTEND:20250901T180000Z
+DTSTAMP:20261011T151914Z
+UID:ccr32o9l6tj64bb360o6ab9k6ph66bb2ccq3gb9i6oo30dhm6dhj4dpg6o@google.com
+CREATED:20250827T055729Z
+LAST-MODIFIED:20250827T055729Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sport Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260929T183000Z
+DTEND:20260929T203000Z
+DTSTAMP:20261011T151914Z
+UID:ccr3cd1l6hgj0b9l68r3ib9kc9im2b9p6thjebb66kpm4or4c5j6apj160@google.com
+CREATED:20260913T090509Z
+LAST-MODIFIED:20260927T175038Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251002T160000Z
+DTEND:20251002T200000Z
+DTSTAMP:20261011T151914Z
+UID:64p30db26dhjgb9m70p30b9kcpimabb168pj8bb6c9h6apj470o64p1nco@google.com
+CREATED:20250902T142216Z
+LAST-MODIFIED:20250902T142216Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Team Building Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260310T074500Z
+DTEND:20260310T110000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6go3gp1oc4s62b9i75h32b9kclhj6bb174sj6b9ichgjce9l70p36opoc8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/pox-pyax-kgj
+CLASS:PRIVATE
+CREATED:20250909T194203Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/po
+ x-pyax-kgj\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250909T194204Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cardiologue
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260519T110000Z
+DTEND:20260519T150000Z
+DTSTAMP:20261011T151914Z
+UID:7kose891l3ubagbh6ns6ecci2q@google.com
+CREATED:20250821T143632Z
+LAST-MODIFIED:20260430T091909Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Journée sans cartable
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260814T153500Z
+DTEND:20260814T163500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:69hjcc9g68s6cbb560pjgb9kccsjcbb26cr38bb46cojgohjcosjco9j68@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260719T162157Z
+LAST-MODIFIED:20260720T055455Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ferry: Sifnos to Piraeus (Olympic Champion Jet)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251107T160000Z
+DTEND:20251107T165000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:65h66db365j3cbb560qjab9kcphjebb16gq3abb3chj6cc9h75h32c1p6g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/wnm-uheo-prh
+CLASS:PRIVATE
+CREATED:20251030T160826Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/sBLo5dCt\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/wnm-
+ uheo-prh\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251030T160827Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260202T170000Z
+DTEND:20260202T180000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:61i34opnchijibb6cop64b9k6kq36b9oc5j3cb9m70rj8oj5ccpj8chn6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/tkk-fbkm-jie
+CREATED:20260124T093917Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/go7Vo7LL\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/tkk-
+ fbkm-jie\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260124T093918Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260318T154500Z
+DTEND:20260318T160000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6cs62e316os64bb56pgj4b9k6pj30b9p6ko62b9o61i36d34cpi3gc9n6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/xzi-suuh-xms
+CLASS:PRIVATE
+CREATED:20260311T132828Z
+DESCRIPTION:Informations pratiques :\n* Au 2ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: ABBAS\n* Code : 34B15\
+ n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous :\nh
+ ttps://www.doctolib.fr/sessions/anonymous/FYrSs1R9\n\nVia Doctolib\n\n-::~:
+ ~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ :~:~::-\nJoin with Google Meet: https://meet.google.com/xzi-suuh-xms\n\nLea
+ rn more about Meet at: https://support.google.com/a/users/answer/9282720\n\
+ nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260311T132828Z
+LOCATION:50 Avenue de la Motte-Picquet\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Ali ABBAS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250512T150000Z
+DTEND:20250512T160000Z
+DTSTAMP:20261011T151914Z
+UID:c5gjadb5c4smab9p74ojib9k60sm2b9p75h36bb36som6e34c5h3ip1k6o@google.com
+CREATED:20250501T135346Z
+LAST-MODIFIED:20250501T135346Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Chercher enfants
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250721T170000Z
+DTEND:20250721T180000Z
+DTSTAMP:20261011T151914Z
+UID:64oj4cpo68q30b9o6gp6ab9k6oojebb26cqj4b9m64qjac1jc4rm2db5cg@google.com
+CREATED:20250720T150826Z
+LAST-MODIFIED:20250720T150827Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sport Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251018
+DTEND;VALUE=DATE:20251103
+DTSTAMP:20261011T151914Z
+UID:5nauqdk59lp2s6q59f51mrt3em@google.com
+CREATED:20250821T142856Z
+LAST-MODIFIED:20250821T161812Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vacances Scolaires
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260630T130000Z
+DTEND:20260630T140000Z
+DTSTAMP:20261011T151914Z
+UID:2pob7vhlhvhkelf5sevufiftn7@google.com
+CREATED:20250821T143753Z
+LAST-MODIFIED:20250821T143753Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Portes ouvertes MS-CM2
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250904T063000Z
+DTEND:20250904T193000Z
+DTSTAMP:20261011T151914Z
+UID:650shj02odovvklapakvk6l7j7@google.com
+CREATED:20250821T161513Z
+LAST-MODIFIED:20250821T161521Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Angie Angoulème
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270504
+DTEND;VALUE=DATE:20270509
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:69h64ob2c8pjgb9j6ssjgb9k75ijeb9p65im4bb66cs6cdr46di3icpm70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20260905T153222Z
+DESCRIPTION:Réservation : QQLLDVRW\n\nArrivée à partir de 15:00\nDépart jus
+ qu'à 12:00\n\nH1785@accor.com\n\n+44 20 7660 0674
+LAST-MODIFIED:20260906T053840Z
+LOCATION:113 Lambeth  road\, SE1 7LS LONDRES\, Royaume-Uni
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Novotel Londres Waterloo
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260518
+DTSTAMP:20261011T151914Z
+UID:1lcaf0cfh5dkq3ql3s1uqu54r0@google.com
+CREATED:20250821T143613Z
+LAST-MODIFIED:20250821T143614Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pont de l'ascencion - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250714
+DTEND;VALUE=DATE:20250719
+DTSTAMP:20261011T151914Z
+UID:F0B70034-42FE-430B-93DA-E2C0D56BC8AE
+CREATED:20250517T090803Z
+LAST-MODIFIED:20250517T090803Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:My Center Parcs - Activités disponibles
+TRANSP:TRANSPARENT
+X-APPLE-CREATOR-IDENTITY:com.apple.mobilecal
+X-APPLE-CREATOR-TEAM-IDENTITY:0000000000
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250625T130000Z
+DTEND:20250625T150100Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:clim6d336or34b9j75gm4b9k6krj4b9pclh36bb36sq30ob66gp3aohk6k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/gxe-ucfm-hzp
+CREATED:20250601T085609Z
+DESCRIPTION:159v\n1er étage porte face escalier\n\n-::~:~::~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with 
+ Google Meet: https://meet.google.com/gxe-ucfm-hzp\n\nLearn more about Meet 
+ at: https://support.google.com/a/users/answer/9282720\n\nPlease do not edit
+  this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250614T125919Z
+LOCATION:22 Rue Borromée\, 75015 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Eléonore Anniversaire de Morgane
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260417T160000Z
+DTEND:20260417T170000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:chh34p356or30b9lc8r34b9k6dj32b9p70s62b9o64rjao9p75i64d9pcg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260401T080320Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/oXDCtRxt\n\nVia Do
+ ctolib
+LAST-MODIFIED:20260408T021729Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260115T073000Z
+DTEND:20260115T080000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:68r68dpnc4r38b9o75gm2b9kc5im8b9o6cqj8b9l64om2d9pckq68e336g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/mjq-eeus-cxh
+CREATED:20260105T164141Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/mj
+ q-eeus-cxh\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260105T165606Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Petit déjeuner Blomet
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260208T113000Z
+DTEND:20260208T140000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:60oj4d1j70rj4b9l6sp66b9kchi3ab9p70rj8b9gcpi34cb4cgs36pj56c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/mer-ygbt-thy
+CREATED:20260201T184308Z
+DESCRIPTION:Votre réservation chez Halle Quatre pour 4 personne(s).\n<a hre
+ f="https://public.zenchef.com/fr/restaurants/372860/bookings/628d81ef-d7c2-
+ 47bb-8656-ff7476624311">Votre réservation</a>\n\n-::~:~::~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with Go
+ ogle Meet: https://meet.google.com/mer-ygbt-thy\n\nLearn more about Meet at
+ : https://support.google.com/a/users/answer/9282720\n\nPlease do not edit t
+ his section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260202T213946Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Réservation chez Halle Quatre - Paris
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260309T080000Z
+DTEND:20260309T100000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ccsm8db56ss38b9mcgsm4b9k68q3ab9ocdgm2bb66opj2p36cphj8cj5cc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/tmr-vdds-hfk
+CLASS:PRIVATE
+CREATED:20250909T194123Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/tm
+ r-vdds-hfk\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250909T194124Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cardiologue
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260608T160000Z
+DTEND:20260608T180000Z
+DTSTAMP:20261011T151914Z
+UID:cco3cchic4sjgb9n61gm2b9k75j64b9occomcb9g71gmcc3368q3cc1pc4@google.com
+CREATED:20260505T180624Z
+LAST-MODIFIED:20260505T180624Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pièce de théâtre Gabriel
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250923T160000Z
+DTEND:20250923T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:0pg3t9i3m9tvb139e9l3bdho94@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=Fr
+ anck Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20250921T192700Z
+LAST-MODIFIED:20250921T192742Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Full Body - 18h30
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270508T170100Z
+DTEND:20270508T202900Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6cp3ap1l6gpj6b9gcdgj4b9k6gomcb9p6lim4b9icgsm2cj2cos38e9gc4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20260905T153241Z
+DESCRIPTION:Eurostar \nConfirmation number: C4DD6W\n\nDeparture: Londres St
+  Pancras Int'l\, platform \, 18:01 (local time)\nArrival: Paris Gare du Nor
+ d\, platform \, 21:29 (local time)
+LAST-MODIFIED:20260906T053840Z
+LOCATION:Londres St Pancras Int'l
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Train to Paris Gare du Nord
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251213T110000Z
+DTEND:20251213T160000Z
+DTSTAMP:20261011T151914Z
+UID:69hjidpk60s34bb1c4s32b9k70s68bb269ij8bb2ckpm2e316ph3ae9o60@google.com
+CREATED:20251116T095922Z
+LAST-MODIFIED:20251116T095922Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DQM - Tout le monde
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260406
+DTEND;VALUE=DATE:20260407
+DTSTAMP:20261011T151914Z
+UID:0buqc90iclh3f3srld929hbudh@google.com
+CREATED:20250821T143435Z
+LAST-MODIFIED:20250821T143435Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Férié - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260402T150000Z
+DTEND:20260402T200000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ckq30cr2cgq3cbb66so3eb9kcpj6cb9p74sj6bb3ccsjgpj36thj4c36ck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20260323T165445Z
+LAST-MODIFIED:20260323T165445Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Diner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260528T160000Z
+DTEND:20260528T170000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6cs38ohhcksjab9hccsj4b9k6dgj2bb1c4q6abb36gqj8cpo6co6cphl6g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260518T072855Z
+LAST-MODIFIED:20260520T173026Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:AG HeadMind
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251202T073000Z
+DTEND:20251202T080000Z
+DTSTAMP:20261011T151914Z
+UID:14vem7fjt7fpceib7sek2megg8@google.com
+CREATED:20250902T071954Z
+DESCRIPTION:Célébration liturgique
+LAST-MODIFIED:20250902T071955Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Entrée dans l’Avent
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251206T130000Z
+DTEND:20251206T160000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6lh38c1j6cr6ab9kclhjgb9k74qj4bb26hh6ab9l6cq3cp9o6go3gcb270@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/cvh-geye-rgf
+CREATED:20251107T082130Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/cv
+ h-geye-rgf\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251107T084546Z
+LOCATION:La Palmeraie\, 20 Rue du Colonel Pierre Avia\, 75015 Paris\, Franc
+ e
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Arbre de Noël HeadMind
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250610
+DTEND;VALUE=DATE:20250611
+DTSTAMP:20261011T151914Z
+UID:cgq64d336dgj8bb264oj2b9k6so64b9p68p62b9gc8qjio9ocgp3edb3cg@google.com
+CREATED:20250529T073449Z
+LAST-MODIFIED:20250529T073450Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck départ Belgique
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250614T080000Z
+DTEND:20250614T150000Z
+DTSTAMP:20261011T151914Z
+UID:c4q3ecpp70rmcb9o65im8b9k6sojib9ocoo34bb56sr3gdj5c8rjcd9lc4@google.com
+CREATED:20250529T073554Z
+LAST-MODIFIED:20250529T073554Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Angie DQM
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260424
+DTEND;VALUE=DATE:20260425
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c5i6adpi64r3ibb5coqjab9kc8o32b9occojeb9j74sjacphclj3cdr16g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260414T105822Z
+LAST-MODIFIED:20260420T044833Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Bruxelles
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250723T170000Z
+DTEND:20250723T210000Z
+DTSTAMP:20261011T151914Z
+UID:64p38dr5ccp3cbb4c8o30b9kcoojgbb16opm8bb26ksjcc1icks3aohjcg@google.com
+CREATED:20250720T150740Z
+LAST-MODIFIED:20250720T150803Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251009T070000Z
+DTEND:20251009T080000Z
+DTSTAMP:20261011T151914Z
+UID:2hc8lbto4mn0t4qgpgdf6i6eq3@google.com
+CREATED:20250821T142756Z
+LAST-MODIFIED:20250821T142757Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Photos Fratrie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250905T161500Z
+DTEND:20250905T171500Z
+DTSTAMP:20261011T151914Z
+UID:65ijcphh6oqjabb670sjeb9k68pm4bb2ccom6b9p6soj2eb16krjce9gcg@google.com
+CREATED:20250827T055811Z
+LAST-MODIFIED:20250827T055811Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sport Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260617T130000Z
+DTEND:20260617T153000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cgsm8o9m64r64bb374pjab9k6dgjgbb174pmcb9i6tijip1j68s62p9hck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260601T074523Z
+LAST-MODIFIED:20260605T170841Z
+LOCATION:22 Rue Borromée\n75015 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Morgane
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251008T063000Z
+DTEND:20251008T073000Z
+DTSTAMP:20261011T151914Z
+UID:70rmcp1hcli3ab9j68o62b9k6grjcb9o69j36b9lcdij8p9p6pi32db160@google.com
+CREATED:20251004T111611Z
+DESCRIPTION:Affaires de foot pour Gabriel
+LAST-MODIFIED:20251004T111611Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Deposer Enfants chez Coco
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260613
+DTEND;VALUE=DATE:20260614
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:71ij4d356pi3ib9i6pgjab9k6cq6cbb160ojcb9hcoo30pb660s6ap1n70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+CREATED:20260517T172209Z
+LAST-MODIFIED:20260520T173030Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Dernière fois Herquiniere Déménagement
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260619T160000Z
+DTEND:20260619T170000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ccp3aphk6coj0bb3c8pjib9kc4q3ebb16krj0b9j70o3id1n61j3copk64@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/oyh-cjid-pkb
+CREATED:20260530T113333Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/3md1236G\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/oyh-
+ cjid-pkb\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260530T113334Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260312T080000Z
+DTEND:20260312T090000Z
+DTSTAMP:20261011T151914Z
+UID:324954ojp9ec7c7lmjcvrnla7n@google.com
+CREATED:20250821T143352Z
+LAST-MODIFIED:20260312T073722Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mi-Carème - Journée déguisée
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260904T170000Z
+DTEND:20260904T183000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6hh64d1icoojeb9pccpjcb9kcoq6ab9p61gjabb1ckqj2opo6hhj0ob56o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/efs-xpqg-wov
+CLASS:PRIVATE
+CREATED:20260831T113344Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ef
+ s-xpqg-wov\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260831T113448Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260628T123000Z
+DTEND:20260628T153000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:97B61320-3CC4-4F68-BE1C-45252C3AA9F4
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=family
+ 01283698051277897933@group.calendar.google.com;X-NUM-GUESTS=0:mailto:family
+ 01283698051277897933@group.calendar.google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+CREATED:20260505T175108Z
+LAST-MODIFIED:20260505T180627Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Gabriel Anniversaire Leopold
+TRANSP:TRANSPARENT
+X-APPLE-CREATOR-IDENTITY:com.apple.mobilecal
+X-APPLE-CREATOR-TEAM-IDENTITY:0000000000
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260316
+DTEND;VALUE=DATE:20260317
+DTSTAMP:20261011T151914Z
+UID:1ckh6rl8ltvdn73svl3f9uo2mh@google.com
+CREATED:20250821T143415Z
+LAST-MODIFIED:20250821T143415Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Journée pédagogique - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260530T090000Z
+DTEND:20260530T123000Z
+DTSTAMP:20261011T151914Z
+UID:74pm8cr164sjibb1chi3cb9k60sm4bb268p3ebb36osm6o9n6cr3edhl68@google.com
+CREATED:20260505T181455Z
+LAST-MODIFIED:20260505T181455Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire quitterie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251009T063000Z
+DTEND:20251009T073000Z
+DTSTAMP:20261011T151914Z
+UID:6sqm2pj26gs36bb66li3cb9kc9im4bb265i62b9h74r3gdhp6gp6achgck@google.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/yra-rodb-wva
+CREATED:20251004T111718Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/yr
+ a-rodb-wva\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251004T111718Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sortie Gabriel - Préparer picnic avec gourde\, t shirt rouge et pas
+ se navigo + affaires de judo
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270310T083000Z
+DTEND:20270310T085500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c4rjaor46lim2b9h6kojeb9k6sq32b9p70sj0b9mcos3ecpkc8p3ae9i74@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/dho-swuu-tfp
+CLASS:PRIVATE
+CREATED:20260311T115157Z
+DESCRIPTION:Informations pratiques :\n* Avec ascenseur\n* Avec entrée acces
+ sible\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessou
+ s :\nhttps://www.doctolib.fr/sessions/anonymous/HHZau3L9\n\nVia Doctolib\n\
+ n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/dho-swuu-tfp\
+ n\nLearn more about Meet at: https://support.google.com/a/users/answer/9282
+ 720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260409T170147Z
+LOCATION:185 Rue Raymond Losserand\, 75014 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Yamina MOUHOUB
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181219T190000Z
+DTEND:20181219T200000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70ojecplcdhj6bb660rmcb9k6ks36b9p6kq62b9g70qjidj56sqm2p9i68@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=Angie
+  Pefanis;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20181207T185858Z
+LAST-MODIFIED:20221129T193836Z
+LOCATION:Restaurant Le Rigmarole\n\n10\, rue du Grand Prieuré\n\n75011 Pari
+ s
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Restaurant Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260917T163000Z
+DTEND:20260917T180000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:1d1v2rlfs5d4q6n7fa0i5g3q5s@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260624T183445Z
+DESCRIPTION:Réunion de parents de rentrée pour la classe de CM1 (Gabriel)
+LAST-MODIFIED:20260914T160946Z
+LOCATION:École Blomet - Salle Michel-Ange
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Réunion parents CM1 - Gabriel
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260416T123000Z
+DTEND:20260416T133000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cpimcc9n6opjcb9pchh3cb9k6kq32b9o74qjgb9hcgom8c9m70r62phg6s@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=cbn@ci
+ nta.digital;X-NUM-GUESTS=0:mailto:cbn@cinta.digital
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie@apge-avocats.fr;X-NUM-GUESTS=0:mailto:angie@apge-avocats.fr
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ma
+ xime@lachai.se;X-NUM-GUESTS=0:mailto:maxime@lachai.se
+X-GOOGLE-CONFERENCE:https://meet.google.com/kiw-zjaz-qkp
+CLASS:PRIVATE
+CREATED:20260410T161037Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ki
+ w-zjaz-qkp\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260411T072946Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Projet Cameron
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250612T070000Z
+DTEND:20250612T080000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cdij2dpk6dj3ib9lcorm8b9kc9ij0bb16th3ab9gc4omceb570pj2e9hcc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=fduchi
+ 954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/zfk-dgbh-ftv
+CLASS:PRIVATE
+CREATED:20250517T090934Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/zf
+ k-dgbh-ftv\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250529T073505Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Rdv Diagnostics Herquiniere
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260627T120000Z
+DTEND:20260627T143000Z
+DTSTAMP:20261011T151914Z
+UID:ckq36db6c8p66b9l68s64b9k6orj2bb265i6cb9g6gsj8ohk6oqj4db2c4@google.com
+CREATED:20260506T181820Z
+LAST-MODIFIED:20260506T181820Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Eléonore - Otipi
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250927T120000Z
+DTEND:20250927T140000Z
+DTSTAMP:20261011T151914Z
+UID:6nv2ov14plfb076ok6h3bns51r@google.com
+CREATED:20250830T090803Z
+LAST-MODIFIED:20250927T114133Z
+LOCATION:12 Rue Félix Faure\, 75015 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Arthus 14h45
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250615T103000Z
+DTEND:20250615T123000Z
+DTSTAMP:20261011T151914Z
+UID:chj3id1i6gr66bb1cksjeb9kclhj6b9o74rj8bb174r3geb1chimaphm60@google.com
+CREATED:20250518T085529Z
+DESCRIPTION:Réservation chez Halle Quatre pour 4 personnes.
+LAST-MODIFIED:20250615T100424Z
+LOCATION:17 rue du Cotentin\, 75015 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Halle Quatre
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250805T170000Z
+DTEND:20250805T180000Z
+DTSTAMP:20261011T151914Z
+UID:60r32p32cco3cbb674q64b9kc5i3gbb16gs62b9k6kr66cb36ph3gcr674@google.com
+CREATED:20250731T182650Z
+LAST-MODIFIED:20250731T182650Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Partir pour avion
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251216T170000Z
+DTEND:20251216T210000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cgrj8php68qm4bb36spm6b9kc8s6cbb26so3ab9p6os68phlcgrj4c9ocg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/hog-mgje-qau
+CREATED:20251207T074812Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ho
+ g-mgje-qau\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251209T130158Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Team Building Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260113T070000Z
+DTEND:20260113T080000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6osj4pb66sq34bb261i3cb9k61gj0b9ocor66b9l69h38cj2c8q3ep9o6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20251229T132125Z
+LAST-MODIFIED:20251229T135154Z
+LOCATION:Team Toy 92
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Révision Toyota - Depot
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260606T073000Z
+DTEND:20260606T103000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:75h30dho64pj6b9mcgo68b9k6orm8b9p6lijab9gckp6ccr16gojiob3cc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/trn-wyti-nyt
+CREATED:20260515T111538Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/tr
+ n-wyti-nyt\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260515T113709Z
+LOCATION:Centre Sportif La Plaine\, 9 Rue du Général Guillaumat\, 75015 Par
+ is\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tournoi U9 ESC XV
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250702T091500Z
+DTEND:20250702T113000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cgpm2eb26sqjibb1c8p64b9k60rj2b9pc4p3ib9m6kq3gd9lckqm6c9o64@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20250615T160339Z
+LAST-MODIFIED:20250617T072338Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Ludovic
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250611
+DTEND;VALUE=DATE:20250612
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c4r3ee1k6ph66bb2cgqj4b9k6oq6cb9p70rj6b9n6oq34dr269h6achg70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=fduchi
+ 954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20250517T091011Z
+LAST-MODIFIED:20250527T184203Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Belgique + Départ Herquiniere
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260113T150000Z
+DTEND:20260113T160000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c5j34c1k75gj0b9hc4q3cb9k6ss6cbb175j30bb470omad1oc8o30dho68@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20251229T132144Z
+LAST-MODIFIED:20251229T143106Z
+LOCATION:Team Toy 92
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Revision Toyota - Récupération 16h45
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251127
+DTEND;VALUE=DATE:20251128
+DTSTAMP:20261011T151914Z
+UID:3k8la5qhurepirqggpgidu8fc2@google.com
+CREATED:20250902T071940Z
+DESCRIPTION:Photo de classe pour tous les niveaux
+LAST-MODIFIED:20250902T071941Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Photos de classe
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260321T110000Z
+DTEND:20260321T120000Z
+DTSTAMP:20261011T151914Z
+UID:6gs64c9pckrm8b9i68sjgb9k6osjab9o6lim8b9jc8sj2p1m6opjedhh68@google.com
+CREATED:20260313T194037Z
+LAST-MODIFIED:20260313T194038Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:DQM
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251208T160000Z
+DTEND:20251208T190000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6op6cob260pj2b9g6ph6ab9k6kq36bb1cpij0b9k6cq62pj16hij2dhm60@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20251105T174800Z
+LAST-MODIFIED:20251105T174809Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260621T123000Z
+DTEND:20260621T153000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6grjeoj571h62b9gcpj3gb9kc4rmcbb270p36bb2cco30o9n64rm4cr5c8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie.pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260615T062459Z
+LAST-MODIFIED:20260615T062459Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Invitation Arthus
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260525
+DTEND;VALUE=DATE:20260526
+DTSTAMP:20261011T151914Z
+UID:55dta2p5e6mu9080o0kr33tc9a@google.com
+CREATED:20250821T143646Z
+LAST-MODIFIED:20250821T143646Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Férié - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251103
+DTEND;VALUE=DATE:20251104
+DTSTAMP:20261011T151914Z
+UID:6o5cn2kgiqrintdbeg8vejilqq@google.com
+CREATED:20250821T142917Z
+LAST-MODIFIED:20250821T142926Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Journée pédagogique - Pas de cours
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260116T190000Z
+DTEND:20260116T225900Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:64pjgopkcor36bb669hm6b9k6gsj6bb271hj4b9k6cqj0dj4c8qjec1h6s@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/pjr-btey-wco
+CREATED:20251121T095842Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/pj
+ r-btey-wco\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251122T103127Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Kick off HeadMind
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260320T170000Z
+DTEND:20260320T180000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6him8eb3cdgj4b9g60rm4b9k65h3ib9o6lh3ib9jcko62e346pgjec1o6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/qjm-jsia-uqp
+CLASS:PRIVATE
+CREATED:20260313T193433Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/XctRumnD\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/qjm-
+ jsia-uqp\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260313T193433Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250911T153000Z
+DTEND:20250911T163000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cdi36chhc4qjgb9kc4sj8b9kcco64b9o65j3abb6ckr68e9n70o66e9o6g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20250826T180918Z
+LAST-MODIFIED:20250909T204002Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:AG 209
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260504T170000Z
+DTEND:20260504T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70o3ecj5ccs3ab9p6opj0b9kc8rj2b9ocli32bb270q3adpn6go6cc1o6g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/nwd-hvpa-brj
+CREATED:20260503T110523Z
+DESCRIPTION:Informations pratiques :\n* Au 2ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Avec entrée accessible\n* Interphone: Kinésithérapeutes\n* C
+ ode 1 : 4402\n* Code : 4402\n\nAutres informations :\n* Entrez dans la rési
+ dence à droite du Monoprix par la porte de droite (code 4402A) INTERPHONE G
+ ECINA\, puis prenez l'ascenseur ou escalier sur votre droite jusqu'au 1er é
+ tage.\n* Sur l'esplanade\, escalier B\, puis 2e étage D.\n\nPour annuler ou
+  déplacer votre RDV\, cliquez sur le lien ci-dessous :\nhttps://www.doctoli
+ b.fr/sessions/anonymous/DSyhYtu7\n\nVia Doctolib\n\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with
+  Google Meet: https://meet.google.com/nwd-hvpa-brj\n\nLearn more about Meet
+  at: https://support.google.com/a/users/answer/9282720\n\nPlease do not edi
+ t this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260503T110524Z
+LOCATION:74 Rue Lecourbe\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Mme Marianne BOUTIER - Kine
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250910T160000Z
+DTEND:20250910T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:smfra6lhl88nhe1b7blumnqnp4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=Fr
+ anck Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20250909T201247Z
+LAST-MODIFIED:20250909T201400Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cross Training (18h30)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260901T114000Z
+DTEND:20260901T142500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:et73m220h2272hcipkmq17k3ic@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260624T183542Z
+DESCRIPTION:Rentrée des élèves à l'École Blomet pour Eléonore (CP)
+LAST-MODIFIED:20260625T163938Z
+LOCATION:École Blomet
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rentrée CP - Eléonore
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260828T170300Z
+DTEND:20260828T180300Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:chgj4chl6co3abb165h6ab9k6dgj8b9o64sm8b9mccojgcr160s34e9lc8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260712T160658Z
+DESCRIPTION:Voyage retour en train Frecciarossa 6148. Passagers: Angie Pefa
+ nis\, Franck Duchi\, Gabriel Duchi Pefanis\, Eleonore Duchi Pefanis.
+LAST-MODIFIED:20260712T160728Z
+LOCATION:Marseille-Saint-Charles
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Retour Marseille - Paris (Frecciarossa 6148)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261015T170000Z
+DTEND:20261015T210000Z
+DTSTAMP:20261011T151914Z
+UID:6hgm2or5cks6cb9i6th66b9kc9gj6bb16kqjgb9o6hi3gchg6lgj8pb1cc@google.com
+CREATED:20260927T175520Z
+LAST-MODIFIED:20260927T175521Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250710
+DTEND;VALUE=DATE:20250715
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6li3cdhmckqjgbb46ph68b9kcosmcbb265j3gb9kc9j64e1mc8rm2cb170@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20250601T062905Z
+DESCRIPTION:Booking number: PKQLBQBZ
+LAST-MODIFIED:20250614T125919Z
+LOCATION:200 Allée des Quatre Vents\, Domaine de Limère ARDON ORLEANS Franc
+ e
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Booking at Hôtel Mercure Orléans Portes de Sologne - PKQLBQBZ
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250922T170000Z
+DTEND:20250922T180000Z
+DTSTAMP:20261011T151914Z
+UID:6e0o78a54fa6v01paftllvo2gq@google.com
+CREATED:20250902T071833Z
+LAST-MODIFIED:20250902T071834Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Assemblée Générale de l'APEL ENC
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260820T131000Z
+DTEND:20260820T141000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ccsm6opi74p66bb268s38b9k75im2bb161i3cbb46tgm2pj570rm4d1m68@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260712T160553Z
+DESCRIPTION:Trenitalia \nConfirmation number: TGCEHN\n\nDeparture: \, platf
+ orm \, 15:10 (local time)\nArrival: \, platform \, 18:29 (local time)
+LAST-MODIFIED:20260720T055451Z
+LOCATION:Paris-Gare-De-Lyon
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Train to Marseille-Saint-Charles
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260704
+DTEND;VALUE=DATE:20260712
+DTSTAMP:20261011T151914Z
+UID:6pj3ie35c8q6ab9j6hj3ib9k6hj3ib9o70rm8b9n6gpm4e316spm6p9k6g@google.com
+CREATED:20260426T110623Z
+LAST-MODIFIED:20260426T110651Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Le havre
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250911T160000Z
+DTEND:20250911T163000Z
+DTSTAMP:20261011T151914Z
+UID:4dqnc0ov5rrghe3ma4a305qqg1@google.com
+CREATED:20250821T142700Z
+LAST-MODIFIED:20250821T142700Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pot APEL
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260107T170000Z
+DTEND:20260107T220000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cpj32p1m60r38b9jc4ojib9k64q6abb261hjibb360pj6cj16dim6dhoco@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/yfw-kpmz-zog
+CREATED:20260105T164057Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/yf
+ w-kpmz-zog\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260105T164057Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Soirée Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261003T120000Z
+DTEND:20261003T150000Z
+DTSTAMP:20261011T151914Z
+UID:cli3ep34ccrj2b9kcdh3ab9kchgjibb174q62b9hcoq3gcr2c8qj4d1g6k@google.com
+CREATED:20260927T175504Z
+LAST-MODIFIED:20260927T175504Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Matilda maison
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250718T143000Z
+DTEND:20250718T163000Z
+DTSTAMP:20261011T151914Z
+UID:6gr30d9g6krjebb275h3eb9k69ij8b9o61ijgb9o6lij4c9ncoom8pj2cg@google.com
+CREATED:20250715T150007Z
+DESCRIPTION:vendredi 18 juil. 16:30-18:30
+LAST-MODIFIED:20250715T150007Z
+LOCATION:Spot de l'été  41600 CHAUMONT_SUR_THARONNE\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Drôle de Frimousse - Activité Center Parcs
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251108T130000Z
+DTEND:20251108T140000Z
+DTSTAMP:20261011T151914Z
+UID:c4ojgphkcpgm6b9h70r3ib9kc4pj2b9pccrmcbb360qj0pj3ckoj6or36g@google.com
+CREATED:20251031T061117Z
+LAST-MODIFIED:20251031T061117Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ramener jouets king jouet
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250621T120000Z
+DTEND:20250621T143000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6go62d9j6com4b9m68q34b9k61im8b9o6spjeb9j64sjceb36kom8o9gcc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+CREATED:20250402T115652Z
+LAST-MODIFIED:20250527T184226Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Eléonore - Otipi
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260418
+DTEND;VALUE=DATE:20260504
+DTSTAMP:20261011T151914Z
+UID:6a27bc6rn1egnudlej96bkrvgf@google.com
+CREATED:20250821T143517Z
+LAST-MODIFIED:20250821T143518Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vacances Scolaires
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251220T150000Z
+DTEND:20251227T100000Z
+DTSTAMP:20261011T151914Z
+UID:60q3aeb269hjabb361i3ib9kc9h6cbb2cos6ab9o6oo3eoj3cdgjeo9i60@google.com
+CREATED:20250822T154410Z
+LAST-MODIFIED:20250822T154411Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Les Arcs 1950
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260409T153000Z
+DTEND:20260409T163000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6kq3id1lcoqm4b9j61hjeb9k65ijeb9o6crm2b9n6di3gcr36cr3eeb6cc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/rre-qfvz-ihd
+CREATED:20260407T184247Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/rr
+ e-qfvz-ihd\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260408T021730Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dentiste Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260702T160000Z
+DTEND:20260702T200000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cdhj0pj2cdgjabb460rmcb9k60s64b9pcpi64b9m6goj8c1mcgp3ac1p6c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/rhv-isoj-tcj
+CREATED:20260603T152210Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/rh
+ v-isoj-tcj\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260603T155004Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251008
+DTEND;VALUE=DATE:20251013
+DTSTAMP:20261011T151914Z
+UID:cgr62eb6cop38bb470s3ab9k6pi6ab9o6orjgb9j6dh64cpg60o3id356c@google.com
+CREATED:20250801T162229Z
+LAST-MODIFIED:20250801T162230Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Angie Vienne
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260330T173000Z
+DTEND:20260330T181500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c9j66eb4coomcbb1ccpj6b9k74sm8b9o6di36b9ic4rm4e9g61hj4cr2co@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/haa-qjky-szm
+CREATED:20260324T072542Z
+DESCRIPTION:Informations pratiques :\n* Au Rez-de-chaussée\n* Sans ascenseu
+ r\n* Avec entrée accessible\n\nAutres informations :\n* 25  (local avec vit
+ rine anthracite situé au rez de chaussée sur rue)\n\nPour annuler ou déplac
+ er votre RDV\, cliquez sur le lien ci-dessous :\nhttps://www.doctolib.fr/se
+ ssions/anonymous/1n2jy4nb\n\nVia Doctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with Google
+  Meet: https://meet.google.com/haa-qjky-szm\n\nLearn more about Meet at: ht
+ tps://support.google.com/a/users/answer/9282720\n\nPlease do not edit this 
+ section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260324T083057Z
+LOCATION:25 Rue Bargue\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Emilie THELLIER
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260612T163000Z
+DTEND:20260612T213000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70rmapb66dgj8b9p65i3ib9k6hi32bb1cgr38bb16hh38phpchj3ecpk64@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/hsy-ttin-xyn
+CREATED:20260417T160038Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/hs
+ y-ttin-xyn\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260418T162910Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Garden Party HeadMind
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260228T100000Z
+DTEND:20260228T160000Z
+DTSTAMP:20261011T151914Z
+UID:6hgjapj4c8rjcbb665j3ib9k65ij6bb164r3gb9m6hh30dpm61h38chkcg@google.com
+CREATED:20260219T180724Z
+LAST-MODIFIED:20260219T180735Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Dqm Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250909T163000Z
+DTEND:20250909T180000Z
+DTSTAMP:20261011T151914Z
+UID:4qr4vj2addgsa63gchjhpneq2d@google.com
+CREATED:20250902T071749Z
+DESCRIPTION:Pot d&#39\;accueil APEL à 18h dans la cour
+LAST-MODIFIED:20250902T071749Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : CE2 & CM1 : Réunion parents
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260926
+DTSTAMP:20261011T151914Z
+UID:c5i34p9g70rjgb9ocgr64b9k6gs32b9p6gs34bb3coq32eb660qj4dhm6k@google.com
+CREATED:20260914T061653Z
+LAST-MODIFIED:20260914T061653Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Belgique
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251220
+DTEND;VALUE=DATE:20260105
+DTSTAMP:20261011T151914Z
+UID:5sl7pmdq634cepa634nk50djkk@google.com
+CREATED:20250821T143142Z
+LAST-MODIFIED:20250821T143142Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vacances de Nöel
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260221
+DTEND;VALUE=DATE:20260309
+DTSTAMP:20261011T151914Z
+UID:1fi8bo3qsjcck0ukqjk5ctv0cp@google.com
+CREATED:20250821T143319Z
+LAST-MODIFIED:20250821T143320Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vacances scolaires
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250827T170000Z
+DTEND:20250827T180000Z
+DTSTAMP:20261011T151914Z
+UID:6lh32ohj6di38b9ic8o6ab9kcpim4b9pcphm6bb2cgq3ccj1c4pmcphk6c@google.com
+CREATED:20250826T171113Z
+LAST-MODIFIED:20250826T171113Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Sport
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260512T134500Z
+DTEND:20260512T150000Z
+DTSTAMP:20261011T151914Z
+UID:46ovonq7dsv3kqr9nd2mb5lrmc@google.com
+CREATED:20250902T072133Z
+DESCRIPTION:Célébration religieuse
+LAST-MODIFIED:20250902T072133Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Fête Ste Jeanne de Lestonnac
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250909T160000Z
+DTEND:20250909T163000Z
+DTSTAMP:20261011T151914Z
+UID:295bko47nspt2vq2rm5jmhdc2c@google.com
+CREATED:20250821T142601Z
+LAST-MODIFIED:20250821T142601Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pot APEL
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250918T160000Z
+DTEND:20250918T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:8mdj9kp0s48csig66eljrsnn84@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=Fr
+ anck Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20250909T201259Z
+LAST-MODIFIED:20250918T154129Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Group Training (18h30)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260403
+DTEND;VALUE=DATE:20260404
+DTSTAMP:20261011T151914Z
+UID:57a3cs4su1k7c69j8m187gqf7p@google.com
+CREATED:20250902T072057Z
+DESCRIPTION:Célébration du Vendredi Saint
+LAST-MODIFIED:20250902T072057Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Bol de riz et chemin de croix
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260620T090000Z
+DTEND:20260620T150000Z
+DTSTAMP:20261011T151914Z
+UID:03m3skgdhsrnqfdsefn5p2061c@google.com
+CREATED:20250821T143716Z
+LAST-MODIFIED:20250821T143717Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Kermesse
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260128T150000Z
+DTEND:20260128T160000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c8r36ob661h3eb9k6gr3cb9k68q6ab9o64r62b9i6lgjcoho60q34cr268@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/owi-zetf-rjc
+CREATED:20260124T132539Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/go7Vo7LL\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/owi-
+ zetf-rjc\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260124T132539Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260619T153000Z
+DTEND:20260619T163000Z
+DTSTAMP:20261011T151914Z
+UID:6ko34c1i6oo66b9n6so3eb9kc4q38b9p6cq3gb9lcgqjaoj5c8s62or3cg@google.com
+CREATED:20260606T183515Z
+LAST-MODIFIED:20260606T183515Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Judo Gabriel
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260917
+DTEND;VALUE=DATE:20260919
+DTSTAMP:20261011T151914Z
+UID:6dhmcc31c9h6cb9j61im2b9kclh66b9oclh62bb26th3cc9nccrj4p9ock@google.com
+CREATED:20260914T061631Z
+LAST-MODIFIED:20260914T061631Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Brest
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Paris:20250831T080000
+DTEND;TZID=Europe/Paris:20250831T111500
+RRULE:FREQ=WEEKLY;WKST=TU
+EXDATE;TZID=Europe/Paris:20251026T080000
+DTSTAMP:20261011T151914Z
+UID:68sm8cr5chj34b9pchhjeb9k6lim2bb274pm2b9n6limcc3364o34d9m6c@google.com
+CREATED:20250826T171225Z
+LAST-MODIFIED:20250914T053010Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Sport Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250911T163000Z
+DTEND:20250911T180000Z
+DTSTAMP:20261011T151914Z
+UID:019evj1o1o0ps25grdhgj0thgp@google.com
+CREATED:20250902T071758Z
+DESCRIPTION:Pot d&#39\;accueil APEL à 18h dans la cour
+LAST-MODIFIED:20250902T071759Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : CE1 & GS : Réunion parents
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251116T113000Z
+DTEND:20251116T133000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:60pjid1g75i32bb5cop3eb9k6pgjgb9p6gs3ab9p6hgj2e1mcksjgob674@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20251018T110121Z
+DESCRIPTION:Réservation chez Halle Quatre pour 4 personnes.
+LAST-MODIFIED:20251021T200838Z
+LOCATION:17 rue du Cotentin\, 75015 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Halle Quatre
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260625T153000Z
+DTEND:20260625T183000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:copm8or670oj2b9o74r30b9k64p3cbb1chij2b9mc8q36db3ccs36o9h70@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/rkm-kppf-npr
+CREATED:20260513T190528Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/rk
+ m-kppf-npr\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260515T102533Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pot Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261010T220000Z
+DTEND:20261011T220000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cpj3cphmchi3ib9nchim4b9k6sr38b9p65h32bb5cgr32php6dijiob464@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260924T043608Z
+LAST-MODIFIED:20260925T160834Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Arthur
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P0DT0H5M0S
+DESCRIPTION:This is an event reminder
+END:VALARM
+BEGIN:VALARM
+ACTION:EMAIL
+ATTENDEE:mailto:franck.duchi@gmail.com
+TRIGGER:-P0DT0H10M0S
+DESCRIPTION:This is an event reminder
+SUMMARY:Alarm notification
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:This is an event reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270403T093000Z
+DTEND:20270410T103000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6ti62chmclgm2b9n6lgj2b9k6kqj4bb2chhj8b9pc4pjecr474q34cpm6o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/set-hnzk-xuq
+CREATED:20260806T135200Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/se
+ t-hnzk-xuq\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260906T053832Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Parents à Paris ?
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250629
+DTEND;VALUE=DATE:20250705
+DTSTAMP:20261011T151914Z
+UID:c9hmap1hcosjibb674r6cb9kcosm2bb270p36b9j60rm2opjc9im2d1h6g@google.com
+CREATED:20250529T073740Z
+LAST-MODIFIED:20250615T093227Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Franck St Tropez
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+DTSTAMP:20261011T151914Z
+UID:6tijgdhj6hj36b9k6kp6cb9kcgo3eb9o74r3cbb261hm2pj26go62opnco@google.com
+CREATED:20260806T135200Z
+LAST-MODIFIED:20260806T135200Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Spectacle Parents à Aix
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260727T153000Z
+DTEND:20260727T180000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6cs38ohpc4ojibb460rjcb9kcoq30b9ockoj0b9n6gr62p9lchh3id3264@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/fij-ptwf-fhv
+CREATED:20260721T181147Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/fi
+ j-ptwf-fhv\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260721T181149Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260325T151000Z
+DTEND:20260325T152000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:69i6cp9l6pgm6b9o6oqm2b9k68r38b9p6dj64b9k68p3aopkcko30d1o60@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/yrh-cnqr-ebv
+CLASS:PRIVATE
+CREATED:20260318T161221Z
+DESCRIPTION:Informations pratiques :\n* Au Rez-de-chaussée\n* Sans ascenseu
+ r\n* Avec entrée accessible\n* Interphone: Dr Sauvage Rigal \n\nAutres info
+ rmations :\n* L'entrée du cabinet médical se situe au 16 rue Victor Duruy.\
+ n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous :\nh
+ ttps://www.doctolib.fr/sessions/anonymous/cTbGdpk1\n\nVia Doctolib\n\n-::~:
+ ~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ :~:~::-\nJoin with Google Meet: https://meet.google.com/yrh-cnqr-ebv\n\nLea
+ rn more about Meet at: https://support.google.com/a/users/answer/9282720\n\
+ nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260318T161223Z
+LOCATION:1 Rue Olivier de Serres\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Sophie Sauvage Rigal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251207T080000Z
+DTEND:20251207T110000Z
+DTSTAMP:20261011T151914Z
+UID:6gbrkhv3v1d9utdmgl86nc0va6@google.com
+CREATED:20250821T143046Z
+LAST-MODIFIED:20251207T093049Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Marché de Noël
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251105T170000Z
+DTEND:20251105T210000Z
+DTSTAMP:20261011T151914Z
+UID:70qjiob269ij0bb36lh66b9k69i36bb26lj6cbb670sm6e9n75gjgcj2cg@google.com
+CREATED:20251010T103524Z
+LAST-MODIFIED:20251010T103532Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Spectacle Le Roi Lion
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250704T100000Z
+DTEND:20250704T110000Z
+DTSTAMP:20261011T151914Z
+UID:6crm2pj464q3cbb3c4o6ab9k60omcbb2cdh68b9p71ijgdb56ph3ee9ic4@google.com
+CREATED:20250615T093338Z
+LAST-MODIFIED:20250615T093338Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Fin école
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251107T080000Z
+DTEND:20251107T090000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70q6cor4cksjcbb3c9j6ab9kcos64bb1coqmcbb36cq36opk75imadr2ck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20251106T212655Z
+LAST-MODIFIED:20251106T212707Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Call visa
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251207T100000Z
+DTEND:20251207T140000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70o3ipb1cgqm6b9i6osjcb9k6dij8bb2coo3eb9ocoqm8oj675h6ao9jcc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/akx-czyh-iaw
+CREATED:20251121T175319Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ak
+ x-czyh-iaw\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251122T103129Z
+LOCATION:Les Halles d'Issy - Biltoki\, 1 Rue Rouget de Lisle\, 92130 Issy-l
+ es-Moulineaux\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Buche Noël Nina Métayer
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261013T080000Z
+DTEND:20261013T090000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ungmv415qboigr96pnvvr9qlq4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20260914T062257Z
+LAST-MODIFIED:20260919T065241Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Révision vélo chez Cyclable
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260328T150000Z
+DTEND:20260328T151500Z
+DTSTAMP:20261011T151914Z
+UID:c4sj0p9hccsjcb9mckrjcb9k70p38bb16go38bb5c5gjie9j61gm4db168@google.com
+CREATED:20260325T154512Z
+DESCRIPTION:Informations pratiques :\n* Sans ascenseur\n* Avec entrée acces
+ sible\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessou
+ s :\nhttps://www.doctolib.fr/sessions/anonymous/jQcg6m3L\n\nVia Doctolib
+LAST-MODIFIED:20260325T154512Z
+LOCATION:136 bis Rue Blomet\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Centre de radiologie\, de scanner et IRM de Blomet
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260508
+DTEND;VALUE=DATE:20260509
+DTSTAMP:20261011T151914Z
+UID:5vebe921rtd3n20ojlm2rlmog6@google.com
+CREATED:20250821T143531Z
+LAST-MODIFIED:20250821T143532Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Férié - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251130T160000Z
+DTEND:20251130T210000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:0qhkn5had5oaqvb8veiap2e6ik@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/esj-vpfs-wtp
+CLASS:PRIVATE
+CREATED:20251125T074204Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/es
+ j-vpfs-wtp\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251125T074205Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Verre Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250916T160000Z
+DTEND:20250916T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:jmo1kp26jlaad7vu4piq59b3m0@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=Fr
+ anck Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CLASS:PRIVATE
+CREATED:20250909T201255Z
+LAST-MODIFIED:20250909T201517Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Full Body (18h30)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250919T070500Z
+DTEND:20250919T080500Z
+DTSTAMP:20261011T151914Z
+UID:6crj6dhk70sjebb46srj8b9kc5ij0bb2corj0b9n64q3ad9h6hj6cdpo6s@google.com
+CREATED:20250918T115803Z
+LAST-MODIFIED:20250918T115804Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Appeler conciergerie Viss
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260423T120000Z
+DTEND:20260423T130000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:61gj6pb66oo6cb9jc4r3cb9k65h38bb26gp64b9jc5h6cdhn60s34ohm74@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ma
+ xime@lachai.se;X-NUM-GUESTS=0:mailto:maxime@lachai.se
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=lachai
+ semaxime@gmail.com;X-NUM-GUESTS=0:mailto:lachaisemaxime@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/wzf-yixz-boc
+CREATED:20260417T172151Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/wz
+ f-yixz-boc\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260417T190209Z
+LOCATION:48 Rue du Général Foy\, 75008 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Projet
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260907T070000Z
+DTEND:20260907T080000Z
+DTSTAMP:20261011T151914Z
+UID:e58tfsp6rbpducvmehonemovro@google.com
+CREATED:20260910T063633Z
+LAST-MODIFIED:20260910T064115Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Semaine B
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250613T150000Z
+DTEND:20250613T160000Z
+DTSTAMP:20261011T151914Z
+UID:75j3adhlclijabb364rm8b9kchgm8bb16co6abb6ccpjapb3cks66p1o74@google.com
+CREATED:20250529T073533Z
+LAST-MODIFIED:20250529T073533Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Gabriel - Cérémonie Judo
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260621
+DTEND;VALUE=DATE:20260622
+DTSTAMP:20261011T151914Z
+UID:0g9qv5krqelimtcus8rcvb4v97@google.com
+CREATED:20250902T072202Z
+LAST-MODIFIED:20250902T072202Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Fête des Pères
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260331T134500Z
+DTEND:20260331T140000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6srjgp9h6gp62b9j74om8b9k60r68b9pccr6abb36csm6eb56grmaor46g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/nmi-iqpw-msq
+CLASS:PRIVATE
+CREATED:20260319T164114Z
+DESCRIPTION:Informations pratiques :\n* Au 3ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Code : 67329\n\nAutres information
+ s :\n* Attention en sortant de l'ascenseur\, il y a plusieurs marches d'esc
+ alier juste devant.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le 
+ lien ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/msZv1b3G\n\nV
+ ia Doctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com
+ /nmi-iqpw-msq\n\nLearn more about Meet at: https://support.google.com/a/use
+ rs/answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260319T164116Z
+LOCATION:57 Boulevard de Vaugirard\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Jean-Marc COHEN
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250629
+DTEND;VALUE=DATE:20250630
+DTSTAMP:20261011T151914Z
+UID:cosm2opoclh38b9n75j3gb9kc4pj0bb26hh3eb9m6tijae1p68oj2e9p6c@google.com
+CREATED:20250529T073702Z
+LAST-MODIFIED:20250529T073702Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Gabriel Anniversaire Leopold
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20190111T190000Z
+DTEND:20190111T225700Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c4omcdb2chhjcb9k6cpm2b9k6ksm8bb16hh64b9h64s3cohn6cpm6dj6c4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=Angie
+  Pefanis;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20181219T065233Z
+LAST-MODIFIED:20221129T193836Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Kick off Beijaflore
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260204T073000Z
+DTEND:20260204T103000Z
+DTSTAMP:20261011T151914Z
+UID:79s97jfptcg5gm3fn6l0vj3hgq@google.com
+CREATED:20250821T143250Z
+LAST-MODIFIED:20250821T162058Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Rencontres Parents-Profs
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251111
+DTEND;VALUE=DATE:20251112
+DTSTAMP:20261011T151914Z
+UID:3mlk59ek4gfa6cp82q4p1vgac3@google.com
+CREATED:20250821T142950Z
+LAST-MODIFIED:20250821T142951Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Férié - Pas de classe
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250903T170000Z
+DTEND:20250903T180000Z
+DTSTAMP:20261011T151914Z
+UID:70r3eo9icop3ab9jc8rm6b9k74o68bb1ckrm2bb574q66c31c4qmco9o6o@google.com
+CREATED:20250827T055743Z
+LAST-MODIFIED:20250903T091746Z
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Sport Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260928T070000Z
+DTEND:20260928T080000Z
+DTSTAMP:20261011T151914Z
+UID:6i4rbdhchs3b7o91pbgvhsm0ts@google.com
+CREATED:20260910T063643Z
+LAST-MODIFIED:20260914T061727Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Semaine A
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250724T160000Z
+DTEND:20250724T210000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:68s68dhj68sm8b9l74q68b9k69j68bb26crm4bb4c4rj4d1j6cq3adhmc4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/anu-kyza-vix
+CREATED:20250708T171434Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/an
+ u-kyza-vix\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250708T172014Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Soirée Headmind Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250901T120000Z
+DTEND:20250901T130000Z
+DTSTAMP:20261011T151914Z
+UID:6co6cp9pccs66bb36cs30b9k6thjcbb271ijebb26di36e1jc8s64p336o@google.com
+CREATED:20250826T170306Z
+LAST-MODIFIED:20250826T170307Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rentree Gabriel
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260221T110000Z
+DTEND:20260221T123000Z
+DTSTAMP:20261011T151914Z
+UID:70omad9nc4om4bb66cr34b9k60rj6b9p75gm8b9n75gj6ob564oj0opp68@google.com
+CREATED:20260220T183849Z
+DESCRIPTION:Votre réservation chez Happy Grill 해피그릴 pour 4 personne(s).\n<a
+  href="https://public.zenchef.com/fr/restaurants/365733/bookings/40339c36-f
+ 6b4-472b-bca2-79a7f864f6d8">Votre réservation</a>
+LAST-MODIFIED:20260220T183850Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Réservation chez Happy Grill 해피그릴 - Paris
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260311T130000Z
+DTEND:20260311T131000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:70o36oho70pjib9p64q62b9k6srj4b9p71j68b9p70s3idhn74rj4cpncc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/pjb-ydxs-gsb
+CLASS:PRIVATE
+CREATED:20260308T030039Z
+DESCRIPTION:Informations pratiques :\n* Au Rez-de-chaussée\n* Sans ascenseu
+ r\n* Avec entrée accessible\n* Interphone: Dr Sauvage Rigal \n\nAutres info
+ rmations :\n* L'entrée du cabinet médical se situe au 16 rue Victor Duruy.\
+ n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous :\nh
+ ttps://www.doctolib.fr/sessions/anonymous/Dn5zV9GB\n\nVia Doctolib\n\n-::~:
+ ~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ :~:~::-\nJoin with Google Meet: https://meet.google.com/pjb-ydxs-gsb\n\nLea
+ rn more about Meet at: https://support.google.com/a/users/answer/9282720\n\
+ nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260308T030039Z
+LOCATION:1 Rue Olivier de Serres\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rendez-vous chez Dr Sophie Sauvage Rigal
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261027
+DTSTAMP:20261011T151914Z
+UID:61i36pj66lh3ebb66crj4b9k68q36b9o6gsm8b9ocdj6cob460pmapb2cg@google.com
+CREATED:20260903T064615Z
+LAST-MODIFIED:20260903T064616Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Corse
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250605
+DTEND;VALUE=DATE:20250607
+DTSTAMP:20261011T151914Z
+UID:74o30cb671gjgb9ncdhm8b9k74s3cbb2ccq34bb26gq38dhp6oqjcdho60@google.com
+CREATED:20250529T073428Z
+LAST-MODIFIED:20250529T073428Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck Avignon Orano
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251010T063000Z
+DTEND:20251010T073000Z
+DTSTAMP:20261011T151914Z
+UID:cgqmacb165hmcb9k65im4b9k60p30bb2cks3cbb16dij6p1m6som4opl6k@google.com
+CREATED:20251004T111732Z
+LAST-MODIFIED:20251004T111732Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Piscine Eleonore
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250628
+DTEND;VALUE=DATE:20250629
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6dgm8e356tim2b9o6oq6ab9k6dhj4bb160o68b9i60sj6e1o60pj6p1jcg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20250615T093109Z
+LAST-MODIFIED:20250617T072336Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Fête de l'école
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260529T160000Z
+DTEND:20260529T170000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:cks66oj56tgm2b9oc5im4b9kc4oj2b9oc8sm8bb66hhm6d3270q6ce9hcg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/znn-gpmp-gvt
+CREATED:20260419T073153Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: Taper 33 : DO VALE Chi
+ ropracteur\n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour E
+ scalier B. 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien 
+ ci-dessous :\nhttps://www.doctolib.fr/sessions/anonymous/2kpFm3iK\n\nVia Do
+ ctolib\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/znn-
+ gpmp-gvt\n\nLearn more about Meet at: https://support.google.com/a/users/an
+ swer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260419T073154Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck - Rendez-vous chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251219T080000Z
+DTEND:20251219T090000Z
+DTSTAMP:20261011T151914Z
+UID:0ddugak9rbduvtdtq4d51j178p@google.com
+CREATED:20250821T143109Z
+LAST-MODIFIED:20251219T073559Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Journée Pulls de Noël
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260901T121000Z
+DTEND:20260901T143000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:7rm4m9i56cfr2jbgpgth2pa3bs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260624T183543Z
+DESCRIPTION:Rentrée des élèves à l'École Blomet pour Gabriel (CM1)
+LAST-MODIFIED:20260625T163941Z
+LOCATION:École Blomet
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rentrée CM1 - Gabriel
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250629
+DTEND;VALUE=DATE:20250630
+DTSTAMP:20261011T151914Z
+UID:ckq3gopgclijibb36dhj2b9k60p3ib9o74o3cb9p6com4oj6ccrj0oj26g@google.com
+CREATED:20250529T073712Z
+LAST-MODIFIED:20250529T073712Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Eléonore Anniversaire Delphine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261010T124500Z
+DTEND:20261010T154500Z
+DTSTAMP:20261011T151914Z
+UID:c4q38chg6pi3cbb474s34b9kccrmabb170s3cbb670s6cd1o60p6ao9m70@google.com
+CREATED:20260925T161449Z
+LAST-MODIFIED:20260925T161449Z
+LOCATION:Futsal
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anniversaire Marcel heure
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250804T090000Z
+DTEND:20250804T100000Z
+DTSTAMP:20261011T151914Z
+UID:6ssjicpm64sjgbb471gj4b9k69h6abb1clgm8b9l6go3cdphc8s34d1jco@google.com
+CREATED:20250731T182506Z
+LAST-MODIFIED:20250731T182507Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Remplir reservoir arrosage
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250603T080000Z
+DTEND:20250603T081500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6kq32p356hhjeb9j61ij6b9k60om2bb165hm4b9o64rj2p1m6com4phpck@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/zxa-cspw-kqh
+CREATED:20250601T114927Z
+DESCRIPTION:Informations pratiques :\n* Au 2ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: ABBAS\n* Code : 34B15\
+ n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous :\nh
+ ttps://www.doctolib.fr/sessions/anonymous/9GhdmvEL\n\nVia Doctolib\n\n-::~:
+ ~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ :~:~::-\nJoin with Google Meet: https://meet.google.com/zxa-cspw-kqh\n\nLea
+ rn more about Meet at: https://support.google.com/a/users/answer/9282720\n\
+ nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250614T125919Z
+LOCATION:50 Avenue de la Motte-Picquet\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:RDV chez Dr Ali ABBAS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260421T083000Z
+DTEND:20260421T093000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ckrj6dpl64rm8b9p68q3ab9k6so3gbb174q38b9j68p66opkccr66o9o6k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/tbx-xuxy-cxb
+CREATED:20260412T080626Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/tb
+ x-xuxy-cxb\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260413T163950Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Fin délai rétractation Herquiniere
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260908T163000Z
+DTEND:20260908T180000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:gerh05079ktp030ts3767pcqqk@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260624T183543Z
+DESCRIPTION:Réunion de parents de rentrée pour la classe de CP (Eléonore)
+LAST-MODIFIED:20260625T163943Z
+LOCATION:École Blomet - Salle Michel-Ange
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Réunion parents CP - Eléonore
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250925T160000Z
+DTEND:20250925T173000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:g2un0kcmj3l0redd8i9ou7d22o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20250921T192700Z
+LAST-MODIFIED:20250921T192759Z
+LOCATION:Paris 15 Convention
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Full Body - 18h30
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250615T130000Z
+DTEND:20250615T140000Z
+DTSTAMP:20261011T151914Z
+UID:chi64dpi74r6cb9k74r36b9k6cqj6bb16cpjebb570p6cohjcgr66cpj74@google.com
+CREATED:20250529T073615Z
+LAST-MODIFIED:20250529T073615Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Angie RDV Fiat
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260705
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:ckpjaoho70p6cb9i75hm4b9k6os3gbb160ojab9j6hijco9l6ks3ao9ncg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260626T123222Z
+DESCRIPTION:Réservation : QLWDGBXX\n\nArrivée à partir de 14:00\nDépart jus
+ qu'à 12:00\n\nH0432@accor.com\n\n+33 2 32 91 76 76
+LAST-MODIFIED:20260626T132702Z
+LOCATION:Angle Avenue de l'Université\, Rue de la Mare Sansoure\, 76800 SAI
+ NT ETIENNE DU ROUVRAY\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Novotel Rouen Sud Zenith Parc Expo
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250620
+DTEND;VALUE=DATE:20250621
+DTSTAMP:20261011T151914Z
+UID:6tj68d1jccrm8b9l6ti32b9k65j68b9o6os3eb9o6lim4cj26li64o9jcc@google.com
+CREATED:20250601T085653Z
+LAST-MODIFIED:20250614T125919Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Eléonore - Sortie Scolaire avec Franck
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251127T183000Z
+DTEND:20251127T203000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:75i3ge9pc4rj6b9kclh3ib9k6cr62b9o6kq32b9k64p30or4ccrj8pj5c8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=TENTATIVE;CN=angie
+ .pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20251118T192154Z
+DESCRIPTION:Réservation chez Halle Quatre pour 4 personnes.
+LAST-MODIFIED:20251118T192433Z
+LOCATION:17 rue du Cotentin\, 75015 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Halle Quatre
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260614T100000Z
+DTEND:20260614T120000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6srj0opo70sjibb361gj2b9k71ijgbb1c8q38bb46os38dpjcdij8eb1c4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260503T173127Z
+DESCRIPTION:Réservation chez Halle Quatre pour 4 personnes.
+LAST-MODIFIED:20260505T021703Z
+LOCATION:17 rue du Cotentin\, 75015 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Halle Quatre Brunch
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20250602
+DTEND;VALUE=DATE:20250603
+DTSTAMP:20261011T151914Z
+UID:6coj4p9pc9i64b9j75j66b9k6oq3abb1c8q66b9mc5j3ed35cksmao9ic4@google.com
+CREATED:20250502T100302Z
+LAST-MODIFIED:20250502T100302Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:My Center Parcs - Activités disponibles
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261018T152500Z
+DTEND:20261018T170500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c9hmcopmccpjab9g69i68b9k6hh34bb26dim2b9m6ssmcphg65gjgd9mcc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CLASS:PRIVATE
+CREATED:20260719T161853Z
+DESCRIPTION:Vol AF7598 Paris (ORY) - Bastia (BIA)\\nHeure Limite d'Enregist
+ rement : 16:45\\nHeure locale de départ (Paris) : 18/10/2026\, 17:25\\nHeur
+ e locale d'arrivée (Bastia) : 18/10/2026\, 19:05\\nRéférence de réservation
+  : XQCC4R
+LAST-MODIFIED:20260720T055455Z
+LOCATION:Aéroport Orly (ORY) - Terminal 3
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vol Paris-Bastia
+TRANSP:OPAQUE
+ATTACH;FILENAME=Billet_électronique.pdf:https://mail.google.com/?view=att&t
+ h=19f7b2ba4d0c9126&attid=0.2&disp=attd&zw
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251216T080000Z
+DTEND:20251216T090000Z
+DTSTAMP:20261011T151914Z
+UID:053052g8a56aladpdj330k0lde@google.com
+CREATED:20250902T072009Z
+DESCRIPTION:Messe de montée vers Noël à SJBS
+LAST-MODIFIED:20250902T072009Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Messe de Noël
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260531
+DTEND;VALUE=DATE:20260601
+DTSTAMP:20261011T151914Z
+UID:0rhpjq7mhm9u4ltdbldq68nrq1@google.com
+CREATED:20250902T072147Z
+LAST-MODIFIED:20250902T072147Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Fête des Mères
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250607T090000Z
+DTEND:20250607T100000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c8ojecpic8s3ibb275h68b9k64sj8bb16cr30b9iccq34oj5cgo38c9l68@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie.pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CLASS:PRIVATE
+CREATED:20250527T184151Z
+DESCRIPTION:Cet événement a été créé à partir d'un e-mail que vous avez reç
+ u dans Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPw1L-C4K74
+ e1zs0-nnm9JrG1SzdloQyvo
+LAST-MODIFIED:20250527T184151Z
+LOCATION:Grand Palais\, 3\, av du Général Eisenhower\, 75008 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Balloon Museum | Euphoria – Art is in the Air
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Paris:20250830T080000
+DTEND;TZID=Europe/Paris:20250830T110000
+RRULE:FREQ=WEEKLY;WKST=TU
+EXDATE;TZID=Europe/Paris:20251101T080000
+DTSTAMP:20261011T151914Z
+UID:64s6ce9m61i62b9j74o3ib9k6sp34bb26cpm6b9pcgs3gp9ocpi32db6co@google.com
+CREATED:20250826T171155Z
+LAST-MODIFIED:20250913T060205Z
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Sport Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250603T163000Z
+DTEND:20250603T172000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:64r3idppclj36b9ocgpm6b9k74oj6b9o61ijab9l60s6cd9g60r6ae35co@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie.pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Franck
+  Duchi;X-NUM-GUESTS=0:mailto:franck.duchi@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=fduchi
+ 954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/afi-wims-ooc
+CREATED:20250517T115733Z
+DESCRIPTION:Informations pratiques :\n* Au 7ème étage avec ascenseur\n* Ave
+ c ascenseur\n* Sans entrée accessible\n* Interphone: DO VALE Chiropracteur\
+ n* Code : 1562B\n\nAutres informations :\n* Au fond de la cour Escalier B. 
+ 7e.\n\nPour annuler ou déplacer votre RDV\, cliquez sur le lien ci-dessous 
+ :\nhttps://www.doctolib.fr/sessions/anonymous/dEJAr3gC\n\nVia Doctolib\n\n-
+ ::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/afi-wims-ooc\n\
+ nLearn more about Meet at: https://support.google.com/a/users/answer/928272
+ 0\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250527T184133Z
+LOCATION:62 Boulevard du Montparnasse\, 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:FRANCK RDV chez M. Bruno DO VALE
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251121T144500Z
+DTEND:20251121T160000Z
+DTSTAMP:20261011T151914Z
+UID:4n3gb737oolclpu6o92acgcrp5@google.com
+CREATED:20250902T071926Z
+DESCRIPTION:Célébration religieuse pour la Sainte patronne
+LAST-MODIFIED:20250902T071926Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Fête Ste Jeanne de Lestonnac
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261026T090000Z
+DTEND:20261026T104500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:75gm6dpmchj38b9j61hm6b9k6os62b9ocdi66b9j75i66pb16go3ep9nc4@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CLASS:PRIVATE
+CREATED:20260719T161908Z
+DESCRIPTION:Vol AF7591 Bastia (BIA) - Paris (ORY)\\nHeure Limite d'Enregist
+ rement : 09:30\\nHeure locale de départ (Bastia) : 26/10/2026\, 10:00\\nHeu
+ re locale d'arrivée (Paris) : 26/10/2026\, 11:45\\nRéférence de réservation
+  : XQCC4R
+LAST-MODIFIED:20260720T055456Z
+LOCATION:Aéroport Poretta (BIA) - Terminal
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vol Bastia-Paris
+TRANSP:OPAQUE
+ATTACH;FILENAME=Billet_électronique.pdf:https://mail.google.com/?view=att&t
+ h=19f7b2ba4d0c9126&attid=0.2&disp=attd&zw
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250703T063000Z
+DTEND:20250703T073000Z
+DTSTAMP:20261011T151914Z
+UID:6dj6cc32chhm2b9kc8p34b9k64s38b9p61j36b9m75hjic1o71im2cj5c4@google.com
+CREATED:20250616T214349Z
+LAST-MODIFIED:20250616T214357Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Petit déjeuner fin année CE2
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270504T180200Z
+DTEND:20270504T193000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c9i38c9o70pj0b9jc5imab9k64q62b9o71gm2b9ic9h68dr268rjec9j6g@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+CREATED:20260905T153233Z
+DESCRIPTION:Eurostar \nConfirmation number: C4DD6W\n\nDeparture: Paris Gare
+  du Nord\, platform \, 20:02 (local time)\nArrival: Londres St Pancras Int'
+ l\, platform \, 21:30 (local time)
+LAST-MODIFIED:20260906T053840Z
+LOCATION:Paris Gare du Nord
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Train to Londres St Pancras Int'l
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250902T093000Z
+DTEND:20250902T103000Z
+DTSTAMP:20261011T151914Z
+UID:3r22viea320t25hal7un50aptj@google.com
+CREATED:20250821T144059Z
+LAST-MODIFIED:20250821T144123Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cardiologue Franck - 11h30
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261005T070000Z
+DTEND:20261005T080000Z
+DTSTAMP:20261011T151914Z
+UID:lhmms9aiu571fgh0ppqa0qjmr0@google.com
+CREATED:20260910T063646Z
+LAST-MODIFIED:20260914T061737Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Semaine B
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260125T140000Z
+DTEND:20260125T150000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6gq3gc1pc4o34b9j6ti38b9k65j30bb26cojib9h6ksm6ob6cgom4phjco@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=DECLINED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/ejs-pkxe-vkk
+CREATED:20260109T192113Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ej
+ s-pkxe-vkk\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20260109T195148Z
+LOCATION:de Blomet – 75015 Paris
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Bingo Blomet
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260319T163000Z
+DTEND:20260319T173000Z
+DTSTAMP:20261011T151914Z
+UID:c8p64dr3c8rjcbb4cgqj2b9k6krjgb9oc9i3gbb36sqj6or675j6cdpg68@google.com
+CLASS:PRIVATE
+CREATED:20260315T103741Z
+LAST-MODIFIED:20260315T103741Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rdv dentiste Franck
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250901T113000Z
+DTEND:20250901T123000Z
+DTSTAMP:20261011T151914Z
+UID:6cr38e9jccr36b9i6thm6b9k74q30bb2cgo66b9i64o34phg6lhjgcpg70@google.com
+CREATED:20250826T170221Z
+LAST-MODIFIED:20250826T170221Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Rentrée Eléonore
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260810T054500Z
+DTEND:20260810T064500Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:c8pjac9h6sp36bb169ij2b9kcko30bb1ccq66b9gcko3geb660qjcphk6c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20260719T162143Z
+LAST-MODIFIED:20260720T055455Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ferry: Piraeus to Sifnos (Champion Jet 3)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261206T080000Z
+DTEND:20261206T110000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:64rm6e1nclhmab9ocoo3gb9kc4qm8b9p64rjabb675i34pj6c8p3cc32cc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie.pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/csm-tuin-dwm
+CREATED:20261007T093301Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/cs
+ m-tuin-dwm\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20261007T093302Z
+LOCATION:Les Pavillons de Bercy - Musée des Arts Forains\, 53 Av. des Terro
+ irs de France\, 75012 Paris\, France
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Arbre de Noël HeadMind
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251007T070000Z
+DTEND:20251007T080000Z
+DTSTAMP:20261011T151914Z
+UID:2fkorgljepdhksf7ar7amnsag9@google.com
+CREATED:20250902T071847Z
+DESCRIPTION:Célébration religieuse de rentrée
+LAST-MODIFIED:20250902T071847Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:ENC Primaire Blomet : Messe de rentrée SJBS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20270728T083000Z
+DTEND:20270819T093000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:68p32db260om4bb4clhjib9k6hh64bb174r62bb6corj0c1i6gsm4opkcc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=angie.
+ pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/img-ncqn-uuo
+CREATED:20261004T082927Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/im
+ g-ncqn-uuo\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20261004T085804Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Athènes
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250830T173000Z
+DTEND:20250830T193000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6ssm4cj26pj3gb9p6op3eb9kcgrmabb161j66bb66dhjaphpcdi3cdr168@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=an
+ gie.pefanis@gmail.com;X-NUM-GUESTS=0:mailto:angie.pefanis@gmail.com
+CREATED:20250830T160734Z
+DESCRIPTION:Réservation chez Quindici Trattoria pour 4 personnes.
+LAST-MODIFIED:20250830T160748Z
+LOCATION:257 rue de Vaugirard\, 75015 PARIS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Quindici Trattoria
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251126T160000Z
+DTEND:20251126T190000Z
+DTSTAMP:20261011T151914Z
+ORGANIZER;CN=family01283698051277897933@group.calendar.google.com:mailto:fa
+ mily01283698051277897933@group.calendar.google.com
+UID:6gp66ob5cgqj6bb675im2b9k75gj4b9ocosjgb9kc8smaob560ojioj46k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=fd
+ uchi954@headmind.com;X-NUM-GUESTS=0:mailto:fduchi954@headmind.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/iap-wpem-koh
+CREATED:20251105T174742Z
+DESCRIPTION:-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ia
+ p-wpem-koh\n\nLearn more about Meet at: https://support.google.com/a/users/
+ answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251105T174742Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Dîner Angie
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20251001
+DTEND;VALUE=DATE:20251002
+DTSTAMP:20261011T151914Z
+UID:65gm2dhgcks62bb66lhm6b9kccom6bb26gq3abb471h62dpk69i34p1kcc@google.com
+CREATED:20250930T055135Z
+LAST-MODIFIED:20250930T055135Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ouverture vente sncf décembre
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250805T201500Z
+DTEND:20250805T211500Z
+DTSTAMP:20261011T151914Z
+UID:c5ij6cb36kpj2bb66gr36b9k64p38b9oc8p66bb46lh34phpcdj30chpc8@google.com
+CREATED:20250731T182631Z
+LAST-MODIFIED:20250731T182632Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Vol pour Athènes
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250629T140000Z
+DTEND:20250629T150000Z
+DTSTAMP:20261011T151914Z
+UID:6gp3ep9l6osjcbb169i64b9k6ti30b9o60q68b9i6li36pj4ccr3io9j6g@google.com
+CREATED:20250529T073812Z
+LAST-MODIFIED:20250529T073812Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Franck départ St Tropez
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

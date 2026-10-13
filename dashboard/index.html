@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="google" content="notranslate">
+    <title>DUCHISCREEN Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/leaflet/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="kiosk-container" id="kioskContainer">
+        <!-- Top Navigation Bar -->
+        <header class="top-bar">
+            <div class="brand">
+                <img src="assets/mascot_head.png" alt="Mascotte DUCHISCREEN" class="brand-mascot" />
+                <span class="brand-title">DUCHI<span class="accent">SCREEN</span></span>
+                <span class="pulse-indicator online" id="statusPulse" title="Connecté à Home Assistant"></span>
+            </div>
+            <div class="clock-widget">
+                <div class="time" id="digitalClock">12:00</div>
+                <div class="date-row">
+                    <span class="date" id="calendarDate">Dimanche 11 Octobre 2026</span>
+                    <span class="badge badge-week" id="weekBadge">Semaine B</span>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <button class="icon-btn" id="btnRefresh" title="Actualiser les données" aria-label="Actualiser">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.19"/>
+                    </svg>
+                </button>
+                <button class="icon-btn sleep-btn" id="btnSleep" title="Mettre en veille" aria-label="Mise en veille">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Dashboard 3-Columns Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- Colonne 1: Météo, Pluie dans l'heure & Trafic / Chat Flipper -->
+            <section class="left-column">
+                
+                <!-- Météo Actuelle -->
+                <div class="card weather-card-compact">
+                    <div class="card-header">
+                        <span class="card-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        </span>
+                        <h3>Météo Paris 15e</h3>
+                        <span class="weather-condition-tag" id="weatherDesc">Couvert</span>
+                    </div>
+                    <div class="weather-compact-body">
+                        <div class="weather-big-temp">
+                            <span id="weatherTemp">17</span><span class="weather-unit">°C</span>
+                        </div>
+                        <div class="weather-details-compact">
+                            <div>Ressenti <strong id="weatherFeels">15°</strong></div>
+                            <div>Vent <strong id="weatherWind">11 km/h</strong></div>
+                            <div>Hum. <strong id="weatherHum">51%</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pluie dans l'heure (Météo-France) -->
+                <div class="card rain-card">
+                    <div class="card-header">
+                        <span class="card-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>
+                        </span>
+                        <h3>Pluie 1h</h3>
+                        <span class="badge badge-mf">Météo-France</span>
+                    </div>
+                    <div class="rain-status-text" id="rainStatusText">Temps sec la prochaine heure</div>
+                    <div class="rain-timeline" id="rainTimeline">
+                        <!-- Barres générées dynamiquement -->
+                    </div>
+                    <div class="rain-time-labels">
+                        <span>0m</span>
+                        <span>15m</span>
+                        <span>30m</span>
+                        <span>45m</span>
+                        <span>60m</span>
+                    </div>
+                </div>
+
+                <!-- Trafic Matin & Chat Flipper Container -->
+                <div class="flipper-container" id="flipperSlot">
+                    <!-- Face 1 : Trafic Trajet avec Carte Cartographique du Parcours en Fond -->
+                    <div class="card traffic-card" id="cardTraffic">
+                        <!-- Fond de Carte Leaflet Dark Mode -->
+                        <div class="route-map-bg" id="routeMap"></div>
+                        
+                        <!-- Header Flottant -->
+                        <div class="traffic-header-overlay">
+                            <span class="card-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            </span>
+                            <h3>Trafic Trajet</h3>
+                            <span class="badge badge-traffic" id="trafficBadge">Fluide</span>
+                        </div>
+
+                        <!-- Pill d'information trafic flottante au premier plan -->
+                        <div class="traffic-pill-overlay">
+                            <div class="traffic-duration"><span id="trafficMinutes">18</span><span class="traffic-unit">min</span></div>
+                            <div class="traffic-info">
+                                <span class="traffic-route" id="trafficRoute">Arsonval ➔ Gal Foy</span>
+                                <span class="traffic-state" id="trafficState">Trafic normal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Face 2 : Photo de Chat Trop Mignon (100% Kid-Safe, Sans badge) -->
+                    <div class="card cat-card hidden" id="cardCat">
+                        <img class="cat-img" id="catImg" src="assets/cats/cat1.jpg" alt="Chat mignon" />
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Colonne 2: Températures & Alertes Trajet -->
+            <section class="middle-column">
+                
+                <!-- Carte 1: Climat Maison Compact & Épuré -->
+                <div class="card climate-card-compact">
+                    <div class="card-header">
+                        <span class="card-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </span>
+                        <h3>Climat Maison</h3>
+                        <span class="badge badge-success">Home Assistant</span>
+                    </div>
+                    <div class="rooms-grid-slim" id="roomsGrid">
+                        <!-- Salon -->
+                        <div class="room-pill-slim" id="room-salon">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-salon">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 9V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/><path d="M4 18v2M20 18v2"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">Salon</span>
+                                    <span class="room-hum" id="hum-salon">43%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-salon">21.8</span>°</div>
+                        </div>
+                        <!-- Ch. Gab -->
+                        <div class="room-pill-slim" id="room-gab">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-gab">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">Ch. Gab</span>
+                                    <span class="room-hum" id="hum-gab">52%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-gab">21.0</span>°</div>
+                        </div>
+                        <!-- Cuisine -->
+                        <div class="room-pill-slim" id="room-cuisine">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-cuisine">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2v20M6 2v20M2 7h8M2 12h8"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">Cuisine</span>
+                                    <span class="room-hum" id="hum-cuisine">46%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-cuisine">23.2</span>°</div>
+                        </div>
+                        <!-- Ch. Parents -->
+                        <div class="room-pill-slim" id="room-parents">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-parents">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">Parents</span>
+                                    <span class="room-hum" id="hum-parents">46%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-parents">21.7</span>°</div>
+                        </div>
+                        <!-- SDB -->
+                        <div class="room-pill-slim" id="room-sdb">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-sdb">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">SDB</span>
+                                    <span class="room-hum" id="hum-sdb">52%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-sdb">22.0</span>°</div>
+                        </div>
+                        <!-- Extérieur -->
+                        <div class="room-pill-slim exterior-slim" id="room-exterieur">
+                            <div class="room-left">
+                                <span class="room-icon-svg icon-exterieur">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                                </span>
+                                <div class="room-meta">
+                                    <span class="room-name">Extérieur</span>
+                                    <span class="room-hum" id="hum-exterieur">64%</span>
+                                </div>
+                            </div>
+                            <div class="room-temp"><span id="temp-exterieur">14.0</span>°</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 2: Alertes Voirie & Manifs sur le Trajet (Arsonval ➔ Gal Foy) -->
+                <div class="card route-alerts-card">
+                    <div class="card-header">
+                        <span class="card-icon">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>Alertes Trajet</h3>
+                        <span class="badge badge-route-tag" id="routeAlertBadge">Arsonval ➔ Foy</span>
+                    </div>
+                    <div class="route-alerts-body" id="routeAlertsList">
+                        <!-- Liste dynamique d'alertes filtrées sur l'itinéraire -->
+                        <div class="route-alert-empty">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span>Itinéraire dégagé • Aucun obstacle</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Colonne 3: Suivi des Colis en Couleur -->
+            <section class="card colis-card">
+                <div class="card-header">
+                    <span class="card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.55" y2="4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+                    </span>
+                    <h3>Suivi Colis</h3>
+                    <span class="badge badge-colis" id="colisCount">4 actifs</span>
+                </div>
+                <div class="colis-list" id="colisList">
+                    <!-- Liste générée dynamiquement en couleur -->
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sleep / Blanking Overlay -->
+        <div class="screen-sleep-overlay" id="screenSleepOverlay">
+            <div class="sleep-message">
+                <div class="sleep-moon">
+                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </div>
+                <div class="sleep-text">Écran en veille</div>
+                <div class="sleep-subtext">Touchez l'écran pour réveiller</div>
+            </div>
+        </div>
+
+        <!-- Footer status bar -->
+        <footer class="footer-bar">
+            <div class="footer-left">
+                <span>Synchronisation HA : <strong id="lastSyncTime">En direct</strong></span>
+            </div>
+            <div class="footer-right">
+                <span>Veille auto : <span id="idleTimer">1:00</span></span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modale Plein Écran : Détail des Alertes & Fermetures Voirie Paris -->
+    <div class="modal-backdrop hidden" id="routeAlertsModal">
+        <div class="modal-card">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <div>
+                        <h2>Perturbations & Fermetures sur l'itinéraire</h2>
+                        <span class="modal-subtitle">Trajet : 1 rue d'Arsonval (15e) ➔ Rue du Général Foy (8e)</span>
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="btnCloseAlertsModal" aria-label="Fermer la fenêtre">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span>Fermer</span>
+                </button>
+            </header>
+            <div class="modal-body" id="modalAlertsList">
+                <!-- Alertes détaillées injectées en direct -->
+            </div>
+            <footer class="modal-footer">
+                <span>Données en temps réel Ville de Paris • PC Lutèce</span>
+                <span id="modalAlertsCount">4 perturbations</span>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modale Plein Écran : Détail d'un colis -->
+    <div class="modal-backdrop hidden" id="colisModal">
+        <div class="modal-card">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.55" y2="4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+                    </span>
+                    <div>
+                        <h2 id="colisModalTitle">Colis</h2>
+                        <span class="modal-subtitle" id="colisModalSubtitle"></span>
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="btnCloseColisModal" aria-label="Fermer la fenêtre">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span>Fermer</span>
+                </button>
+            </header>
+            <div class="modal-body" id="colisModalBody"></div>
+            <footer class="modal-footer">
+                <span>Suivi colis • Home Assistant</span>
+                <span>Touchez hors de la fenêtre pour fermer</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/leaflet/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

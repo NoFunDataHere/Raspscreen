@@ -1,0 +1,7 @@
+{
+  "salon_temp": 20.8,
+  "salon_hum": 49,
+  "lights": 3,
+  "power": 410,
+  "notes": "Modifiez ce fichier ou envoyez un POST pour mettre à jour les capteurs de la maison"
+}

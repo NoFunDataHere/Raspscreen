@@ -1,0 +1,9 @@
+[Unit]
+Description=RaspEcran Auto-Update Timer (Chaque vendredi à 14:00)
+
+[Timer]
+OnCalendar=Fri *-*-* 14:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
