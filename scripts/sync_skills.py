@@ -42,13 +42,21 @@ def sync_skills():
         print(f"  Note Push: {err.strip() or out.strip()}")
 
     # 3. Mettre a jour le Raspberry Pi
-    print("\n[3/3] Mise a jour du catalogue de skills sur le Raspberry Pi...")
+    print("\n[3/4] Mise a jour du catalogue de skills sur le Raspberry Pi...")
     pi_cmd = "cd /home/raspscreen/.gemini/config/skills && git pull origin main"
     res = subprocess.run([PLINK, "-batch", "-pw", PI_PASS, f"{PI_USER}@{PI_HOST}", pi_cmd], capture_output=True, text=True)
     if res.returncode == 0:
         print(f"  Raspberry Pi mis a jour avec succes:\n  {res.stdout.strip()}")
     else:
         print(f"  Erreur mise a jour Pi: {res.stderr.strip()}")
+
+    # 4. Publication automatique des skills autorises vers le GitHub partage en ligne
+    print("\n[4/4] Synchronisation des skills autorises vers GitHub (TeamRocket)...")
+    shared_script = os.path.join(os.path.dirname(__file__), "sync_shared_skills_online.py")
+    if os.path.exists(shared_script):
+        run_cmd([sys.executable, shared_script])
+    else:
+        print("  Script sync_shared_skills_online non trouve, etape ignoree.")
 
     print("\n=== Synchronisation des skills terminee avec succes ! ===")
 
