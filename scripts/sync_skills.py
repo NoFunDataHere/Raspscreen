@@ -28,18 +28,18 @@ def sync_skills():
         print("  Aucune modification locale non commitee.")
 
     # 2. Pousser / Tirer avec le Synology
-    print("\n[2/3] Synchronisation avec le NAS Synology (antigravity-skills.git)...")
-    out, err, code = run_cmd(["git", "pull", "--rebase", "syno", "main"], cwd=local_skills_dir)
-    if code == 0:
-        print("  Pull depuis Synology: OK")
-    else:
-        print(f"  Note Pull: {err.strip() or out.strip()}")
-
-    out, err, code = run_cmd(["git", "push", "syno", "main"], cwd=local_skills_dir)
-    if code == 0:
-        print("  Push vers Synology: OK")
-    else:
-        print(f"  Note Push: {err.strip() or out.strip()}")
+    print("\n[2/4] Synchronisation avec le NAS Synology (antigravity-skills.git)...")
+    try:
+        from synology_sync_manager import sync_or_queue, is_synology_online
+        if is_synology_online():
+            out, err, code = run_cmd(["git", "pull", "--rebase", "syno", "main"], cwd=local_skills_dir)
+            if code == 0:
+                print("  Pull depuis Synology: OK")
+            else:
+                print(f"  Note Pull: {err.strip() or out.strip()}")
+        sync_or_queue(local_skills_dir, remote="syno", branch="main", repo_type="skills")
+    except Exception as e:
+        print(f"  Note Synology: {e}")
 
     # 3. Mettre a jour le Raspberry Pi
     print("\n[3/4] Mise a jour du catalogue de skills sur le Raspberry Pi...")

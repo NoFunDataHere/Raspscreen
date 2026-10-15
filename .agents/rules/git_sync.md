@@ -6,7 +6,15 @@ Dans ce projet, le dépôt central de référence est hébergé sur le NAS Synol
 
 ## Directive de synchronisation obligatoire pour Antigravity :
 1. **Au début de chaque session ou tâche :**
-   - Toujours exécuter `git pull` (ou `git pull syno main` / `git pull origin main`) pour s'assurer de disposer de la toute dernière version poussée depuis l'autre machine (PC ou Raspberry Pi).
+   - Vérifier l'état du NAS avec `python scripts/synology_sync_manager.py flush`.
+   - Si le NAS est en ligne, dépiler la file d'attente et exécuter `git pull` pour récupérer les dernières modifications.
 2. **À la fin de chaque tâche ou modification réussie :**
-   - Toujours commiter et exécuter `git push` pour renvoyer le travail sur le NAS Synology.
+   - Commiter localement le travail.
+   - Exécuter la synchronisation intelligente :
+     ```bash
+     python scripts/synology_sync_manager.py sync . syno main
+     ```
+   - **Gestion de l'extinction programmée du Synology :**
+     - Si le NAS est allumé : le push direct est effectué et la file en attente est purgée.
+     - Si le NAS est éteint (nuit / planification d'extinction) : la synchronisation est automatiquement stockée dans `~/.gemini/antigravity/synology_pending_sync.json` sans bloquer le travail. Elle sera purgée et poussée automatiquement dès que le serveur sera de nouveau joignable en journée.
 
