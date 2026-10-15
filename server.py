@@ -527,13 +527,21 @@ def update_ha_data():
             if has_rain and first_rain_min:
                 rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
 
-            # 3. Colis TRMNL
+            # 3. Colis TRMNL & Nettoyage intelligent des anomalies
             colis_raw = by_id.get("sensor.trmnl_colis_tracking", {}).get("attributes", {}).get("colis", [])
             colis_cleaned = []
             for c in colis_raw:
-                statut = c.get("statut", "Inconnu")
-                badge = "transit"
+                raw_nom = (c.get("nom") or "").strip()
+                raw_contenu = (c.get("contenu") or "").strip()
+                expediteur = (c.get("expediteur") or "Expéditeur").strip()
+                transporteur = (c.get("transporteur") or "Transporteur").strip()
+                numero = (c.get("numero") or "").strip()
+                statut = (c.get("statut") or "Inconnu").strip()
+                date_maj = (c.get("date_maj") or "").strip()
+                date_livre = (c.get("date_livre") or "").strip()
+
                 statut_lower = statut.lower()
+                badge = "transit"
                 if "livraison" in statut_lower or "aujourd" in statut_lower or "out for delivery" in statut_lower:
                     badge = "delivery"
                 elif "livré" in statut_lower or "delivered" in statut_lower:
@@ -543,17 +551,60 @@ def update_ha_data():
                 else:
                     badge = "transit"
 
+                # 1. Correction des libellés parasites (sujets d'emails tronqués)
+                nom = raw_nom or raw_contenu or "Colis"
+                contenu = raw_contenu
+                nom_lower = nom.lower()
+
+                # Détection des objets d'e-mails Amazon tronqués
+                if "informations complémentaires" in nom_lower or "information complémentaire" in nom_lower:
+                    short_num = numero.split("-")[-1] if "-" in numero else numero[-6:]
+                    nom = f"Commande Amazon #{short_num}" if short_num else "Commande Amazon"
+                    contenu = "Articles en préparation d'expédition"
+                elif "mise à jour de la date de livr" in nom_lower or "date de livraison" in nom_lower:
+                    short_num = numero.split("-")[-1] if "-" in numero else numero[-6:]
+                    nom = f"Commande Amazon #{short_num}" if short_num else "Commande Amazon"
+                    contenu = "Livraison reprogrammée"
+                elif nom.strip() == "Votre colis arrive !":
+                    nom = f"Colis Colissimo #{numero[-6:]}" if len(numero) >= 6 else "Colis Colissimo"
+                    contenu = "En cours d'acheminement"
+
+                # 2. Nettoyage des phrases de statut tronquées
+                statut_clean = statut
+                if statut_clean.endswith(" sur le site de tr (FR)"):
+                    statut_clean = "En traitement sur le site de tri"
+                elif statut_clean.startswith("[FR] Your Colissimo is being processed at the local sorting"):
+                    statut_clean = "Colissimo en traitement au centre de tri"
+                elif "processed at the local sorting" in statut_clean.lower():
+                    statut_clean = "En cours de tri local"
+
+                # 3. Filtrage : si livré depuis plus de 48h, ne pas encombrer l'écran
+                if badge == "delivered":
+                    try:
+                        if "/" in date_maj:
+                            d_parts = date_maj.split()[0].split("/")
+                            day, month = int(d_parts[0]), int(d_parts[1])
+                            now_dt = datetime.datetime.now()
+                            if month == now_dt.month and (now_dt.day - day) >= 2:
+                                continue
+                    except Exception:
+                        pass
+
                 colis_cleaned.append({
-                    "nom": c.get("nom", c.get("contenu", "Colis")),
-                    "contenu": c.get("contenu", ""),
-                    "expediteur": c.get("expediteur", "Expéditeur"),
-                    "transporteur": c.get("transporteur", "Transporteur"),
-                    "numero": c.get("numero", ""),
-                    "statut": statut,
+                    "nom": nom,
+                    "contenu": contenu,
+                    "expediteur": expediteur,
+                    "transporteur": transporteur,
+                    "numero": numero,
+                    "statut": statut_clean,
                     "badge": badge,
-                    "date": c.get("date_maj", ""),
-                    "date_livre": c.get("date_livre", "")
+                    "date": date_maj,
+                    "date_livre": date_livre
                 })
+
+            # Tri intelligent par priorité opérationnelle
+            priority_order = {"delivery": 0, "transit": 1, "ordered": 2, "delivered": 3}
+            colis_cleaned.sort(key=lambda x: priority_order.get(x["badge"], 9))
 
             # 4. Météo Open-Meteo
             meteo_cur = fetch_open_meteo()

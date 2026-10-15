@@ -262,7 +262,15 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.55" y2="4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
                         </span>
                         <h3>Suivi Colis</h3>
-                        <span class="badge badge-colis" id="colisCount">4 actifs</span>
+                        <div class="colis-header-controls">
+                            <button class="colis-scroll-btn" id="btnScrollColisUp" title="Défiler vers le haut" aria-label="Défiler vers le haut">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                            </button>
+                            <button class="colis-scroll-btn" id="btnScrollColisDown" title="Défiler vers le bas" aria-label="Défiler vers le bas">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <span class="badge badge-colis" id="colisCount">6 actifs</span>
+                        </div>
                     </div>
                     <div class="colis-list" id="colisList">
                         <!-- Liste générée dynamiquement en couleur -->

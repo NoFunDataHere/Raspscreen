@@ -55,6 +55,8 @@ const roomIds = ['salon', 'gab', 'cuisine', 'parents', 'sdb', 'exterieur'];
 // Colis Elements
 const colisList = document.getElementById('colisList');
 const colisCount = document.getElementById('colisCount');
+const btnScrollColisUp = document.getElementById('btnScrollColisUp');
+const btnScrollColisDown = document.getElementById('btnScrollColisDown');
 
 // TRMNL Elements
 const cardTrmnl = document.getElementById('cardTrmnl');
@@ -453,6 +455,22 @@ function closeColisModal() {
     if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeColisModal(); });
 })();
 
+// Contrôles de défilement manuel de la liste des colis
+(function bindColisScrollControls() {
+    if (btnScrollColisUp && colisList) {
+        btnScrollColisUp.addEventListener('click', (e) => {
+            e.stopPropagation();
+            colisList.scrollBy({ top: -90, behavior: 'smooth' });
+        });
+    }
+    if (btnScrollColisDown && colisList) {
+        btnScrollColisDown.addEventListener('click', (e) => {
+            e.stopPropagation();
+            colisList.scrollBy({ top: 90, behavior: 'smooth' });
+        });
+    }
+})();
+
 function renderColis(colis) {
     if (!colis) return;
     
@@ -478,10 +496,26 @@ function renderColis(colis) {
             </div>
             <div class="colis-title">${escapeHtml(c.nom)}</div>
         `;
+
+        // Discrimination tactile : un glissement pour scroller ne doit PAS ouvrir la modale
+        let startY = 0;
+        let isDrag = false;
+        item.addEventListener('pointerdown', (e) => {
+            startY = e.clientY;
+            isDrag = false;
+        });
+        item.addEventListener('pointermove', (e) => {
+            if (Math.abs(e.clientY - startY) > 8) {
+                isDrag = true;
+            }
+        });
         item.addEventListener('click', (e) => {
             e.stopPropagation();
-            openColisModal(c);
+            if (!isDrag) {
+                openColisModal(c);
+            }
         });
+
         colisList.appendChild(item);
     });
 }
@@ -585,19 +619,19 @@ function renderTrmnl(trmnl) {
         trmnlBody.innerHTML = `
             <div class="trmnl-rank-row">
                 <div class="trmnl-eu-rank">
-                    <span style="font-size:0.70rem; color:var(--text-secondary); font-weight:normal; margin-right:4px;">Europe</span>
+                    <span style="font-size:0.68rem; color:var(--text-secondary); font-weight:normal; margin-right:3px;">Europe</span>
                     <span class="rank-num">#${trmnl.pos_eu || '—'}</span>
+                    <span class="trmnl-eu-total">/~${trmnl.total_eu || '—'}</span>
                 </div>
-                <div class="trmnl-eu-total">sur ~${trmnl.total_eu || '—'} (Berlin)</div>
+                <span class="trmnl-global-stat">Monde #${trmnl.pos_global}/${trmnl.total_global}</span>
             </div>
             <div class="trmnl-progress-bar-bg" title="${trmnl.progress_percent || 0}% complété">
                 <div class="trmnl-progress-bar-fill" style="width: ${pct}%;"></div>
             </div>
             <div class="trmnl-sub-stats">
                 <span>Devant vous : <strong class="trmnl-ahead-highlight">~${trmnl.ahead_eu || 0}</strong></span>
-                <span class="trmnl-global-stat">Monde : #${trmnl.pos_global}/${trmnl.total_global}</span>
+                <span style="color:var(--text-muted); font-size:0.56rem;">Détails au toucher</span>
             </div>
-            ${trmnl.berlin_status ? `<div class="trmnl-berlin-banner" title="${escapeHtml(trmnl.berlin_status)}"><strong>Atelier :</strong> ${escapeHtml(trmnl.berlin_status)}</div>` : ''}
         `;
     }
 }
