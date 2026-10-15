@@ -56,6 +56,16 @@ const roomIds = ['salon', 'gab', 'cuisine', 'parents', 'sdb', 'exterieur'];
 const colisList = document.getElementById('colisList');
 const colisCount = document.getElementById('colisCount');
 
+// TRMNL Elements
+const cardTrmnl = document.getElementById('cardTrmnl');
+const trmnlBadge = document.getElementById('trmnlBadge');
+const trmnlBody = document.getElementById('trmnlBody');
+const trmnlModal = document.getElementById('trmnlModal');
+const btnCloseTrmnlModal = document.getElementById('btnCloseTrmnlModal');
+const trmnlModalBody = document.getElementById('trmnlModalBody');
+const trmnlModalFooterNote = document.getElementById('trmnlModalFooterNote');
+let currentTrmnlData = null;
+
 // Route Alerts Elements
 const routeAlertsList = document.getElementById('routeAlertsList');
 const routeAlertsCard = document.querySelector('.route-alerts-card');
@@ -226,6 +236,7 @@ async function fetchData() {
         renderRouteAlerts(data.route_alerts);
         renderTemperatures(data.temperatures);
         renderColis(data.colis);
+        renderTrmnl(data.trmnl);
         
         const now = new Date();
         lastSyncTime.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
@@ -475,6 +486,122 @@ function renderColis(colis) {
     });
 }
 
+/* -------------------------------------------------------------------------- */
+/* Suivi TRMNL Model X (#56352)                                               */
+/* -------------------------------------------------------------------------- */
+function openTrmnlModal(t) {
+    if (!trmnlModal || !t) return;
+    const isShipped = t.is_shipped;
+    const badgeHtml = isShipped 
+        ? `<span class="colis-status-badge badge-delivery" style="font-size:0.75rem; padding:3px 8px;">Expédié</span>`
+        : `<span class="colis-status-badge badge-transit" style="font-size:0.75rem; padding:3px 8px;">En attente de fabrication</span>`;
+
+    const rows = [
+        ['Statut', badgeHtml],
+        ['Appareil', 'TRMNL Model X (Écran e-Paper 10.3 pouces connecté)'],
+        ['Numéro de commande', `<span class="colis-detail-mono">#${escapeHtml(t.order_number || '56352')}</span>`],
+        ['Atelier d\'assemblage', 'Berlin, Allemagne (TRMNL Europe / 48.8% du volume mondial)'],
+        ['File Europe (corrigée)', `<strong>Rang #${t.pos_eu || '—'}</strong> sur ~${t.total_eu || '—'} commandes`],
+        ['Commandes devant vous', `<strong>~${t.ahead_eu || 0}</strong> appareils restants à assembler à Berlin`],
+        ['Avancement Europe', `${t.progress_percent || 0}% de la file Berlin traitée`],
+        ['File globale mondiale', `Rang #${t.pos_global || '—'} sur ${t.total_global || '—'} (Ateliers Atlanta + Berlin)`],
+        ['Dernier point logistique', escapeHtml(t.berlin_status || '—')]
+    ];
+
+    if (isShipped && t.days_remaining !== null) {
+        rows.push(['Règle de rétention', `Cette carte disparaîtra automatiquement dans ${t.days_remaining} jour(s)`]);
+    }
+
+    trmnlModalBody.innerHTML = rows.map(([k, v]) => `
+        <div class="colis-detail-row">
+            <span class="colis-detail-label">${k}</span>
+            <span class="colis-detail-value">${v}</span>
+        </div>`).join('');
+
+    if (trmnlModalFooterNote && t.last_check) {
+        const d = new Date(t.last_check);
+        trmnlModalFooterNote.textContent = `Dernière vérification TRMNL : ${d.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})}`;
+    }
+
+    trmnlModal.classList.remove('hidden');
+}
+
+function closeTrmnlModal() {
+    if (trmnlModal) trmnlModal.classList.add('hidden');
+}
+
+if (cardTrmnl) {
+    cardTrmnl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentTrmnlData) openTrmnlModal(currentTrmnlData);
+    });
+}
+if (btnCloseTrmnlModal) {
+    btnCloseTrmnlModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeTrmnlModal();
+    });
+}
+if (trmnlModal) {
+    trmnlModal.addEventListener('click', (e) => {
+        if (e.target === trmnlModal) closeTrmnlModal();
+    });
+}
+
+function renderTrmnl(trmnl) {
+    if (!cardTrmnl) return;
+    currentTrmnlData = trmnl;
+
+    if (!trmnl || trmnl.visible === false || trmnl.expired === true) {
+        cardTrmnl.style.display = 'none';
+        return;
+    }
+
+    cardTrmnl.style.display = 'flex';
+
+    if (trmnl.is_shipped) {
+        if (trmnlBadge) {
+            trmnlBadge.className = 'badge badge-trmnl shipped';
+            trmnlBadge.textContent = 'EXPÉDIÉ';
+        }
+        if (trmnlBody) {
+            trmnlBody.innerHTML = `
+                <div class="trmnl-shipped-box">
+                    <div class="trmnl-shipped-title">🎉 Commande Expédiée !</div>
+                    <div class="trmnl-shipped-countdown">${trmnl.days_remaining ? `Auto-suppression dans ${trmnl.days_remaining}j` : 'En acheminement'}</div>
+                </div>
+            `;
+        }
+        return;
+    }
+
+    if (trmnlBadge) {
+        trmnlBadge.className = 'badge badge-trmnl';
+        trmnlBadge.textContent = `#${trmnl.order_number || '56352'}`;
+    }
+
+    if (trmnlBody) {
+        const pct = Math.min(100, Math.max(5, trmnl.progress_percent || 0));
+        trmnlBody.innerHTML = `
+            <div class="trmnl-rank-row">
+                <div class="trmnl-eu-rank">
+                    <span style="font-size:0.70rem; color:var(--text-secondary); font-weight:normal; margin-right:4px;">Europe</span>
+                    <span class="rank-num">#${trmnl.pos_eu || '—'}</span>
+                </div>
+                <div class="trmnl-eu-total">sur ~${trmnl.total_eu || '—'} (Berlin)</div>
+            </div>
+            <div class="trmnl-progress-bar-bg" title="${trmnl.progress_percent || 0}% complété">
+                <div class="trmnl-progress-bar-fill" style="width: ${pct}%;"></div>
+            </div>
+            <div class="trmnl-sub-stats">
+                <span>Devant vous : <strong class="trmnl-ahead-highlight">~${trmnl.ahead_eu || 0}</strong></span>
+                <span class="trmnl-global-stat">Monde : #${trmnl.pos_global}/${trmnl.total_global}</span>
+            </div>
+            ${trmnl.berlin_status ? `<div class="trmnl-berlin-banner" title="${escapeHtml(trmnl.berlin_status)}"><strong>Atelier :</strong> ${escapeHtml(trmnl.berlin_status)}</div>` : ''}
+        `;
+    }
+}
+
 function renderRouteAlerts(routeAlerts) {
     if (!routeAlertsList) return;
     
@@ -561,4 +688,7 @@ if (urlParams.get('cat') === '1') {
 }
 if (urlParams.get('colis') === '1') {
     setTimeout(() => { const el = colisList && colisList.querySelector('.colis-item'); if (el) el.click(); }, 2500);
+}
+if (urlParams.get('trmnl') === '1') {
+    setTimeout(() => { if (currentTrmnlData) openTrmnlModal(currentTrmnlData); }, 1500);
 }

@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 *.log
 data/cache_*.json
+data/trmnl_status.json

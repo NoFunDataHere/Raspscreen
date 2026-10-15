@@ -26,6 +26,7 @@ import math
 import gzip
 from pathlib import Path
 from threading import Thread, Lock
+from scripts.trmnl_service import get_trmnl_status
 
 PORT = 8080
 BASE_DIR = Path(__file__).resolve().parent
@@ -70,7 +71,8 @@ ha_cache = {
         "has_incident": False,
         "count": 0,
         "alerts": []
-    }
+    },
+    "trmnl": {}
 }
 
 # Backlight paths sur Raspberry Pi OS
@@ -565,6 +567,13 @@ def update_ha_data():
             # 7. Alertes voirie & manifs filtrées sur l'itinéraire (OpenData Paris)
             route_alerts = fetch_route_traffic_alerts((traffic_info or {}).get("geometry"))
 
+            # 8. Suivi Commande TRMNL Model X (#56352)
+            try:
+                trmnl_info = get_trmnl_status(force_refresh=False)
+            except Exception as e:
+                print(f"[TRMNL] Erreur statut: {e}")
+                trmnl_info = {"visible": False, "error": str(e)}
+
             with cache_lock:
                 ha_cache["last_update"] = time.time()
                 ha_cache["week_ab"] = week_ab
@@ -572,6 +581,7 @@ def update_ha_data():
                 ha_cache["colis"] = colis_cleaned
                 ha_cache["traffic"] = traffic_info
                 ha_cache["route_alerts"] = route_alerts
+                ha_cache["trmnl"] = trmnl_info
                 ha_cache["rain_hour"] = {
                     "status": rain_status,
                     "has_rain": has_rain,
@@ -580,7 +590,7 @@ def update_ha_data():
                 if meteo_cur:
                     ha_cache["weather"] = meteo_cur
 
-            print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}.")
+            print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}, TRMNL EU: #{trmnl_info.get('pos_eu', '?')}.")
     except Exception as e:
         print(f"[DUCHISCREEN] Erreur Home Assistant : {e}")
 
@@ -598,6 +608,10 @@ class KioskHandler(http.server.SimpleHTTPRequestHandler):
             with cache_lock:
                 data = dict(ha_cache)
             self.send_json(data)
+        elif self.path == "/api/trmnl":
+            with cache_lock:
+                trmnl_data = ha_cache.get("trmnl", {})
+            self.send_json(trmnl_data)
         elif self.path == "/api/version":
             self.send_json({"version": get_app_version()})
         elif self.path == "/api/system":
@@ -620,8 +634,23 @@ class KioskHandler(http.server.SimpleHTTPRequestHandler):
             success = set_screen_brightness(255)
             self.send_json({"status": "active", "success": success})
         elif self.path == "/api/refresh":
-            Thread(target=update_ha_data, daemon=True).start()
+            def _full_refresh():
+                update_ha_data()
+                try:
+                    t_data = get_trmnl_status(force_refresh=True)
+                    with cache_lock:
+                        ha_cache["trmnl"] = t_data
+                except Exception:
+                    pass
+            Thread(target=_full_refresh, daemon=True).start()
             self.send_json({"status": "refreshing"})
+        elif self.path == "/api/trmnl/refresh":
+            def _refresh_trmnl():
+                data = get_trmnl_status(force_refresh=True)
+                with cache_lock:
+                    ha_cache["trmnl"] = data
+            Thread(target=_refresh_trmnl, daemon=True).start()
+            self.send_json({"status": "refreshing_trmnl"})
         else:
             self.send_error(404, "Endpoint introuvable")
 

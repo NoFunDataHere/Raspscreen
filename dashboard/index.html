@@ -238,18 +238,37 @@
 
             </section>
 
-            <!-- Colonne 3: Suivi des Colis en Couleur -->
-            <section class="card colis-card">
-                <div class="card-header">
-                    <span class="card-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.55" y2="4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
-                    </span>
-                    <h3>Suivi Colis</h3>
-                    <span class="badge badge-colis" id="colisCount">4 actifs</span>
+            <!-- Colonne 3: TRMNL Model X & Suivi des Colis -->
+            <section class="right-column">
+                
+                <!-- Carte Dédiée : Suivi TRMNL Model X (#56352) -->
+                <div class="card trmnl-card" id="cardTrmnl">
+                    <div class="card-header">
+                        <span class="card-icon icon-trmnl">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </span>
+                        <h3>TRMNL Model X</h3>
+                        <span class="badge badge-trmnl" id="trmnlBadge">#56352</span>
+                    </div>
+                    <div class="trmnl-body" id="trmnlBody">
+                        <!-- Généré dynamiquement : rang Berlin, progression, etc. -->
+                    </div>
                 </div>
-                <div class="colis-list" id="colisList">
-                    <!-- Liste générée dynamiquement en couleur -->
+
+                <!-- Suivi des Colis en Couleur -->
+                <div class="card colis-card" id="cardColis">
+                    <div class="card-header">
+                        <span class="card-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16.5" y1="9.4" x2="7.55" y2="4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+                        </span>
+                        <h3>Suivi Colis</h3>
+                        <span class="badge badge-colis" id="colisCount">4 actifs</span>
+                    </div>
+                    <div class="colis-list" id="colisList">
+                        <!-- Liste générée dynamiquement en couleur -->
+                    </div>
                 </div>
+
             </section>
 
         </main>
@@ -326,6 +345,34 @@
             <footer class="modal-footer">
                 <span>Suivi colis • Home Assistant</span>
                 <span>Touchez hors de la fenêtre pour fermer</span>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modale Plein Écran : Détail Suivi TRMNL Model X -->
+    <div class="modal-backdrop hidden" id="trmnlModal">
+        <div class="modal-card">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <div>
+                        <h2>Suivi Commande TRMNL Model X</h2>
+                        <span class="modal-subtitle">Écran e-Paper 10.3" • Commande #56352 • Atelier Berlin (Europe)</span>
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="btnCloseTrmnlModal" aria-label="Fermer la fenêtre">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span>Fermer</span>
+                </button>
+            </header>
+            <div class="modal-body" id="trmnlModalBody">
+                <!-- Détails complets injectés dynamiquement -->
+            </div>
+            <footer class="modal-footer">
+                <span>Synchronisation officielle TRMNL • Atelier Europe (Berlin)</span>
+                <span id="trmnlModalFooterNote">Touchez hors de la fenêtre pour fermer</span>
             </footer>
         </div>
     </div>
