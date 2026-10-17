@@ -249,7 +249,11 @@ Le workflow synchronise 4 environnements distincts tout en garantissant une éta
        ├── (2) Déploiement Réseau Kiosk ───────> [ Raspberry Pi (192.168.0.17) ]
        │                                           (/home/raspscreen/antigravity/...)
        │
-       └── (3) Partage Équipe (Skills autorisés) ─> [ GitHub Privé (TeamRocket) ]
+       ├── (3) Dépôt GitHub Kiosk Dédié ───────> [ GitHub Privé (Raspscreen) ]
+       │                                           (https://github.com/NoFunDataHere/Raspscreen.git)
+       │                                           * Remote : github / origin *
+       │
+       └── (4) Partage Équipe (Skills autorisés) ─> [ GitHub Privé (TeamRocket) ]
                                                    (https://github.com/NoFunDataHere/TeamRocket.git)
                                                    * 100% Anonymisé / Sanitized *
 ```
