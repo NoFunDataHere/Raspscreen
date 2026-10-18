@@ -43,6 +43,11 @@ echo "[Kiosk] Lancement de Chromium en mode kiosque tactile..."
 
 # Lancement en boucle infinie (si le navigateur est fermé par mégarde, il redémarre)
 while true; do
+    if [ -f "/tmp/kiosk_exit" ]; then
+        echo "[Kiosk] Arrêt demandé (/tmp/kiosk_exit détecté). Sortie de la boucle."
+        exit 0
+    fi
+
     "$BROWSER" \
         --password-store=basic \
         --lang=fr-FR \
@@ -70,6 +75,11 @@ while true; do
         --disk-cache-size=104857600 \
         http://localhost:8080 200>&-
     
+    if [ -f "/tmp/kiosk_exit" ]; then
+        echo "[Kiosk] Sortie demandée après fermeture de Chromium. Arrêt du script."
+        exit 0
+    fi
+
     echo "[Kiosk] Navigateur fermé, redémarrage dans 2 secondes..."
     sleep 2
 done

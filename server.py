@@ -702,6 +702,19 @@ class KioskHandler(http.server.SimpleHTTPRequestHandler):
                     ha_cache["trmnl"] = data
             Thread(target=_refresh_trmnl, daemon=True).start()
             self.send_json({"status": "refreshing_trmnl"})
+        elif self.path == "/api/kiosk/exit":
+            def _exit_kiosk():
+                time.sleep(0.3)
+                try:
+                    Path("/tmp/kiosk_exit").touch()
+                except Exception:
+                    pass
+                # Stopper kiosk.sh et fermer Chromium pour revenir au bureau
+                subprocess.run(["pkill", "-f", "kiosk.sh"], check=False)
+                subprocess.run(["pkill", "-f", "chromium"], check=False)
+                subprocess.run(["pkill", "-f", "chromium-browser"], check=False)
+            Thread(target=_exit_kiosk, daemon=True).start()
+            self.send_json({"status": "exiting_kiosk", "success": True})
         else:
             self.send_error(404, "Endpoint introuvable")
 

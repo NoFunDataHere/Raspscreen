@@ -726,3 +726,63 @@ if (urlParams.get('colis') === '1') {
 if (urlParams.get('trmnl') === '1') {
     setTimeout(() => { if (currentTrmnlData) openTrmnlModal(currentTrmnlData); }, 1500);
 }
+
+/* -------------------------------------------------------------------------- */
+/* Sortie du mode kiosque (5 taps rapides sur le logo)                        */
+/* -------------------------------------------------------------------------- */
+let brandTapCount = 0;
+let brandTapTimer = null;
+const brandContainer = document.querySelector('.brand');
+
+if (brandContainer) {
+    brandContainer.style.cursor = 'pointer';
+    brandContainer.setAttribute('title', 'Tapez 5 fois pour quitter le mode kiosque');
+    
+    brandContainer.addEventListener('click', async (e) => {
+        brandTapCount++;
+        clearTimeout(brandTapTimer);
+        brandTapTimer = setTimeout(() => {
+            brandTapCount = 0;
+        }, 2000); // Réinitialise si plus de 2s sans interaction
+
+        // Feedback visuel à chaque tap
+        brandContainer.style.transition = 'transform 0.12s ease';
+        brandContainer.style.transform = `scale(${1 + brandTapCount * 0.05})`;
+        setTimeout(() => { brandContainer.style.transform = 'scale(1)'; }, 120);
+
+        if (brandTapCount >= 5) {
+            brandTapCount = 0;
+            
+            // Toast de confirmation
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(15, 23, 42, 0.96);
+                border: 2px solid #ef4444;
+                color: #ffffff;
+                padding: 24px 36px;
+                border-radius: 16px;
+                text-align: center;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(239, 68, 68, 0.5);
+                z-index: 99999;
+                font-family: 'Outfit', sans-serif;
+            `;
+            toast.innerHTML = `
+                <div style="font-size: 36px; margin-bottom: 8px;">🔓</div>
+                <div style="font-size: 19px; font-weight: 700; color: #ef4444; margin-bottom: 4px;">Sortie du mode kiosque</div>
+                <div style="font-size: 13px; color: #94a3b8;">Fermeture de Chromium en cours...</div>
+            `;
+            document.body.appendChild(toast);
+
+            try {
+                await fetch('/api/kiosk/exit', { method: 'POST' });
+            } catch (err) {
+                console.error("Erreur exit kiosk:", err);
+            }
+        }
+    });
+}
+
