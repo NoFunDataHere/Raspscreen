@@ -242,6 +242,17 @@ async function fetchData() {
         
         const now = new Date();
         lastSyncTime.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+        
+        const footerIp = document.getElementById('footerIp');
+        if (footerIp && data.system_ip) {
+            if (data.tailscale_ip) {
+                footerIp.textContent = `${data.system_ip} • TS ${data.tailscale_ip}`;
+                footerIp.title = `LAN: ${data.system_ip} | Tailscale: ${data.tailscale_ip}`;
+            } else {
+                footerIp.textContent = data.system_ip;
+                footerIp.title = `LAN: ${data.system_ip}`;
+            }
+        }
     } catch (e) {
         console.error("Erreur actualisation :", e);
     }

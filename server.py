@@ -102,6 +102,15 @@ def get_local_ip():
     except Exception:
         return "127.0.0.1"
 
+def get_tailscale_ip():
+    try:
+        res = subprocess.run(["tailscale", "ip", "-4"], capture_output=True, text=True, timeout=1.0)
+        if res.returncode == 0 and res.stdout.strip():
+            return res.stdout.strip().splitlines()[0].strip()
+    except Exception:
+        pass
+    return None
+
 def set_screen_brightness(level: int):
     val = f"{max(5, min(255, level))}\n"
     for path in BACKLIGHT_BRIGHTNESS_PATHS:
@@ -658,6 +667,10 @@ class KioskHandler(http.server.SimpleHTTPRequestHandler):
         if self.path == "/api/home":
             with cache_lock:
                 data = dict(ha_cache)
+            data["system_ip"] = get_local_ip()
+            ts_ip = get_tailscale_ip()
+            if ts_ip:
+                data["tailscale_ip"] = ts_ip
             self.send_json(data)
         elif self.path == "/api/trmnl":
             with cache_lock:
