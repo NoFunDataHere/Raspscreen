@@ -1,0 +1,9 @@
+[Unit]
+Description=Watchdog de surveillance et reconnexion automatique Wi-Fi RaspEcran
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/raspscreen/antigravity/RaspEcran/scripts/wifi_watchdog.sh
+StandardOutput=journal
+StandardError=journal
