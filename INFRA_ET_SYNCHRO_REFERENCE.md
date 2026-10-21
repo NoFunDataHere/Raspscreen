@@ -181,6 +181,20 @@ sudo raspi-config nonint disable_overlayfs 0
 sudo reboot
 ```
 
+### G. Accès Distant Antigravity (`agy`) & Watchdog de Reconnexion
+
+Le Raspberry Pi héberge une instance de l'agent Antigravity accessible à distance depuis n'importe où via [https://antigravity.google.com](https://antigravity.google.com) (instance `raspecran-pi`).
+
+#### Architecture de Résilience & Auto-Redémarrage :
+1. **Linger Systemd activé :** Le daemon s'exécute en tâche de fond dès le démarrage matériel du Raspberry Pi sans nécessiter d'ouverture de session interactive (`loginctl enable-linger raspscreen`).
+2. **Service Daemon (`~/.config/systemd/user/antigravity-cli-daemon.service`) :**
+   - Attend la disponibilité DNS / OAuth (`oauth2.googleapis.com`) au boot via `ExecStartPre` pour éviter tout blocage d'authentification si le Wi-Fi met plusieurs secondes à s'associer.
+   - Relance infinie avec temporisation de 10s (`StartLimitIntervalSec=0`).
+3. **Watchdog Automatique (`antigravity-watcher.timer`) :**
+   - Exécute chaque minute `scripts/antigravity_watcher.sh`.
+   - Vérifie la connectivité Internet, l'état systemd et la présence de sockets réseau actives (Google HTTPS / TURN).
+   - Relance immédiatement le daemon s'il n'est plus connecté ou s'il a rencontré une anomalie d'authentification.
+
 ---
 
 ## 3. 🎨 Charte Graphique & Palette de Couleurs (Dark Cyberpunk / Sleek)

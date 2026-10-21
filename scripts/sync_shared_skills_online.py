@@ -6,7 +6,7 @@ import tempfile
 import re
 
 SHARED_GIT_URL = "https://github.com/NoFunDataHere/TeamRocket.git"
-LOCAL_SKILLS_DIR = os.path.expanduser(r"~\.gemini\config\skills")
+LOCAL_SKILLS_DIR = os.path.expanduser("~/.gemini/config/skills")
 
 # Mots-cles et expressions sensibles a anonymiser
 SANITIZE_RULES = [
@@ -107,7 +107,9 @@ Copiez simplement le dossier d'un skill dans votre repertoire personnel Antigrav
         subprocess.run(["git", "remote", "add", "origin", SHARED_GIT_URL], cwd=temp_dir, capture_output=True)
 
         print(f"\n[3/3] Publication vers {SHARED_GIT_URL}...")
-        res = subprocess.run(["git", "push", "-u", "--force", "origin", "main"], cwd=temp_dir, capture_output=True, text=True)
+        env = os.environ.copy()
+        env["GIT_TERMINAL_PROMPT"] = "0"
+        res = subprocess.run(["git", "push", "-u", "--force", "origin", "main"], cwd=temp_dir, capture_output=True, text=True, env=env)
         if res.returncode == 0:
             print("  [SUCCES] Les skills partages ont ete publies sur GitHub avec succes !")
         else:

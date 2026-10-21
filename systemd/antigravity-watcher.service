@@ -1,0 +1,9 @@
+[Unit]
+Description=Watchdog for Antigravity Remote Control Daemon
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/raspscreen/.local/bin/antigravity-watcher.sh
+StandardOutput=journal
+StandardError=journal

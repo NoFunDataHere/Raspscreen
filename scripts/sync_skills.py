@@ -13,12 +13,12 @@ def run_cmd(cmd_list, cwd=None):
     return res.stdout, res.stderr, res.returncode
 
 def sync_skills():
-    local_skills_dir = os.path.expanduser(r"~\.gemini\config\skills")
+    local_skills_dir = os.path.expanduser("~/.gemini/config/skills")
     print(f"=== Synchronisation du repertoire central des skills Antigravity ===")
     print(f"Repertoire local: {local_skills_dir}")
     
-    # 1. Verification et commit local sur Windows
-    print("\n[1/3] Verification de l'etat des skills locaux (Windows)...")
+    # 1. Verification et commit local
+    print("\n[1/4] Verification de l'etat des skills locaux...")
     out, _, _ = run_cmd(["git", "status", "--porcelain"], cwd=local_skills_dir)
     if out.strip():
         print("  Modifications detectees dans les skills locaux. Commit en cours...")
@@ -41,20 +41,26 @@ def sync_skills():
     except Exception as e:
         print(f"  Note Synology: {e}")
 
-    # 3. Mettre a jour le Raspberry Pi
-    print("\n[3/4] Mise a jour du catalogue de skills sur le Raspberry Pi...")
-    pi_cmd = "cd /home/raspscreen/.gemini/config/skills && git pull origin main"
-    res = subprocess.run([PLINK, "-batch", "-pw", PI_PASS, f"{PI_USER}@{PI_HOST}", pi_cmd], capture_output=True, text=True)
-    if res.returncode == 0:
-        print(f"  Raspberry Pi mis a jour avec succes:\n  {res.stdout.strip()}")
+    # 3. Mettre a jour le Raspberry Pi si execute depuis Windows
+    if os.name == "nt" and os.path.exists(PLINK):
+        print("\n[3/4] Mise a jour du catalogue de skills sur le Raspberry Pi...")
+        pi_cmd = "cd /home/raspscreen/.gemini/config/skills && git pull origin main"
+        res = subprocess.run([PLINK, "-batch", "-pw", PI_PASS, f"{PI_USER}@{PI_HOST}", pi_cmd], capture_output=True, text=True)
+        if res.returncode == 0:
+            print(f"  Raspberry Pi mis a jour avec succes:\n  {res.stdout.strip()}")
+        else:
+            print(f"  Erreur mise a jour Pi: {res.stderr.strip()}")
     else:
-        print(f"  Erreur mise a jour Pi: {res.stderr.strip()}")
+        print("\n[3/4] Execution locale sur Linux / Raspberry Pi (pas de rebond SSH necessaire).")
 
     # 4. Publication automatique des skills autorises vers le GitHub partage en ligne
     print("\n[4/4] Synchronisation des skills autorises vers GitHub (TeamRocket)...")
     shared_script = os.path.join(os.path.dirname(__file__), "sync_shared_skills_online.py")
     if os.path.exists(shared_script):
-        run_cmd([sys.executable, shared_script])
+        out, err, code = run_cmd([sys.executable, shared_script])
+        print(out)
+        if err.strip():
+            print(f"  Note GitHub: {err.strip()}")
     else:
         print("  Script sync_shared_skills_online non trouve, etape ignoree.")
 
