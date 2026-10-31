@@ -531,24 +531,39 @@ def update_ha_data():
                 rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
 
             # 3. Colis TRMNL & Nettoyage intelligent des anomalies
+            dismissed_set = set()
+            dismissed_file = Path(__file__).parent / "data" / "dismissed_colis.json"
+            if dismissed_file.exists():
+                try:
+                    with open(dismissed_file, "r", encoding="utf-8") as f:
+                        dismissed_set = set(json.load(f))
+                except Exception:
+                    pass
+
             colis_raw = by_id.get("sensor.trmnl_colis_tracking", {}).get("attributes", {}).get("colis", [])
             colis_cleaned = []
             for c in colis_raw:
+                numero = (c.get("numero") or "").strip()
+                if numero in dismissed_set:
+                    continue
+
+                date_livre = (c.get("date_livre") or "").strip()
+                if date_livre:
+                    continue
+
                 raw_nom = (c.get("nom") or "").strip()
                 raw_contenu = (c.get("contenu") or "").strip()
                 expediteur = (c.get("expediteur") or "Expéditeur").strip()
                 transporteur = (c.get("transporteur") or "Transporteur").strip()
-                numero = (c.get("numero") or "").strip()
                 statut = (c.get("statut") or "Inconnu").strip()
                 date_maj = (c.get("date_maj") or "").strip()
-                date_livre = (c.get("date_livre") or "").strip()
 
                 statut_lower = statut.lower()
                 badge = "transit"
                 if "livraison" in statut_lower or "aujourd" in statut_lower or "out for delivery" in statut_lower:
                     badge = "delivery"
                 elif "livré" in statut_lower or "delivered" in statut_lower:
-                    badge = "delivered"
+                    continue  # Colis déjà livré, ne pas afficher
                 elif "confirmé" in statut_lower or "ordered" in statut_lower:
                     badge = "ordered"
                 else:
@@ -580,18 +595,6 @@ def update_ha_data():
                     statut_clean = "Colissimo en traitement au centre de tri"
                 elif "processed at the local sorting" in statut_clean.lower():
                     statut_clean = "En cours de tri local"
-
-                # 3. Filtrage : si livré depuis plus de 48h, ne pas encombrer l'écran
-                if badge == "delivered":
-                    try:
-                        if "/" in date_maj:
-                            d_parts = date_maj.split()[0].split("/")
-                            day, month = int(d_parts[0]), int(d_parts[1])
-                            now_dt = datetime.datetime.now()
-                            if month == now_dt.month and (now_dt.day - day) >= 2:
-                                continue
-                    except Exception:
-                        pass
 
                 colis_cleaned.append({
                     "nom": nom,

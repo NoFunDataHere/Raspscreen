@@ -491,7 +491,17 @@ function renderColis(colis) {
     colisList.innerHTML = '';
     
     if (colis.length === 0) {
-        colisList.innerHTML = '<div style="color:var(--text-muted); font-size:0.8rem; text-align:center; padding:20px;">Aucun colis en attente</div>';
+        colisList.innerHTML = `
+            <div class="colis-empty-state">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="colis-empty-icon">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.29 7 12 12 20.71 7"/>
+                    <line x1="12" y1="22" x2="12" y2="12"/>
+                    <path d="m9 12 2 2 4-4" stroke="#10b981" stroke-width="2.2"/>
+                </svg>
+                <div class="colis-empty-title">Tous les colis sont arrivés</div>
+                <div class="colis-empty-subtitle">Aucune livraison en attente</div>
+            </div>`;
         return;
     }
 
