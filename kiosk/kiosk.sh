@@ -69,8 +69,6 @@ while true; do
         --check-for-update-interval=31536000 \
         --touch-events=enabled \
         --autoplay-policy=no-user-gesture-required \
-        --window-size=800,480 \
-        --window-position=0,0 \
         --disk-cache-dir=/dev/shm/chromium-cache \
         --disk-cache-size=104857600 \
         http://localhost:8080 200>&-

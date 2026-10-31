@@ -296,6 +296,9 @@ function renderTraffic(traffic) {
     if (traffic.geometry && traffic.geometry.length > 0) {
         updateRouteMapGeometry(traffic.geometry);
     }
+    if (routeMap) {
+        setTimeout(() => routeMap.invalidateSize(), 200);
+    }
 }
 
 function initRouteMap() {
