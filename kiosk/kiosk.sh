@@ -13,6 +13,7 @@ fi
 
 export DISPLAY="${DISPLAY:-:0}"
 export WAYLAND_DISPLAY="${WAYLAND_DISPLAY:-wayland-0}"
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
 
 # Attendre que le serveur backend soit prêt
 echo "[Kiosk] En attente du serveur web..."
@@ -21,12 +22,12 @@ until curl -s http://localhost:8080 > /dev/null; do
 done
 echo "[Kiosk] Serveur web détecté !"
 
-# Masquer le curseur de souris après 0.5s d'inactivité (si X11)
-if command -v unclutter > /dev/null 2>&1; then
-    unclutter -idle 0.5 -root &
-fi
+# Nettoyage systématique des sessions précédentes pour éviter l'accumulation d'onglets
+rm -rf "$HOME/.config/chromium/Default/Sessions"/* 2>/dev/null || true
+rm -rf "$HOME/.config/chromium/Default/"*Session* 2>/dev/null || true
+rm -rf "$HOME/.config/chromium/Default/"*Tabs* 2>/dev/null || true
 
-# Nettoyage des flags de crash de Chromium pour éviter le message "Restaurer les pages ?"
+# Nettoyage des flags de crash de Chromium
 PREFS="$HOME/.config/chromium/Default/Preferences"
 if [ -f "$PREFS" ]; then
     sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' "$PREFS" 2>/dev/null || true
@@ -39,7 +40,7 @@ if ! command -v "$BROWSER" > /dev/null 2>&1; then
     BROWSER="chromium"
 fi
 
-echo "[Kiosk] Lancement de Chromium en mode kiosque tactile..."
+echo "[Kiosk] Lancement de Chromium en mode kiosque tactile propre..."
 
 # Lancement en boucle infinie (si le navigateur est fermé par mégarde, il redémarre)
 while true; do
@@ -49,6 +50,7 @@ while true; do
     fi
 
     "$BROWSER" \
+        --incognito \
         --password-store=basic \
         --lang=fr-FR \
         --kiosk \
@@ -65,7 +67,6 @@ while true; do
         --disable-background-networking \
         --disable-session-crashed-bubble \
         --hide-scrollbars \
-        --enable-gpu-rasterization \
         --check-for-update-interval=31536000 \
         --touch-events=enabled \
         --autoplay-policy=no-user-gesture-required \
