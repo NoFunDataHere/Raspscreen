@@ -1347,69 +1347,68 @@ body {
 
 
 /* -------------------------------------------------------------------------- */
-/* ADAPTATION GRAND ECRAN (10.1 pouces, 1920x1200 / 1280x800 - CX101PI-C)     */
-/* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /* ADAPTATION GRAND ECRAN (10.1 pouces, 1920x1200 - CX101PI-C)                */
 /* -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
     html {
-        font-size: 18px;
+        font-size: 19px;
     }
 
     :root {
-        --radius-lg: 18px;
-        --radius-md: 14px;
-        --radius-sm: 10px;
+        --radius-lg: 16px;
+        --radius-md: 12px;
+        --radius-sm: 8px;
     }
 
     .kiosk-container {
-        padding: 16px 22px;
-        gap: 16px;
+        padding: 14px 18px;
+        gap: 14px;
     }
 
+    /* Top Bar */
     .top-bar {
-        height: 68px;
-        padding: 8px 24px;
+        height: 62px;
+        padding: 6px 20px;
         border-radius: var(--radius-md);
     }
 
     .brand {
-        gap: 14px;
+        gap: 12px;
     }
 
     .brand-mascot {
-        width: 46px;
-        height: 46px;
+        width: 42px;
+        height: 42px;
     }
 
     .brand-title {
-        font-size: 1.55rem;
-        letter-spacing: 1.2px;
+        font-size: 1.45rem;
+        letter-spacing: 1px;
     }
 
     .clock-widget .time {
-        font-size: 2.9rem;
+        font-size: 2.7rem;
         font-weight: 700;
     }
 
     .clock-widget .date-row {
-        gap: 12px;
+        gap: 10px;
     }
 
     .clock-widget .date {
-        font-size: 1.05rem;
+        font-size: 1.0rem;
     }
 
     .badge-week {
-        font-size: 0.88rem;
-        padding: 3px 12px;
+        font-size: 0.82rem;
+        padding: 3px 10px;
         border-radius: 8px;
     }
 
     .top-bar-btn {
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
     }
 
     .top-bar-btn svg {
@@ -1417,26 +1416,27 @@ body {
         height: 22px;
     }
 
+    /* Grid Layout */
     .dashboard-grid {
-        grid-template-columns: minmax(360px, 1.05fr) minmax(460px, 1.45fr) minmax(380px, 1.15fr);
-        gap: 16px;
+        grid-template-columns: minmax(340px, 1.05fr) minmax(460px, 1.45fr) minmax(360px, 1.1fr);
+        gap: 14px;
     }
 
     .left-column, .middle-column, .right-column {
-        gap: 16px;
+        gap: 14px;
     }
 
     .card {
-        padding: 16px 18px;
+        padding: 14px 16px;
         border-radius: var(--radius-lg);
     }
 
     .card-header {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .card-header h3 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         gap: 10px;
     }
 
@@ -1446,199 +1446,180 @@ body {
     }
 
     .card-header .header-badge {
-        font-size: 0.82rem;
-        padding: 4px 10px;
+        font-size: 0.8rem;
+        padding: 3px 10px;
     }
 
-    /* Météo & Pluie */
-    .weather-big-temp .temp-val {
-        font-size: 3.8rem;
-    }
-
-    .weather-big-temp .temp-unit {
-        font-size: 1.8rem;
-    }
-
-    .weather-detail-item {
-        font-size: 0.95rem;
-        gap: 6px;
+    /* Colonne 1 : Météo */
+    .weather-card-compact {
+        flex: 0 0 auto;
+        min-height: 110px;
     }
 
     .weather-condition-tag {
+        font-size: 0.82rem;
+        padding: 3px 10px;
+    }
+
+    .weather-compact-body {
+        padding: 6px 14px;
+    }
+
+    .weather-big-temp {
+        font-size: 3.0rem;
+        line-height: 1;
+    }
+
+    .weather-unit {
+        font-size: 1.3rem;
+    }
+
+    .weather-details-compact {
         font-size: 0.85rem;
-        padding: 4px 10px;
+        gap: 4px;
+    }
+
+    /* Colonne 1 : Pluie dans l'heure */
+    .rain-card {
+        flex: 0 0 auto;
+        min-height: 115px;
     }
 
     .rain-status-text {
         font-size: 0.95rem;
+        margin-bottom: 6px;
     }
 
-    .rain-bar-item .bar-label {
+    .rain-timeline {
+        height: 34px;
+    }
+
+    .rain-labels {
         font-size: 0.72rem;
     }
 
-    /* Trafic & Carte */
-    .traffic-main .traffic-val {
-        font-size: 2.6rem;
+    /* Colonne 1 : Flipper & Trafic */
+    .flipper-container {
+        flex: 1;
+        min-height: 380px;
     }
 
-    .traffic-main .traffic-unit {
-        font-size: 1.3rem;
+    .traffic-header-overlay {
+        padding: 6px 12px;
     }
 
-    .traffic-status-pill {
-        font-size: 0.85rem;
-        padding: 4px 10px;
+    .traffic-header-overlay h3 {
+        font-size: 1.05rem;
+    }
+
+    .traffic-pill-overlay {
+        padding: 6px 12px;
+    }
+
+    .traffic-main-time {
+        font-size: 1.8rem;
+    }
+
+    .traffic-unit-time {
+        font-size: 0.95rem;
     }
 
     .route-name {
         font-size: 0.95rem;
     }
 
-    .card-traffic .map-container {
-        height: 240px;
-        min-height: 200px;
+    /* Colonne 2 : Climat Maison */
+    .climate-card-compact {
+        flex: 1.2;
+    }
+
+    .rooms-grid-slim {
+        gap: 10px;
+    }
+
+    .room-pill-slim {
+        padding: 10px 14px;
+        min-height: 72px;
         border-radius: var(--radius-md);
     }
 
-    /* Climat Maison */
-    .rooms-grid {
-        gap: 12px;
-    }
-
-    .room-tile {
-        padding: 16px 20px;
-        min-height: 90px;
-        border-radius: var(--radius-md);
+    .room-icon-svg svg {
+        width: 22px;
+        height: 22px;
     }
 
     .room-name {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
         font-weight: 600;
+        margin-bottom: 2px;
     }
 
-    .room-temp {
-        font-size: 2.2rem;
+    .room-hum {
+        font-size: 0.85rem;
+    }
+
+    .room-temp-val {
+        font-size: 1.9rem;
         font-weight: 700;
     }
 
-    .room-hum-val {
-        font-size: 0.95rem;
+    .room-temp-unit {
+        font-size: 1.1rem;
     }
 
-    .room-tile svg {
-        width: 20px;
-        height: 20px;
+    /* Colonne 2 : Alertes Trajet */
+    .route-alerts-card {
+        flex: 1;
+        min-height: 220px;
     }
 
-    /* Alertes Trajet */
     .route-alert-item {
-        padding: 12px 14px;
-        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        gap: 8px;
     }
 
-    .alert-road {
+    .route-alert-street {
+        font-size: 1.0rem;
+        font-weight: 700;
+    }
+
+    .route-alert-desc {
+        font-size: 0.85rem;
+    }
+
+    .route-alert-badge {
+        font-size: 0.78rem;
+        padding: 3px 8px;
+    }
+
+    .route-alert-empty {
         font-size: 1.05rem;
-        font-weight: 600;
+        padding: 24px;
     }
 
-    .alert-detail {
-        font-size: 0.88rem;
-    }
-
-    .alert-badge {
-        font-size: 0.82rem;
-        padding: 4px 10px;
-    }
-
-    .route-alerts-empty {
-        font-size: 1.05rem;
-        padding: 30px;
-    }
-
-    /* TRMNL */
+    /* Colonne 3 : TRMNL */
     .trmnl-card {
-        padding: 16px 18px;
+        padding: 14px 18px;
     }
 
     .trmnl-rank-big {
         font-size: 2.2rem;
     }
 
-    .trmnl-label {
-        font-size: 0.95rem;
+    .trmnl-order-title {
+        font-size: 1.05rem;
     }
 
-    .trmnl-status {
+    .trmnl-order-status {
         font-size: 0.92rem;
     }
 
-    /* Suivi Colis */
-    .colis-item {
-        padding: 12px 16px;
-        min-height: 52px;
-        border-radius: var(--radius-sm);
+    .trmnl-badge {
+        font-size: 0.8rem;
+        padding: 3px 10px;
     }
 
-    .colis-name {
-        font-size: 1.02rem;
-        font-weight: 600;
-    }
-
-    .colis-carrier {
-        font-size: 0.82rem;
-    }
-
-    .colis-badge {
-        font-size: 0.82rem;
-        padding: 4px 10px;
-    }
-
-    /* Footer */
-    .footer-bar {
-        height: 38px;
-        padding: 6px 22px;
-        font-size: 0.88rem;
-    }
-
-    .footer-ip {
-        font-size: 0.85rem;
-        padding: 3px 12px;
-    }
-
-    /* Colonnes & Flex */
-    .left-column {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .flipper-container {
-        flex: 1;
-        min-height: 340px;
-    }
-
-    .middle-column {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .route-alerts-card {
-        flex: 1;
-        min-height: 260px;
-    }
-
-    .route-alerts-list {
-        max-height: 240px;
-    }
-
-    .right-column {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
+    /* Colonne 3 : Suivi Colis */
     .colis-card {
         flex: 1;
         display: flex;
@@ -1647,8 +1628,41 @@ body {
 
     .colis-list {
         flex: 1;
-        max-height: calc(100vh - 380px);
+        max-height: calc(100vh - 350px);
         gap: 8px;
         overflow-y: auto;
+    }
+
+    .colis-item {
+        padding: 10px 14px;
+        min-height: 58px;
+        gap: 4px;
+    }
+
+    .colis-carrier {
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+
+    .colis-title {
+        font-size: 0.98rem;
+        font-weight: 600;
+    }
+
+    .colis-status-badge {
+        font-size: 0.78rem;
+        padding: 3px 8px;
+    }
+
+    /* Footer */
+    .footer-bar {
+        height: 38px;
+        padding: 6px 20px;
+        font-size: 0.85rem;
+    }
+
+    .footer-ip {
+        font-size: 0.82rem;
+        padding: 3px 10px;
     }
 }
