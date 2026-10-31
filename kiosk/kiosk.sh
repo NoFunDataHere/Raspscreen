@@ -68,6 +68,7 @@ while true; do
         --enable-gpu-rasterization \
         --check-for-update-interval=31536000 \
         --touch-events=enabled \
+        --force-device-scale-factor=1.35 \
         --autoplay-policy=no-user-gesture-required \
         --disk-cache-dir=/dev/shm/chromium-cache \
         --disk-cache-size=104857600 \
