@@ -1697,6 +1697,96 @@ body {
         padding: 4px 10px;
     }
 
+    /* Modales agrandies pour écran tactile CX101 (1920x1200) */
+    .modal-card {
+        width: min(1360px, 86vw);
+        height: auto;
+        min-height: 560px;
+        max-height: 85vh;
+        border-radius: 20px;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9);
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-header {
+        padding: 18px 28px;
+    }
+
+    .modal-title-group {
+        gap: 16px;
+    }
+
+    .modal-title-group h2 {
+        font-size: 1.45rem;
+    }
+
+    .modal-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .modal-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-close-btn {
+        padding: 10px 22px;
+        font-size: 1.05rem;
+        gap: 8px;
+        border-radius: var(--radius-sm);
+    }
+
+    .modal-close-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .modal-body {
+        padding: 22px 28px;
+        gap: 16px;
+    }
+
+    .modal-alert-item {
+        padding: 18px 22px;
+        gap: 10px;
+        border-radius: 14px;
+    }
+
+    .modal-alert-street {
+        font-size: 1.25rem;
+    }
+
+    .modal-alert-distance {
+        font-size: 0.95rem;
+    }
+
+    .modal-alert-desc {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+
+    .colis-detail-row {
+        padding: 15px 12px;
+        gap: 24px;
+    }
+
+    .colis-detail-label {
+        font-size: 1.05rem;
+    }
+
+    .colis-detail-value {
+        font-size: 1.18rem;
+    }
+
+    .colis-detail-mono {
+        font-size: 1.15rem;
+    }
+
+    .modal-footer {
+        padding: 14px 28px;
+        font-size: 0.92rem;
+    }
+
     /* Footer */
     .footer-bar {
         height: 36px;

@@ -621,13 +621,6 @@ def update_ha_data():
             # 7. Alertes voirie & manifs filtrées sur l'itinéraire (OpenData Paris)
             route_alerts = fetch_route_traffic_alerts((traffic_info or {}).get("geometry"))
 
-            # 8. Suivi Commande TRMNL Model X (#56352)
-            try:
-                trmnl_info = get_trmnl_status(force_refresh=False)
-            except Exception as e:
-                print(f"[TRMNL] Erreur statut: {e}")
-                trmnl_info = {"visible": False, "error": str(e)}
-
             with cache_lock:
                 ha_cache["last_update"] = time.time()
                 ha_cache["week_ab"] = week_ab
@@ -635,7 +628,7 @@ def update_ha_data():
                 ha_cache["colis"] = colis_cleaned
                 ha_cache["traffic"] = traffic_info
                 ha_cache["route_alerts"] = route_alerts
-                ha_cache["trmnl"] = trmnl_info
+                ha_cache["trmnl"] = {"visible": False}
                 ha_cache["rain_hour"] = {
                     "status": rain_status,
                     "has_rain": has_rain,
@@ -644,7 +637,7 @@ def update_ha_data():
                 if meteo_cur:
                     ha_cache["weather"] = meteo_cur
 
-            print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}, TRMNL EU: #{trmnl_info.get('pos_eu', '?')}.")
+            print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}.")
     except Exception as e:
         print(f"[DUCHISCREEN] Erreur Home Assistant : {e}")
 
