@@ -125,9 +125,8 @@ setInterval(toggleFlipper, CONFIG.FLIP_INTERVAL);
 /* 3. Gestion de l'inactivité tactile                                         */
 /* -------------------------------------------------------------------------- */
 function resetIdleTimer() {
-    const wasInactive = isDimmed || isSleeping;
     idleSeconds = 0;
-    if (wasInactive) {
+    if (isDimmed || isSleeping) {
         wakeScreen();
     }
 }
@@ -168,6 +167,7 @@ async function triggerSleep() {
 }
 
 async function wakeScreen() {
+    idleSeconds = 0;
     isDimmed = false;
     isSleeping = false;
     kioskContainer.classList.remove('dimmed');
@@ -175,14 +175,24 @@ async function wakeScreen() {
     try { await fetch('/api/screen/wake', { method: 'POST' }); } catch (e) {}
 }
 
-['touchstart', 'touchend', 'click', 'mousemove', 'keydown'].forEach(evt => {
-    window.addEventListener(evt, resetIdleTimer, { passive: true });
+function handleUserActivity() {
+    resetIdleTimer();
+}
+
+['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'mousedown', 'mouseup', 'click', 'keydown'].forEach(evt => {
+    window.addEventListener(evt, handleUserActivity, { passive: true });
 });
 
-screenSleepOverlay.addEventListener('click', wakeScreen);
-screenSleepOverlay.addEventListener('touchstart', (e) => {
-    e.preventDefault();
+function handleOverlayWake(e) {
+    if (e && typeof e.stopPropagation === 'function') {
+        e.stopPropagation();
+    }
+    resetIdleTimer();
     wakeScreen();
+}
+
+['pointerdown', 'touchstart', 'mousedown', 'click'].forEach(evt => {
+    screenSleepOverlay.addEventListener(evt, handleOverlayWake, { passive: true });
 });
 
 btnSleep.addEventListener('click', (e) => {

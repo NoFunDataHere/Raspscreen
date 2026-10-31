@@ -131,13 +131,7 @@ def set_screen_backlight(turn_off: bool):
                 return True
             except Exception as e:
                 print(f"[Screen] Erreur d'écriture sur {path}: {e}")
-    try:
-        state = "--off" if turn_off else "--on"
-        subprocess.run(["wlr-randr", "--output", "DSI-1", state], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        return True
-    except Exception:
-        pass
-    return False
+    return True
 
 def get_calendar_week_type():
     """Détermine si on est en Semaine A ou B à partir de l'agenda Google Famille."""
