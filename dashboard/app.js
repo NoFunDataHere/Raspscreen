@@ -90,7 +90,10 @@ function toggleFlipper() {
     isCatShowing = !isCatShowing;
     if (isCatShowing) {
         catIndex = (catIndex + 1) % TOTAL_CATS;
-        catImg.src = `assets/cats/cat${catIndex + 1}.jpg`;
+        const newSrc = `assets/cats/cat${catIndex + 1}.jpg`;
+        catImg.src = newSrc;
+        const catBg = document.getElementById('catBgBlur');
+        if (catBg) catBg.style.backgroundImage = `url('${newSrc}')`;
         cardTraffic.classList.add('hidden');
         cardCat.classList.remove('hidden');
     } else {

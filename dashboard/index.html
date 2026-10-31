@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="google" content="notranslate">
     <title>DUCHISCREEN Dashboard</title>
-    <link rel="stylesheet" href="style.css?v=4.5.1">
+    <link rel="stylesheet" href="style.css?v=4.6.0">
     <link rel="stylesheet" href="assets/leaflet/leaflet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,7 +118,10 @@
 
                     <!-- Face 2 : Photo de Chat Trop Mignon (100% Kid-Safe, Sans badge) -->
                     <div class="card cat-card hidden" id="cardCat">
-                        <img class="cat-img" id="catImg" src="assets/cats/cat1.jpg" alt="Chat mignon" />
+                        <div class="cat-bg-blur" id="catBgBlur" style="background-image: url('assets/cats/cat1.jpg');"></div>
+                        <div class="cat-wrapper">
+                            <img class="cat-img" id="catImg" src="assets/cats/cat1.jpg" alt="Chat mignon" />
+                        </div>
                     </div>
                 </div>
 
@@ -347,6 +350,6 @@
     </div>
 
     <script src="assets/leaflet/leaflet.js"></script>
-    <script src="app.js?v=4.5.1"></script>
+    <script src="app.js?v=4.6.0"></script>
 </body>
 </html>

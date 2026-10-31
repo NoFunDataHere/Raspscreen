@@ -52,6 +52,7 @@ while true; do
     "$BROWSER" \
         --incognito \
         --password-store=basic \
+        --use-mock-keychain \
         --lang=fr-FR \
         --kiosk \
         --noerrdialogs \
