@@ -14,7 +14,7 @@ Write-Host "======================================================" -ForegroundC
 Write-Host "  Déploiement automatique RaspEcran vers $IpAddress    " -ForegroundColor Green
 Write-Host "======================================================" -ForegroundColor Cyan
 
-$hostKey = "SHA256:6BVqRSxYkR39iYwa+RqCIQt5yCokahIWNB/Oo1pOeFU"
+$hostKey = "SHA256:pCOwu3qhx/euWwu3gF8dIHRvtmQ50uz3bmB5xFufVdw"
 
 # 1. Test de connectivité SSH
 Write-Host "[1/4] Test de connexion SSH..." -ForegroundColor Yellow
