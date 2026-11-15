@@ -14,15 +14,11 @@
   - **Correction appliquée :** Flash de l'EEPROM bootloader avec `POWER_OFF_ON_HALT=1` et `WAKE_ON_GPIO=0`.
   - **Action physique utilisateur :** Déplacer le fil jaune (+ alimentation) de la Broche 2 (5V permanent) vers la Broche 1 (3,3V commutable par le PMIC). Le ventilateur s'éteint ainsi à 100% dès l'extinction du Raspberry Pi.
 
-- [ ] **Écran CX101 : Contrôle matériel complet du rétroéclairage (On/Off + Luminosité PWM)**
-  - **Constat vérifié :** L'écran CX101 (HDMI-A-1) ne supporte ni la coupure DPMS (`wlopm` / `wlr-randr`), ni le contrôle DDC/CI (`0x37 unresponsive`), et maintient son rétroéclairage allumé en veille.
-  - **Action matérielle (3 câbles DuPont Femelle-Femelle + switch `BL` vers la droite) :**
-    - `GND` (broche du haut sur carte écran) &rarr; **Broche 9 (`GND`)** du Raspberry Pi
-    - `EN` (broche du bas sur carte écran, On/Off) &rarr; **Broche 11 (`GPIO 17`)** du Raspberry Pi (3,3V = On, 0V = Off)
-    - `PWM` (broche du milieu sur carte écran, Luminosité) &rarr; **Broche 33 (`GPIO 13` / `PWM1`)** du Raspberry Pi *(sans conflit avec `PWM0` utilisé par le Noctua sur GPIO 18)*
-  - **Actions logicielles à implémenter après câblage :**
-    - Activer le canal matériel `PWM1` sur GPIO 13 dans `/boot/firmware/config.txt` (ex: `dtoverlay=pwm,pin=13,func=4`).
-    - Mettre à jour `server.py` (`set_screen_backlight` / `set_screen_brightness`) et `scripts/screen_control.sh` pour piloter `GPIO 17` (veille/réveil réel à 0%) et `pwmchip0/pwm1` (variation de luminosité jour/nuit).
+- [x] **Écran CX101 : Coupure matérielle du rétroéclairage en veille (On/Off via `EN`)**
+  - **Câblage réalisé :** Switch `BL` vers la droite + fil Orange sur `EN` &rarr; **Broche 11 (`GPIO 17`)**.
+  - **Correction appliquée :** Mise à jour de `server.py` (`set_screen_backlight`) et `scripts/screen_control.sh` pour piloter `pinctrl set 17 op dl` (extinction totale à 0 %) et `dh` (allumage).
+- [ ] **Optionnel : Variation de luminosité PWM sur écran CX101 (`PWM1`)**
+  - Relier `PWM` (broche du milieu sur carte écran) &rarr; **Broche 33 (`GPIO 13` / `PWM1`)** et activer `dtoverlay=pwm,pin=13,func=4` si on souhaite un mode nuit tamisé.
 
 ---
 

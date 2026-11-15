@@ -24,6 +24,11 @@ turn_off() {
         fi
     done
     
+    # CX101 Backlight EN via GPIO 17 (Pin 11)
+    if command -v pinctrl > /dev/null 2>&1; then
+        pinctrl set 17 op dl 2>/dev/null && return 0
+    fi
+
     # Wayland fallback
     if command -v wlr-randr > /dev/null 2>&1; then
         wlr-randr --output DSI-1 --off 2>/dev/null && return 0
@@ -71,6 +76,11 @@ turn_on() {
         fi
     done
     
+    # CX101 Backlight EN via GPIO 17 (Pin 11)
+    if command -v pinctrl > /dev/null 2>&1; then
+        pinctrl set 17 op dh 2>/dev/null && return 0
+    fi
+
     # Wayland fallback
     if command -v wlr-randr > /dev/null 2>&1; then
         wlr-randr --output DSI-1 --on 2>/dev/null && return 0

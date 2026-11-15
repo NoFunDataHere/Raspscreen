@@ -24,6 +24,8 @@ import ssl
 import urllib.request
 import math
 import gzip
+import shutil
+import glob
 from pathlib import Path
 from threading import Thread, Lock
 from scripts.trmnl_service import get_trmnl_status
@@ -123,6 +125,7 @@ def set_screen_brightness(level: int):
     return False
 
 def set_screen_backlight(turn_off: bool):
+    """Allume ou éteint le rétroéclairage (DSI sysfs ou GPIO 17 EN sur écran CX101)."""
     val = "1\n" if turn_off else "0\n"
     for path in BACKLIGHT_POWER_PATHS:
         if path.exists():
@@ -131,7 +134,17 @@ def set_screen_backlight(turn_off: bool):
                 return True
             except Exception as e:
                 print(f"[Screen] Erreur d'écriture sur {path}: {e}")
-    return True
+
+    # Contrôle matériel CX101 via broche EN (Pin 11 / GPIO 17)
+    try:
+        state = "dl" if turn_off else "dh"
+        res = subprocess.run(["pinctrl", "set", "17", "op", state], capture_output=True, text=True, timeout=3)
+        if res.returncode == 0:
+            return True
+        print(f"[Screen] Erreur pinctrl GPIO 17: {res.stderr}")
+    except Exception as e:
+        print(f"[Screen] Erreur appel pinctrl: {e}")
+    return False
 
 def get_calendar_week_type():
     """Détermine si on est en Semaine A ou B à partir de l'agenda Google Famille."""
@@ -649,6 +662,78 @@ def background_ha_worker():
         update_ha_data()
         time.sleep(30)
 
+def get_system_health():
+    """Retourne l'état thermique, la vitesse du ventilateur et la santé de la carte SD."""
+    cpu_temp = None
+    try:
+        with open("/sys/class/thermal/thermal_zone0/temp", "r") as f:
+            cpu_temp = round(int(f.read().strip()) / 1000.0, 1)
+    except Exception:
+        pass
+
+    fan_rpm = None
+    fan_percent = None
+    try:
+        for path in glob.glob("/sys/class/hwmon/*/fan1_input"):
+            with open(path, "r") as f:
+                fan_rpm = int(f.read().strip())
+                break
+        for path in glob.glob("/sys/class/hwmon/*/pwm1"):
+            with open(path, "r") as f:
+                pwm_val = int(f.read().strip())
+                fan_percent = round(pwm_val * 100 / 255)
+                break
+        if fan_percent is None:
+            cur_path = "/sys/class/thermal/cooling_device0/cur_state"
+            max_path = "/sys/class/thermal/cooling_device0/max_state"
+            if os.path.exists(cur_path) and os.path.exists(max_path):
+                with open(cur_path, "r") as fc, open(max_path, "r") as fm:
+                    cur_s = int(fc.read().strip())
+                    max_s = int(fm.read().strip())
+                    if max_s > 0:
+                        fan_percent = round(cur_s * 100 / max_s)
+    except Exception:
+        pass
+
+    disk_used_pct = None
+    disk_free_gb = None
+    try:
+        usage = shutil.disk_usage("/")
+        disk_used_pct = round(usage.used * 100.0 / usage.total, 1)
+        disk_free_gb = round(usage.free / (1024 ** 3), 1)
+    except Exception:
+        pass
+
+    sd_readonly = False
+    try:
+        if os.path.exists("/proc/mounts"):
+            with open("/proc/mounts", "r") as f:
+                for line in f:
+                    parts = line.split()
+                    if len(parts) >= 4 and parts[1] == "/":
+                        if "ro" in parts[3].split(","):
+                            sd_readonly = True
+                        break
+    except Exception:
+        pass
+
+    status = "ok"
+    if sd_readonly or (cpu_temp is not None and cpu_temp >= 80) or (disk_used_pct is not None and disk_used_pct >= 90):
+        status = "crit"
+    elif (cpu_temp is not None and cpu_temp >= 70) or (disk_used_pct is not None and disk_used_pct >= 80):
+        status = "warn"
+
+    return {
+        "status": status,
+        "cpu_temp": cpu_temp,
+        "fan_rpm": fan_rpm,
+        "fan_percent": fan_percent,
+        "disk_used_pct": disk_used_pct,
+        "disk_free_gb": disk_free_gb,
+        "sd_readonly": sd_readonly,
+    }
+
+
 class KioskHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(DASHBOARD_DIR), **kwargs)
@@ -673,6 +758,8 @@ class KioskHandler(http.server.SimpleHTTPRequestHandler):
                 "ip": get_local_ip(),
                 "time": time.strftime("%H:%M:%S")
             })
+        elif self.path == "/api/system/health":
+            self.send_json(get_system_health())
         else:
             super().do_GET()
 
