@@ -2,19 +2,21 @@
 
 ## Matériel & Ventilateur Noctua
 
-- [ ] **Correction : Arrêt du ventilateur lors de l'extinction du Raspberry Pi**
-  - **Symptôme constaté :** Lorsque le Raspberry Pi est éteint (shutdown / halt), le ventilateur Noctua continue de tourner à pleine vitesse tant que l'alimentation secteur reste branchée.
-  - **Cause racine identifiée :**
-    1. *Rail 5V permanent :* Sur le Raspberry Pi 4, les broches Pin 2 et Pin 4 sont connectées directement au bus 5V d'entrée (USB-C). Par défaut (`POWER_OFF_ON_HALT=0`), le PMIC laisse les lignes sous tension lors d'un arrêt logiciel.
-    2. *Signal PWM flottant (Tri-state) :* Lorsque le SoC s'éteint, le GPIO 18 passe en haute impédance. Le ventilateur Noctua possède une résistance de pull-up interne sur sa broche PWM (fil bleu). Un signal PWM non alimenté ou flottant est interprété par le ventilateur comme une consigne à 100%.
-  - **Pistes de résolution à implémenter plus tard :**
-    - *Option A (Logicielle EEPROM Pi 4) :* Configurer l'EEPROM de démarrage (`sudo rpi-eeprom-config --edit`) avec `POWER_OFF_ON_HALT=1` et `WAKE_ON_GPIO=0` pour ordonner au PMIC de couper l'alimentation au shutdown.
-    - *Option B (Pull-down matériel) :* Installer une résistance de pull-down (ex: 4.7kΩ à 10kΩ) entre GPIO 18 (PWM) et GND pour forcer la ligne PWM à l'état bas (0%) quand le SoC est éteint.
-    - *Option C (Coupure de l'alimentation 5V) :* Relais ou MOSFET piloté par une ligne 3.3V (coupée au shutdown) si le modèle de ventilateur ne coupe pas totalement le moteur à 0% PWM.
+- [x] **Correction logicielle : Résolution du bug de dépassement de ligne config.txt**
+  - **Problème résolu :** La ligne `dtoverlay=pwm-fan` dépassait 80 caractères et corrompait le seuil `cpu-hot` à `0 °C`, ce qui forçait le ventilateur en continu à 69% même à basse température.
+  - **Correction appliquée :** Remplacement par la directive officielle propre `dtoverlay=pwm-fan`.
+  - **Résultat vérifié en direct :** 
+    - Seuil 50 °C rétabli.
+    - À 47,7 °C : Ventilateur en état `0` (0% PWM, 0 RPM).
+    - Vitesse progressive de 50 °C à 75 °C.
+
+- [x] **Configuration logicielle : Coupure d'alimentation EEPROM à l'extinction**
+  - **Correction appliquée :** Flash de l'EEPROM bootloader avec `POWER_OFF_ON_HALT=1` et `WAKE_ON_GPIO=0`.
+  - **Action physique utilisateur :** Déplacer le fil jaune (+ alimentation) de la Broche 2 (5V permanent) vers la Broche 1 (3,3V commutable par le PMIC). Le ventilateur s'éteint ainsi à 100% dès l'extinction du Raspberry Pi.
 
 ---
 
 ## Fonctionnalités & Optimisations futures
 
-- [ ] Affichage de la vitesse du ventilateur / statut thermique sur l'interface Kiosque
-- [ ] Surveillance proactive de l'état de la carte SD / santé système
+- [x] Affichage de la vitesse du ventilateur / statut thermique sur l'interface Kiosque
+- [x] Surveillance proactive de l'état de la carte SD / santé système
