@@ -41,6 +41,16 @@ CALENDAR_FILE = DATA_DIR / "calendar.ics"
 HA_URL = "https://ha.jokersecurity.com"
 HA_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0ZWZjOTJkNzM5NDM0OTBkODgwYzY3NzljNWY5OGVmNSIsImlhdCI6MTc5MTczMTI4OCwiZXhwIjoyMTA3MDkxMjg4fQ.M-k7WJQwLoclpEbxLhSb2s7dR8zp2uZrkVc4rLIUUyQ"
 
+# ParcelTracker Worker Cloudflare Configuration
+PARCEL_TRACKER_URL = os.environ.get(
+    "PARCEL_TRACKER_URL",
+    "https://parcel-tracker.franck-duchi.workers.dev/api/ha-sensor",
+)
+PARCEL_TRACKER_API_KEY = os.environ.get(
+    "PARCEL_TRACKER_API_KEY",
+    "496b6a4fd07b66cf6716a28e3f5d05e38b40fbfe36d3850ff068badb586f7d6c",
+)
+
 # Coordonnées pour Météo & Itinéraire
 METEO_LAT = 48.8415
 METEO_LON = 2.3117
@@ -449,6 +459,59 @@ def fetch_route_traffic_alerts(route_geometry=None):
             "alerts": []
         }
 
+def fetch_parcel_tracker_colis():
+    """Récupère les colis actifs depuis le Worker Cloudflare ParcelTracker."""
+    req = urllib.request.Request(
+        PARCEL_TRACKER_URL,
+        headers={
+            "X-API-Key": PARCEL_TRACKER_API_KEY,
+            "User-Agent": "RaspEcran/1.0",
+            "Accept": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=8.0) as r:
+            payload = json.loads(r.read().decode("utf-8"))
+    except Exception as e:
+        print(f"[DUCHISCREEN] Erreur ParcelTracker Worker: {e}")
+        return None
+
+    colis_raw = payload.get("attributes", {}).get("colis", [])
+    badge_map = {
+        "out_for_delivery": "delivery",
+        "pickup": "delivery",
+        "issue": "delivery",
+        "delivery": "delivery",
+        "transit": "transit",
+        "ordered": "ordered",
+    }
+    priority_order = {"delivery": 0, "transit": 1, "ordered": 2}
+    colis_cleaned = []
+
+    for c in colis_raw:
+        raw_badge = (c.get("badge") or "transit").strip().lower()
+        date_livre = (c.get("date_livre") or "").strip()
+        if raw_badge == "delivered" or date_livre:
+            continue
+
+        badge = badge_map.get(raw_badge, "transit")
+        colis_cleaned.append({
+            "nom": (c.get("nom") or c.get("contenu") or "Colis").strip(),
+            "contenu": (c.get("contenu") or "").strip(),
+            "expediteur": (c.get("expediteur") or "Expéditeur").strip(),
+            "transporteur": (c.get("transporteur") or "Transporteur").strip(),
+            "numero": (c.get("numero") or "").strip(),
+            "statut": (c.get("statut") or "En cours").strip(),
+            "badge": badge,
+            "date": (c.get("date_maj") or "").strip(),
+            "date_livre": date_livre,
+            "tracking_url": (c.get("tracking_url") or "").strip(),
+        })
+
+    colis_cleaned.sort(key=lambda x: priority_order.get(x["badge"], 9))
+    return colis_cleaned
+
+
 def update_ha_data():
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
@@ -461,19 +524,31 @@ def update_ha_data():
         "User-Agent": "HomeAssistant/RaspEcran"
     })
     
+    by_id = {}
+    ha_ok = False
     try:
         with urllib.request.urlopen(req, timeout=8.0, context=ctx) as r:
             all_states = json.loads(r.read().decode())
             by_id = {s["entity_id"]: s for s in all_states}
-            
-            def get_val(eid, fallback=None):
-                item = by_id.get(eid)
-                if not item: return fallback
-                try:
-                    return float(item.get("state"))
-                except (ValueError, TypeError):
-                    return fallback
+            ha_ok = True
+    except Exception as e:
+        print(f"[DUCHISCREEN] Erreur Home Assistant : {e}")
 
+    try:
+        def get_val(eid, fallback=None):
+            item = by_id.get(eid)
+            if not item: return fallback
+            try:
+                return float(item.get("state"))
+            except (ValueError, TypeError):
+                return fallback
+
+        temps = None
+        rain_status = None
+        has_rain = False
+        rain_timeline = []
+
+        if ha_ok:
             # 1. Climat 6 pièces
             temps = {
                 "salon": {
@@ -511,8 +586,6 @@ def update_ha_data():
             # 2. Pluie dans l'heure Météo-France
             rain_ent = by_id.get("sensor.paris_15eme_arrondissement_next_rain", {})
             forecast_raw = rain_ent.get("attributes", {}).get("1_hour_forecast", {})
-            rain_timeline = []
-            has_rain = False
             first_rain_min = None
             
             interval_keys = ["0 min", "5 min", "10 min", "15 min", "20 min", "25 min", "35 min", "45 min", "55 min"]
@@ -543,119 +616,44 @@ def update_ha_data():
             if has_rain and first_rain_min:
                 rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
 
-            # 3. Colis TRMNL & Nettoyage intelligent des anomalies
-            dismissed_set = set()
-            dismissed_file = Path(__file__).parent / "data" / "dismissed_colis.json"
-            if dismissed_file.exists():
-                try:
-                    with open(dismissed_file, "r", encoding="utf-8") as f:
-                        dismissed_set = set(json.load(f))
-                except Exception:
-                    pass
+        # 3. Suivi des colis via ParcelTracker (Worker Cloudflare)
+        colis_cleaned = fetch_parcel_tracker_colis()
 
-            colis_raw = by_id.get("sensor.trmnl_colis_tracking", {}).get("attributes", {}).get("colis", [])
-            colis_cleaned = []
-            for c in colis_raw:
-                numero = (c.get("numero") or "").strip()
-                if numero in dismissed_set:
-                    continue
+        # 4. Météo Open-Meteo
+        meteo_cur = fetch_open_meteo()
 
-                date_livre = (c.get("date_livre") or "").strip()
-                if date_livre:
-                    continue
+        # 5. Semaine A / B depuis calendrier
+        week_ab = get_calendar_week_type()
 
-                raw_nom = (c.get("nom") or "").strip()
-                raw_contenu = (c.get("contenu") or "").strip()
-                expediteur = (c.get("expediteur") or "Expéditeur").strip()
-                transporteur = (c.get("transporteur") or "Transporteur").strip()
-                statut = (c.get("statut") or "Inconnu").strip()
-                date_maj = (c.get("date_maj") or "").strip()
+        # 6. Trafic temps réel (Arsonval ➔ Gal Foy)
+        traffic_info = calculate_traffic(by_id)
 
-                statut_lower = statut.lower()
-                badge = "transit"
-                if "livraison" in statut_lower or "aujourd" in statut_lower or "out for delivery" in statut_lower:
-                    badge = "delivery"
-                elif "livré" in statut_lower or "delivered" in statut_lower:
-                    continue  # Colis déjà livré, ne pas afficher
-                elif "confirmé" in statut_lower or "ordered" in statut_lower:
-                    badge = "ordered"
-                else:
-                    badge = "transit"
+        # 7. Alertes voirie & manifs filtrées sur l'itinéraire (OpenData Paris)
+        route_alerts = fetch_route_traffic_alerts((traffic_info or {}).get("geometry"))
 
-                # 1. Correction des libellés parasites (sujets d'emails tronqués)
-                nom = raw_nom or raw_contenu or "Colis"
-                contenu = raw_contenu
-                nom_lower = nom.lower()
-
-                # Détection des objets d'e-mails Amazon tronqués
-                if "informations complémentaires" in nom_lower or "information complémentaire" in nom_lower:
-                    short_num = numero.split("-")[-1] if "-" in numero else numero[-6:]
-                    nom = f"Commande Amazon #{short_num}" if short_num else "Commande Amazon"
-                    contenu = "Articles en préparation d'expédition"
-                elif "mise à jour de la date de livr" in nom_lower or "date de livraison" in nom_lower:
-                    short_num = numero.split("-")[-1] if "-" in numero else numero[-6:]
-                    nom = f"Commande Amazon #{short_num}" if short_num else "Commande Amazon"
-                    contenu = "Livraison reprogrammée"
-                elif nom.strip() == "Votre colis arrive !":
-                    nom = f"Colis Colissimo #{numero[-6:]}" if len(numero) >= 6 else "Colis Colissimo"
-                    contenu = "En cours d'acheminement"
-
-                # 2. Nettoyage des phrases de statut tronquées
-                statut_clean = statut
-                if statut_clean.endswith(" sur le site de tr (FR)"):
-                    statut_clean = "En traitement sur le site de tri"
-                elif statut_clean.startswith("[FR] Your Colissimo is being processed at the local sorting"):
-                    statut_clean = "Colissimo en traitement au centre de tri"
-                elif "processed at the local sorting" in statut_clean.lower():
-                    statut_clean = "En cours de tri local"
-
-                colis_cleaned.append({
-                    "nom": nom,
-                    "contenu": contenu,
-                    "expediteur": expediteur,
-                    "transporteur": transporteur,
-                    "numero": numero,
-                    "statut": statut_clean,
-                    "badge": badge,
-                    "date": date_maj,
-                    "date_livre": date_livre
-                })
-
-            # Tri intelligent par priorité opérationnelle
-            priority_order = {"delivery": 0, "transit": 1, "ordered": 2, "delivered": 3}
-            colis_cleaned.sort(key=lambda x: priority_order.get(x["badge"], 9))
-
-            # 4. Météo Open-Meteo
-            meteo_cur = fetch_open_meteo()
-
-            # 5. Semaine A / B depuis calendrier
-            week_ab = get_calendar_week_type()
-
-            # 6. Trafic temps réel (Arsonval ➔ Gal Foy)
-            traffic_info = calculate_traffic(by_id)
-
-            # 7. Alertes voirie & manifs filtrées sur l'itinéraire (OpenData Paris)
-            route_alerts = fetch_route_traffic_alerts((traffic_info or {}).get("geometry"))
-
-            with cache_lock:
-                ha_cache["last_update"] = time.time()
-                ha_cache["week_ab"] = week_ab
+        with cache_lock:
+            ha_cache["last_update"] = time.time()
+            ha_cache["week_ab"] = week_ab
+            if temps is not None:
                 ha_cache["temperatures"] = temps
+            if colis_cleaned is not None:
                 ha_cache["colis"] = colis_cleaned
-                ha_cache["traffic"] = traffic_info
-                ha_cache["route_alerts"] = route_alerts
-                ha_cache["trmnl"] = {"visible": False}
+            ha_cache["traffic"] = traffic_info
+            ha_cache["route_alerts"] = route_alerts
+            ha_cache["trmnl"] = {"visible": False}
+            if rain_status is not None:
                 ha_cache["rain_hour"] = {
                     "status": rain_status,
                     "has_rain": has_rain,
                     "timeline": rain_timeline
                 }
-                if meteo_cur:
-                    ha_cache["weather"] = meteo_cur
+            if meteo_cur:
+                ha_cache["weather"] = meteo_cur
 
-            print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}.")
+        colis_n = len(colis_cleaned) if colis_cleaned is not None else "?"
+        print(f"[DUCHISCREEN] Mis à jour : {week_ab}, Colis: {colis_n}, Trafic: {traffic_info['duration']} min ({traffic_info['status']}), Alertes trajet: {route_alerts['count']}.")
     except Exception as e:
-        print(f"[DUCHISCREEN] Erreur Home Assistant : {e}")
+        print(f"[DUCHISCREEN] Erreur mise à jour données : {e}")
 
 def background_ha_worker():
     while True:
