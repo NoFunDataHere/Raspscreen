@@ -68,25 +68,39 @@
                     </div>
                 </div>
 
-                <!-- Pluie dans l'heure (Météo-France) -->
+                <!-- Pluie dans l'heure (Style APK WeatherRainRadar - Consensus Multi-Sources) -->
                 <div class="card rain-card">
                     <div class="card-header">
                         <span class="card-icon">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>
                         </span>
                         <h3>Pluie 1h</h3>
-                        <span class="badge badge-mf">Météo-France</span>
+                        <span class="badge badge-mf" id="rainSourcesBadge">Consensus</span>
                     </div>
-                    <div class="rain-status-text" id="rainStatusText">Temps sec la prochaine heure</div>
-                    <div class="rain-timeline" id="rainTimeline">
-                        <!-- Barres générées dynamiquement -->
-                    </div>
-                    <div class="rain-time-labels">
-                        <span>0m</span>
-                        <span>15m</span>
-                        <span>30m</span>
-                        <span>45m</span>
-                        <span>60m</span>
+                    <div class="rain-apk-layout">
+                        <div class="rain-dial-wrap">
+                            <svg id="rainDialSvg" class="rain-dial-svg" viewBox="0 0 220 220"></svg>
+                        </div>
+                        <div class="rain-apk-info">
+                            <div class="rain-status-text" id="rainStatusText">Analyse en cours...</div>
+                            <div class="rain-apk-metrics">
+                                <div class="rain-metric-box">
+                                    <span class="rain-metric-label">CUMUL TOTAL</span>
+                                    <span class="rain-metric-val blue" id="rainTotalMm">0,0 mm</span>
+                                </div>
+                                <div class="rain-metric-box">
+                                    <span class="rain-metric-label">RISQUE AGRÉGÉ</span>
+                                    <span class="rain-metric-val green" id="rainRiskPct">0%</span>
+                                </div>
+                            </div>
+                            <div class="rain-apk-segments" id="rainSegments"></div>
+                            <div class="rain-legend">
+                                <span><i class="dot-sec"></i>Sec</span>
+                                <span><i class="dot-faible"></i>Faible</span>
+                                <span><i class="dot-modere"></i>Modéré</span>
+                                <span><i class="dot-fort"></i>Fort</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -288,6 +302,7 @@
             </div>
             <div class="footer-center">
                 <span class="footer-ip" id="footerIp" title="Adresse IP de l'écran">192.168.0.17</span>
+                <span class="footer-health" id="footerHealth" title="Santé système (CPU, Ventilateur, Carte SD)"></span>
             </div>
             <div class="footer-right">
                 <span>Veille auto : <span id="idleTimer">1:00</span></span>

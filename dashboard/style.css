@@ -1113,6 +1113,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
 }
 
 .footer-ip {
@@ -1131,6 +1132,31 @@ body {
 .footer-ip:hover {
     color: var(--accent-cyan);
     border-color: rgba(0, 242, 254, 0.3);
+}
+
+.footer-health {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.4px;
+    color: rgba(148, 163, 184, 0.55);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 1px 6px;
+    user-select: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.footer-health.warn {
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.footer-health.crit {
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.45);
+    background: rgba(248, 113, 113, 0.12);
 }
 
 .footer-bar strong {
@@ -1540,25 +1566,153 @@ body {
         line-height: 1.35;
     }
 
-    /* Colonne 1 : Pluie dans l'heure */
+    /* Colonne 1 : Pluie dans l'heure (Style APK WeatherRainRadar) */
     .rain-card {
-        flex-shrink: 0;
+        flex: 0 0 auto;
         padding: 12px 16px;
-        min-height: 125px;
+        min-height: 215px;
+    }
+
+    .rain-apk-layout {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex: 1;
+        margin-top: 4px;
+    }
+
+    .rain-dial-wrap {
+        flex: 0 0 192px;
+        height: 192px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rain-dial-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .rain-apk-info {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
     }
 
     .rain-status-text {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #38bdf8;
+        text-align: left;
+        margin: 0;
+        line-height: 1.25;
+    }
+
+    .rain-apk-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .rain-metric-box {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(56, 189, 248, 0.16);
+        border-radius: 10px;
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rain-metric-label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        margin-bottom: 2px;
+    }
+
+    .rain-metric-val {
         font-size: 1.05rem;
-        margin-bottom: 6px;
+        font-weight: 800;
+        font-family: 'JetBrains Mono', monospace;
+        white-space: nowrap;
     }
 
-    .rain-timeline {
-        height: 38px;
+    .rain-metric-val.blue { color: #38bdf8; }
+    .rain-metric-val.green { color: #10b981; }
+    .rain-metric-val.orange { color: #f59e0b; }
+    .rain-metric-val.red { color: #ef4444; }
+
+    .rain-apk-segments {
+        display: flex;
+        gap: 3px;
+        width: 100%;
+        height: 22px;
+        margin-top: 2px;
     }
 
-    .rain-labels {
-        font-size: 0.75rem;
+    .rain-seg {
+        flex: 1;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 700;
+        font-family: 'JetBrains Mono', monospace;
+        color: #f8fafc;
+        background: rgba(16, 185, 129, 0.22);
+        border: 1px solid rgba(16, 185, 129, 0.35);
     }
+
+    .rain-seg.lvl-1 {
+        background: rgba(2, 132, 199, 0.85);
+        border-color: #38bdf8;
+    }
+
+    .rain-seg.lvl-2 {
+        background: rgba(217, 119, 6, 0.85);
+        border-color: #f59e0b;
+    }
+
+    .rain-seg.lvl-3 {
+        background: rgba(220, 38, 38, 0.85);
+        border-color: #ef4444;
+    }
+
+    .rain-legend {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.72rem;
+        color: #94a3b8;
+        padding-top: 2px;
+    }
+
+    .rain-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .rain-legend i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .dot-sec { background: #10b981; }
+    .dot-faible { background: #38bdf8; }
+    .dot-modere { background: #f59e0b; }
+    .dot-fort { background: #ef4444; }
 
     /* Colonne 1 : Flipper & Trafic */
     .flipper-container {

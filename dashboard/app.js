@@ -261,7 +261,7 @@ async function fetchData() {
         }
         
         renderWeather(data.weather);
-        renderRain(data.rain_hour);
+        renderRain(data.rain_hour, data.weather);
         renderTraffic(data.traffic);
         renderRouteAlerts(data.route_alerts);
         renderTemperatures(data.temperatures);
@@ -295,19 +295,143 @@ function renderWeather(cur) {
     }
 }
 
-function renderRain(rain) {
+function renderRain(rain, weather) {
     if (!rain) return;
-    
+
     rainStatusText.textContent = rain.status || "Temps sec la prochaine heure";
-    rainTimeline.innerHTML = '';
-    
+
+    const sourcesBadge = document.getElementById('rainSourcesBadge');
+    if (sourcesBadge) {
+        const count = rain.sources_count || 0;
+        sourcesBadge.textContent = count > 0 ? `${count} sources` : 'Consensus';
+    }
+
+    const totalMmEl = document.getElementById('rainTotalMm');
+    const totalMm = Number(rain.total_mm || 0);
+    if (totalMmEl) {
+        totalMmEl.textContent = `${totalMm.toFixed(1).replace('.', ',')} mm`;
+    }
+
+    const riskEl = document.getElementById('rainRiskPct');
+    const riskPct = Number(rain.consensus_percent || 0);
+    if (riskEl) {
+        riskEl.textContent = `${riskPct}%`;
+        riskEl.className = 'rain-metric-val ' + (riskPct >= 65 ? 'red' : (riskPct >= 40 ? 'orange' : (riskPct >= 20 ? 'blue' : 'green')));
+    }
+
+    // Segments mm style widget APK
     const timeline = rain.timeline || [];
-    timeline.forEach(item => {
-        const bar = document.createElement('div');
-        bar.className = `rain-bar rain-${item.level}`;
-        bar.title = `${item.min} min : ${item.desc}`;
-        rainTimeline.appendChild(bar);
+    const segsEl = document.getElementById('rainSegments');
+    if (segsEl) {
+        segsEl.innerHTML = '';
+        timeline.forEach((item, idx) => {
+            const seg = document.createElement('div');
+            const lvl = item.level || 0;
+            seg.className = `rain-seg lvl-${lvl}`;
+            const trancheH = idx < 6 ? (5 / 60) : (10 / 60);
+            const slotMm = (item.mm_h || 0) * trancheH;
+            seg.textContent = lvl > 0 ? Math.max(0.1, slotMm).toFixed(1).replace('.', ',') : '0';
+            seg.style.flex = idx < 6 ? '1' : '1.45';
+            seg.title = `${item.min}m : ${item.desc}`;
+            segsEl.appendChild(seg);
+        });
+    }
+
+    const dialSvg = document.getElementById('rainDialSvg');
+    if (!dialSvg) return;
+
+    // Mapper les 9 créneaux (0,5,10,15,20,25,35,45,55) sur 60 barres radiales
+    const minuteLevels = new Array(60).fill(0);
+    for (let m = 0; m < 60; m++) {
+        let lvl = 0;
+        for (let i = 0; i < timeline.length; i++) {
+            const slotMin = parseInt(timeline[i].min || '0', 10);
+            const nextMin = (i + 1 < timeline.length) ? parseInt(timeline[i + 1].min || '60', 10) : 60;
+            if (m >= slotMin && m < nextMin) {
+                lvl = timeline[i].level || 0;
+                break;
+            }
+        }
+        minuteLevels[m] = lvl;
+    }
+
+    const colors = ['#10b981', '#38bdf8', '#f59e0b', '#ef4444'];
+    const cx = 110, cy = 110;
+    const innerRingR = 66;
+
+    let barsHtml = `<circle cx="${cx}" cy="${cy}" r="${innerRingR}" fill="none" stroke="#334155" stroke-width="1.5" />`;
+    for (let m = 0; m < 60; m++) {
+        const lvl = minuteLevels[m];
+        const isCardinal = (m % 15 === 0);
+        const angleRad = ((m / 60) * 360 - 90) * (Math.PI / 180);
+        const r1 = isCardinal ? innerRingR - 2 : innerRingR + 3;
+        const r2 = (isCardinal ? 82 : 78) + (lvl * 2.5);
+        const x1 = (cx + r1 * Math.cos(angleRad)).toFixed(1);
+        const y1 = (cy + r1 * Math.sin(angleRad)).toFixed(1);
+        const x2 = (cx + r2 * Math.cos(angleRad)).toFixed(1);
+        const y2 = (cy + r2 * Math.sin(angleRad)).toFixed(1);
+        const strokeW = isCardinal ? 4.2 : (lvl > 0 ? 2.6 : 2.2);
+        barsHtml += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${colors[lvl]}" stroke-width="${strokeW}" stroke-linecap="round" opacity="${lvl > 0 || isCardinal ? 1 : 0.78}" />`;
+    }
+
+    // 12 repères horaires autour du cadran (identiques au widget APK)
+    const tickLabels = [
+        { m: 0, txt: 'MAINTENANT', r: 97, size: 8.5, fill: '#e2e8f0', bold: 700 },
+        { m: 5, txt: '5m', r: 95, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 10, txt: '10m', r: 96, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 15, txt: '+15m', r: 98, size: 8.2, fill: '#cbd5e1', bold: 700 },
+        { m: 20, txt: '20m', r: 96, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 25, txt: '25m', r: 95, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 30, txt: '+30m', r: 98, size: 8.2, fill: '#cbd5e1', bold: 700 },
+        { m: 35, txt: '35m', r: 95, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 40, txt: '40m', r: 96, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 45, txt: '+45m', r: 98, size: 8.2, fill: '#cbd5e1', bold: 700 },
+        { m: 50, txt: '50m', r: 96, size: 7.5, fill: '#94a3b8', bold: 600 },
+        { m: 55, txt: '55m', r: 95, size: 7.5, fill: '#94a3b8', bold: 600 },
+    ];
+    let labelsHtml = '';
+    tickLabels.forEach(t => {
+        const rad = ((t.m / 60) * 360 - 90) * (Math.PI / 180);
+        const lx = (cx + t.r * Math.cos(rad)).toFixed(1);
+        const ly = (cy + t.r * Math.sin(rad) + 3).toFixed(1);
+        labelsHtml += `<text x="${lx}" y="${ly}" text-anchor="middle" fill="${t.fill}" font-size="${t.size}" font-weight="${t.bold}">${t.txt}</text>`;
     });
+
+    const maxLevel = Math.max(0, ...minuteLevels);
+    const centerColor = colors[maxLevel] || '#10b981';
+    const tempVal = (weather && weather.temp !== undefined) ? `${Math.round(weather.temp)}°` : (weatherTemp ? `${weatherTemp.textContent}°` : '--°');
+    const centerLabel = maxLevel === 0 ? 'TEMPS SEC' : (maxLevel === 1 ? 'PLUIE EN COURS' : (maxLevel === 2 ? 'PLUIE MODÉRÉE' : 'PLUIE FORTE'));
+
+    // Calcul estimation de fin / début façon APK
+    const nowDt = new Date(Date.now() + 60 * 60000);
+    const endHH = `${String(nowDt.getHours()).padStart(2, '0')}:${String(nowDt.getMinutes()).padStart(2, '0')}`;
+    let subLabel = 'Temps sec sur 60 min';
+    if (maxLevel > 0) {
+        const lastRainIdx = minuteLevels.lastIndexOf(minuteLevels.find((_, i) => minuteLevels[i] > 0) !== undefined ? minuteLevels[minuteLevels.length - 1] : 0);
+        const dryAfter = minuteLevels.slice(1).findIndex(l => l === 0);
+        if (minuteLevels[0] > 0 && dryAfter === -1) {
+            subLabel = `Fin après ${endHH} (> 1h)`;
+        } else if (minuteLevels[0] > 0 && dryAfter > 0) {
+            subLabel = `Fin dans ~${dryAfter + 1} min`;
+        } else {
+            const firstIdx = minuteLevels.findIndex(l => l > 0);
+            subLabel = firstIdx >= 0 ? `Début dans ~${firstIdx} min` : 'Averse prévue';
+        }
+    }
+
+    const centerIcon = maxLevel === 0
+        ? `<circle cx="110" cy="69" r="7" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/><g stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"><line x1="110" y1="57" x2="110" y2="60"/><line x1="110" y1="78" x2="110" y2="81"/><line x1="98" y1="69" x2="101" y2="69"/><line x1="119" y1="69" x2="122" y2="69"/></g>`
+        : `<path d="M98 73h22a5 5 0 0 0 .8-9.9 7 7 0 0 0-13.5-1.8 5.5 5.5 0 0 0-9.3 11.7z" fill="#e2e8f0"/><line x1="103" y1="77" x2="101.5" y2="81.5" stroke="${centerColor}" stroke-width="1.8" stroke-linecap="round"/><line x1="109" y1="77" x2="107.5" y2="81.5" stroke="${centerColor}" stroke-width="1.8" stroke-linecap="round"/><line x1="115" y1="77" x2="113.5" y2="81.5" stroke="${centerColor}" stroke-width="1.8" stroke-linecap="round"/>`;
+
+    dialSvg.innerHTML = `
+        ${barsHtml}
+        ${labelsHtml}
+        ${centerIcon}
+        <text x="110" y="106" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="800">${tempVal}</text>
+        <text x="110" y="121" text-anchor="middle" fill="${centerColor}" font-size="9.5" font-weight="800" letter-spacing="0.03em">${centerLabel}</text>
+        <text x="110" y="133" text-anchor="middle" fill="#38bdf8" font-size="7.8" font-weight="600">${subLabel}</text>
+        <text x="110" y="145" text-anchor="middle" fill="#94a3b8" font-size="7.2" font-weight="600">Épisode ~${totalMm.toFixed(1).replace('.', ',')} mm • Risque ${riskPct}%</text>
+    `;
 }
 
 function renderTraffic(traffic) {

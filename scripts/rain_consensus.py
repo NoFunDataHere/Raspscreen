@@ -238,6 +238,7 @@ def compute_rain_consensus(lat, lon, by_id=None):
     first_rain_desc = None
     max_other_proba = 0.0
     active_families_max = 0
+    total_mm_sum = 0.0
 
     for idx, minute_offset in enumerate(SLOT_MINUTES):
         om_idx = min(minute_offset // 15, 5)
@@ -400,12 +401,15 @@ def compute_rain_consensus(lat, lon, by_id=None):
                 first_rain_min = str(minute_offset)
                 first_rain_desc = slot_desc
 
+        slot_mm = round(combined_rate * tranche_h, 2) if is_slot_rain else 0.0
+        total_mm_sum += slot_mm
+
         timeline.append({
             "min": str(minute_offset),
             "desc": f"{slot_desc} ({round(conf_proba * 100)}% modèles)",
             "level": slot_level,
             "proba": round(conf_proba * 100),
-            "mm_h": round(combined_rate * tranche_h * 12, 2),
+            "mm_h": round(combined_rate, 2) if is_slot_rain else 0.0,
         })
 
     # Score de consensus global affiché
@@ -433,4 +437,5 @@ def compute_rain_consensus(lat, lon, by_id=None):
         "timeline": timeline,
         "consensus_percent": global_prob,
         "sources_count": total_sources,
+        "total_mm": round(total_mm_sum, 1),
     }
