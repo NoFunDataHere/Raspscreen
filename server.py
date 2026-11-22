@@ -29,6 +29,7 @@ import glob
 from pathlib import Path
 from threading import Thread, Lock
 from scripts.trmnl_service import get_trmnl_status
+from scripts.rain_consensus import compute_rain_consensus
 
 PORT = 8080
 BASE_DIR = Path(__file__).resolve().parent
@@ -513,114 +514,13 @@ def fetch_parcel_tracker_colis():
     return colis_cleaned
 
 
-METEO_FRANCE_RAIN_TOKENS = [
-    "__Wj7dVSTjV9YGu1guveLyDq0g7S7TfTjaHBTPTpO0kj8__",
-    "__W3y2t--W3AjKm--W3y2t-z-sL7Sw--W3y2t__",
-]
-
-
 def fetch_rain_in_hour(by_id=None):
-    """Récupère la pluie dans l'heure via l'API Météo-France v3 (reprise du projet Weather) avec repli HA."""
-    interval_mins = ["0", "5", "10", "15", "20", "25", "35", "45", "55"]
-
-    for token in METEO_FRANCE_RAIN_TOKENS:
-        url = (
-            f"https://webservice.meteofrance.com/v3/rain"
-            f"?lat={METEO_LAT:.4f}&lon={METEO_LON:.4f}&token={token}"
-        )
-        req = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": "MeteoFrance/1.0 (Android)",
-                "Accept": "application/json",
-            },
-        )
-        try:
-            with urllib.request.urlopen(req, timeout=8.0) as r:
-                data = json.loads(r.read().decode("utf-8"))
-            forecast = data.get("properties", {}).get("forecast", [])
-            if not forecast:
-                continue
-
-            rain_timeline = []
-            has_rain = False
-            first_rain_min = None
-            first_rain_desc = None
-
-            for idx, slot in enumerate(forecast[:9]):
-                intensity = slot.get("rain_intensity", 1)
-                desc = (slot.get("rain_intensity_description") or "Temps sec").strip()
-                # Météo-France v3 : 1=Temps sec, 2=Pluie faible, 3=Pluie modérée, 4=Pluie forte
-                level = max(0, min(3, int(intensity) - 1)) if isinstance(intensity, (int, float)) else 0
-                if level == 0:
-                    desc_l = desc.lower()
-                    if "forte" in desc_l:
-                        level = 3
-                    elif "modérée" in desc_l or "moderee" in desc_l:
-                        level = 2
-                    elif "faible" in desc_l or "pluie" in desc_l:
-                        level = 1
-
-                m_label = interval_mins[idx] if idx < len(interval_mins) else str(idx * 5)
-                if level > 0:
-                    has_rain = True
-                    if first_rain_min is None:
-                        first_rain_min = m_label
-                        first_rain_desc = desc
-
-                rain_timeline.append({
-                    "min": m_label,
-                    "desc": desc,
-                    "level": level,
-                })
-
-            rain_status = "Temps sec la prochaine heure"
-            if has_rain and first_rain_min is not None:
-                if first_rain_min == "0":
-                    rain_status = f"{first_rain_desc} en cours" if first_rain_desc else "Pluie en cours"
-                else:
-                    rain_status = f"Pluie prévue dans {first_rain_min} min"
-
-            return {
-                "status": rain_status,
-                "has_rain": has_rain,
-                "timeline": rain_timeline,
-                "source": "Météo-France",
-            }
-        except Exception as e:
-            print(f"[Rain] Erreur Météo-France v3: {e}")
-
-    # Fallback sur Home Assistant si Météo-France injoignable
-    if by_id:
-        rain_ent = by_id.get("sensor.paris_15eme_arrondissement_next_rain", {})
-        forecast_raw = rain_ent.get("attributes", {}).get("1_hour_forecast", {})
-        if forecast_raw:
-            rain_timeline = []
-            has_rain = False
-            first_rain_min = None
-            for k in ["0 min", "5 min", "10 min", "15 min", "20 min", "25 min", "35 min", "45 min", "55 min"]:
-                state_desc = forecast_raw.get(k, "Temps sec")
-                level = 0
-                desc_lower = state_desc.lower()
-                if "faible" in desc_lower:
-                    level = 1
-                    has_rain = True
-                elif "modérée" in desc_lower or "moderee" in desc_lower:
-                    level = 2
-                    has_rain = True
-                elif "forte" in desc_lower:
-                    level = 3
-                    has_rain = True
-                if level > 0 and first_rain_min is None:
-                    first_rain_min = k.replace(" min", "")
-                rain_timeline.append({"min": k.replace(" min", ""), "desc": state_desc, "level": level})
-
-            rain_status = "Temps sec la prochaine heure"
-            if has_rain and first_rain_min:
-                rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
-            return {"status": rain_status, "has_rain": has_rain, "timeline": rain_timeline, "source": "HA"}
-
-    return None
+    """Récupère la pluie dans l'heure via le consensus multi-sources (porté de WeatherRainRadar)."""
+    try:
+        return compute_rain_consensus(METEO_LAT, METEO_LON, by_id=by_id)
+    except Exception as e:
+        print(f"[Rain] Erreur consensus multi-sources: {e}")
+        return None
 
 
 _last_morning_wake_date = None
