@@ -69,7 +69,7 @@
                 </div>
 
                 <!-- Pluie dans l'heure (Style APK WeatherRainRadar - Consensus Multi-Sources) -->
-                <div class="card rain-card">
+                <div class="card rain-card" id="rainCard" title="Cliquer pour agrandir">
                     <div class="card-header">
                         <span class="card-icon">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>
@@ -359,6 +359,54 @@
             <div class="modal-body" id="colisModalBody"></div>
             <footer class="modal-footer">
                 <span>Suivi colis • Home Assistant</span>
+                <span>Touchez hors de la fenêtre pour fermer</span>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modale Plein Écran : Zoom Pluie dans l'heure (Style APK WeatherRainRadar) -->
+    <div class="modal-backdrop hidden" id="rainModal">
+        <div class="modal-card rain-modal-card">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/></svg>
+                    </span>
+                    <div>
+                        <h2>Pluie dans l'heure — Paris 15e</h2>
+                        <span class="modal-subtitle" id="rainModalSubtitle">Consensus multi-sources WeatherRainRadar</span>
+                    </div>
+                </div>
+                <button class="modal-close-btn" id="btnCloseRainModal" aria-label="Fermer la fenêtre">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span>Fermer</span>
+                </button>
+            </header>
+            <div class="modal-body rain-modal-body">
+                <div class="rain-modal-dial-wrap">
+                    <svg id="rainModalDialSvg" class="rain-dial-svg" viewBox="0 0 220 220"></svg>
+                </div>
+                <div class="rain-modal-details">
+                    <div class="rain-modal-status" id="rainModalStatus">Analyse en cours...</div>
+                    <div class="rain-apk-metrics rain-modal-metrics">
+                        <div class="rain-metric-box">
+                            <span class="rain-metric-label">CUMUL TOTAL (60M)</span>
+                            <span class="rain-metric-val blue" id="rainModalTotalMm">0,0 mm</span>
+                        </div>
+                        <div class="rain-metric-box">
+                            <span class="rain-metric-label">RISQUE AGRÉGÉ</span>
+                            <span class="rain-metric-val green" id="rainModalRiskPct">0%</span>
+                        </div>
+                    </div>
+                    <div class="rain-apk-segments rain-modal-segments" id="rainModalSegments"></div>
+                    <div class="rain-modal-seg-labels">
+                        <span>0m</span><span>15m</span><span>30m</span><span>45m</span><span>60m</span>
+                    </div>
+                    <div class="rain-modal-slots" id="rainModalSlots"></div>
+                </div>
+            </div>
+            <footer class="modal-footer">
+                <span>Météo-France v3 • AROME • ICON-D2 • ECMWF • GFS • GEM • Tomorrow.io • WeatherAPI • Meteoblue</span>
                 <span>Touchez hors de la fenêtre pour fermer</span>
             </footer>
         </div>

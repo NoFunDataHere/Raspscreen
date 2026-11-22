@@ -295,52 +295,32 @@ function renderWeather(cur) {
     }
 }
 
-function renderRain(rain, weather) {
-    if (!rain) return;
+let latestRainData = null;
+let latestWeatherData = null;
 
-    rainStatusText.textContent = rain.status || "Temps sec la prochaine heure";
+function renderRainSegments(segsEl, timeline) {
+    if (!segsEl) return;
+    segsEl.innerHTML = '';
+    timeline.forEach((item, idx) => {
+        const seg = document.createElement('div');
+        const lvl = item.level || 0;
+        seg.className = `rain-seg lvl-${lvl}`;
+        const trancheH = idx < 6 ? (5 / 60) : (10 / 60);
+        const slotMm = (item.mm_h || 0) * trancheH;
+        seg.textContent = lvl > 0 ? Math.max(0.1, slotMm).toFixed(1).replace('.', ',') : '0';
+        seg.style.flex = idx < 6 ? '1' : '1.45';
+        seg.title = `${item.min}m : ${item.desc}`;
+        segsEl.appendChild(seg);
+    });
+}
 
-    const sourcesBadge = document.getElementById('rainSourcesBadge');
-    if (sourcesBadge) {
-        const count = rain.sources_count || 0;
-        sourcesBadge.textContent = count > 0 ? `${count} sources` : 'Consensus';
-    }
+function renderRainDialSvg(dialSvg, rain, weather) {
+    if (!dialSvg || !rain) return;
 
-    const totalMmEl = document.getElementById('rainTotalMm');
     const totalMm = Number(rain.total_mm || 0);
-    if (totalMmEl) {
-        totalMmEl.textContent = `${totalMm.toFixed(1).replace('.', ',')} mm`;
-    }
-
-    const riskEl = document.getElementById('rainRiskPct');
     const riskPct = Number(rain.consensus_percent || 0);
-    if (riskEl) {
-        riskEl.textContent = `${riskPct}%`;
-        riskEl.className = 'rain-metric-val ' + (riskPct >= 65 ? 'red' : (riskPct >= 40 ? 'orange' : (riskPct >= 20 ? 'blue' : 'green')));
-    }
-
-    // Segments mm style widget APK
     const timeline = rain.timeline || [];
-    const segsEl = document.getElementById('rainSegments');
-    if (segsEl) {
-        segsEl.innerHTML = '';
-        timeline.forEach((item, idx) => {
-            const seg = document.createElement('div');
-            const lvl = item.level || 0;
-            seg.className = `rain-seg lvl-${lvl}`;
-            const trancheH = idx < 6 ? (5 / 60) : (10 / 60);
-            const slotMm = (item.mm_h || 0) * trancheH;
-            seg.textContent = lvl > 0 ? Math.max(0.1, slotMm).toFixed(1).replace('.', ',') : '0';
-            seg.style.flex = idx < 6 ? '1' : '1.45';
-            seg.title = `${item.min}m : ${item.desc}`;
-            segsEl.appendChild(seg);
-        });
-    }
 
-    const dialSvg = document.getElementById('rainDialSvg');
-    if (!dialSvg) return;
-
-    // Mapper les 9 créneaux (0,5,10,15,20,25,35,45,55) sur 60 barres radiales
     const minuteLevels = new Array(60).fill(0);
     for (let m = 0; m < 60; m++) {
         let lvl = 0;
@@ -374,7 +354,6 @@ function renderRain(rain, weather) {
         barsHtml += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${colors[lvl]}" stroke-width="${strokeW}" stroke-linecap="round" opacity="${lvl > 0 || isCardinal ? 1 : 0.78}" />`;
     }
 
-    // 12 repères horaires autour du cadran (identiques au widget APK)
     const tickLabels = [
         { m: 0, txt: 'MAINTENANT', r: 97, size: 8.5, fill: '#e2e8f0', bold: 700 },
         { m: 5, txt: '5m', r: 95, size: 7.5, fill: '#94a3b8', bold: 600 },
@@ -402,12 +381,10 @@ function renderRain(rain, weather) {
     const tempVal = (weather && weather.temp !== undefined) ? `${Math.round(weather.temp)}°` : (weatherTemp ? `${weatherTemp.textContent}°` : '--°');
     const centerLabel = maxLevel === 0 ? 'TEMPS SEC' : (maxLevel === 1 ? 'PLUIE EN COURS' : (maxLevel === 2 ? 'PLUIE MODÉRÉE' : 'PLUIE FORTE'));
 
-    // Calcul estimation de fin / début façon APK
     const nowDt = new Date(Date.now() + 60 * 60000);
     const endHH = `${String(nowDt.getHours()).padStart(2, '0')}:${String(nowDt.getMinutes()).padStart(2, '0')}`;
     let subLabel = 'Temps sec sur 60 min';
     if (maxLevel > 0) {
-        const lastRainIdx = minuteLevels.lastIndexOf(minuteLevels.find((_, i) => minuteLevels[i] > 0) !== undefined ? minuteLevels[minuteLevels.length - 1] : 0);
         const dryAfter = minuteLevels.slice(1).findIndex(l => l === 0);
         if (minuteLevels[0] > 0 && dryAfter === -1) {
             subLabel = `Fin après ${endHH} (> 1h)`;
@@ -432,6 +409,103 @@ function renderRain(rain, weather) {
         <text x="110" y="133" text-anchor="middle" fill="#38bdf8" font-size="7.8" font-weight="600">${subLabel}</text>
         <text x="110" y="145" text-anchor="middle" fill="#94a3b8" font-size="7.2" font-weight="600">Épisode ~${totalMm.toFixed(1).replace('.', ',')} mm • Risque ${riskPct}%</text>
     `;
+}
+
+function renderRainModal(rain, weather) {
+    if (!rain) return;
+    const statusEl = document.getElementById('rainModalStatus');
+    const subEl = document.getElementById('rainModalSubtitle');
+    const mmEl = document.getElementById('rainModalTotalMm');
+    const riskEl = document.getElementById('rainModalRiskPct');
+    const segsEl = document.getElementById('rainModalSegments');
+    const dialSvg = document.getElementById('rainModalDialSvg');
+    const slotsEl = document.getElementById('rainModalSlots');
+
+    const totalMm = Number(rain.total_mm || 0);
+    const riskPct = Number(rain.consensus_percent || 0);
+    const count = rain.sources_count || 0;
+
+    if (statusEl) statusEl.textContent = rain.status || "Temps sec la prochaine heure";
+    if (subEl) subEl.textContent = `Consensus pondéré multi-sources (${count} sources actives)`;
+    if (mmEl) mmEl.textContent = `${totalMm.toFixed(1).replace('.', ',')} mm`;
+    if (riskEl) {
+        riskEl.textContent = `${riskPct}%`;
+        riskEl.className = 'rain-metric-val ' + (riskPct >= 65 ? 'red' : (riskPct >= 40 ? 'orange' : (riskPct >= 20 ? 'blue' : 'green')));
+    }
+
+    renderRainSegments(segsEl, rain.timeline || []);
+    renderRainDialSvg(dialSvg, rain, weather);
+
+    if (slotsEl) {
+        slotsEl.innerHTML = (rain.timeline || []).map(item => `
+            <div class="rain-modal-slot-item">
+                <strong>+${item.min} min</strong>
+                <span>${escapeHtml(item.desc || 'Temps sec')}</span>
+            </div>
+        `).join('');
+    }
+}
+
+function renderRain(rain, weather) {
+    if (!rain) return;
+    latestRainData = rain;
+    latestWeatherData = weather;
+
+    rainStatusText.textContent = rain.status || "Temps sec la prochaine heure";
+
+    const sourcesBadge = document.getElementById('rainSourcesBadge');
+    if (sourcesBadge) {
+        const count = rain.sources_count || 0;
+        sourcesBadge.textContent = count > 0 ? `${count} sources` : 'Consensus';
+    }
+
+    const totalMmEl = document.getElementById('rainTotalMm');
+    const totalMm = Number(rain.total_mm || 0);
+    if (totalMmEl) {
+        totalMmEl.textContent = `${totalMm.toFixed(1).replace('.', ',')} mm`;
+    }
+
+    const riskEl = document.getElementById('rainRiskPct');
+    const riskPct = Number(rain.consensus_percent || 0);
+    if (riskEl) {
+        riskEl.textContent = `${riskPct}%`;
+        riskEl.className = 'rain-metric-val ' + (riskPct >= 65 ? 'red' : (riskPct >= 40 ? 'orange' : (riskPct >= 20 ? 'blue' : 'green')));
+    }
+
+    renderRainSegments(document.getElementById('rainSegments'), rain.timeline || []);
+    renderRainDialSvg(document.getElementById('rainDialSvg'), rain, weather);
+
+    const rainModal = document.getElementById('rainModal');
+    if (rainModal && !rainModal.classList.contains('hidden')) {
+        renderRainModal(rain, weather);
+    }
+}
+
+const rainCardEl = document.getElementById('rainCard');
+const rainModalEl = document.getElementById('rainModal');
+const btnCloseRainModal = document.getElementById('btnCloseRainModal');
+
+if (rainCardEl && rainModalEl) {
+    rainCardEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (latestRainData) {
+            renderRainModal(latestRainData, latestWeatherData);
+        }
+        rainModalEl.classList.remove('hidden');
+    });
+}
+if (btnCloseRainModal && rainModalEl) {
+    btnCloseRainModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        rainModalEl.classList.add('hidden');
+    });
+}
+if (rainModalEl) {
+    rainModalEl.addEventListener('click', (e) => {
+        if (e.target === rainModalEl) {
+            rainModalEl.classList.add('hidden');
+        }
+    });
 }
 
 function renderTraffic(traffic) {
