@@ -84,7 +84,8 @@ ha_cache = {
         "count": 0,
         "alerts": []
     },
-    "trmnl": {}
+    "trmnl": {},
+    "force_awake": False
 }
 
 # Backlight paths sur Raspberry Pi OS
@@ -512,6 +513,129 @@ def fetch_parcel_tracker_colis():
     return colis_cleaned
 
 
+METEO_FRANCE_RAIN_TOKENS = [
+    "__Wj7dVSTjV9YGu1guveLyDq0g7S7TfTjaHBTPTpO0kj8__",
+    "__W3y2t--W3AjKm--W3y2t-z-sL7Sw--W3y2t__",
+]
+
+
+def fetch_rain_in_hour(by_id=None):
+    """Récupère la pluie dans l'heure via l'API Météo-France v3 (reprise du projet Weather) avec repli HA."""
+    interval_mins = ["0", "5", "10", "15", "20", "25", "35", "45", "55"]
+
+    for token in METEO_FRANCE_RAIN_TOKENS:
+        url = (
+            f"https://webservice.meteofrance.com/v3/rain"
+            f"?lat={METEO_LAT:.4f}&lon={METEO_LON:.4f}&token={token}"
+        )
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": "MeteoFrance/1.0 (Android)",
+                "Accept": "application/json",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=8.0) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            forecast = data.get("properties", {}).get("forecast", [])
+            if not forecast:
+                continue
+
+            rain_timeline = []
+            has_rain = False
+            first_rain_min = None
+            first_rain_desc = None
+
+            for idx, slot in enumerate(forecast[:9]):
+                intensity = slot.get("rain_intensity", 1)
+                desc = (slot.get("rain_intensity_description") or "Temps sec").strip()
+                # Météo-France v3 : 1=Temps sec, 2=Pluie faible, 3=Pluie modérée, 4=Pluie forte
+                level = max(0, min(3, int(intensity) - 1)) if isinstance(intensity, (int, float)) else 0
+                if level == 0:
+                    desc_l = desc.lower()
+                    if "forte" in desc_l:
+                        level = 3
+                    elif "modérée" in desc_l or "moderee" in desc_l:
+                        level = 2
+                    elif "faible" in desc_l or "pluie" in desc_l:
+                        level = 1
+
+                m_label = interval_mins[idx] if idx < len(interval_mins) else str(idx * 5)
+                if level > 0:
+                    has_rain = True
+                    if first_rain_min is None:
+                        first_rain_min = m_label
+                        first_rain_desc = desc
+
+                rain_timeline.append({
+                    "min": m_label,
+                    "desc": desc,
+                    "level": level,
+                })
+
+            rain_status = "Temps sec la prochaine heure"
+            if has_rain and first_rain_min is not None:
+                if first_rain_min == "0":
+                    rain_status = f"{first_rain_desc} en cours" if first_rain_desc else "Pluie en cours"
+                else:
+                    rain_status = f"Pluie prévue dans {first_rain_min} min"
+
+            return {
+                "status": rain_status,
+                "has_rain": has_rain,
+                "timeline": rain_timeline,
+                "source": "Météo-France",
+            }
+        except Exception as e:
+            print(f"[Rain] Erreur Météo-France v3: {e}")
+
+    # Fallback sur Home Assistant si Météo-France injoignable
+    if by_id:
+        rain_ent = by_id.get("sensor.paris_15eme_arrondissement_next_rain", {})
+        forecast_raw = rain_ent.get("attributes", {}).get("1_hour_forecast", {})
+        if forecast_raw:
+            rain_timeline = []
+            has_rain = False
+            first_rain_min = None
+            for k in ["0 min", "5 min", "10 min", "15 min", "20 min", "25 min", "35 min", "45 min", "55 min"]:
+                state_desc = forecast_raw.get(k, "Temps sec")
+                level = 0
+                desc_lower = state_desc.lower()
+                if "faible" in desc_lower:
+                    level = 1
+                    has_rain = True
+                elif "modérée" in desc_lower or "moderee" in desc_lower:
+                    level = 2
+                    has_rain = True
+                elif "forte" in desc_lower:
+                    level = 3
+                    has_rain = True
+                if level > 0 and first_rain_min is None:
+                    first_rain_min = k.replace(" min", "")
+                rain_timeline.append({"min": k.replace(" min", ""), "desc": state_desc, "level": level})
+
+            rain_status = "Temps sec la prochaine heure"
+            if has_rain and first_rain_min:
+                rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
+            return {"status": rain_status, "has_rain": has_rain, "timeline": rain_timeline, "source": "HA"}
+
+    return None
+
+
+_last_morning_wake_date = None
+
+
+def is_morning_wake_window(now=None):
+    """Retourne True du lundi au vendredi entre 07:55 et 08:15."""
+    if now is None:
+        now = datetime.datetime.now()
+    if now.weekday() >= 5:  # Samedi (5) ou Dimanche (6)
+        return False
+    hhmm = now.hour * 60 + now.minute
+    return (7 * 60 + 55) <= hhmm < (8 * 60 + 15)
+
+
 def update_ha_data():
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
@@ -544,9 +668,6 @@ def update_ha_data():
                 return fallback
 
         temps = None
-        rain_status = None
-        has_rain = False
-        rain_timeline = []
 
         if ha_ok:
             # 1. Climat 6 pièces
@@ -583,38 +704,8 @@ def update_ha_data():
                 }
             }
             
-            # 2. Pluie dans l'heure Météo-France
-            rain_ent = by_id.get("sensor.paris_15eme_arrondissement_next_rain", {})
-            forecast_raw = rain_ent.get("attributes", {}).get("1_hour_forecast", {})
-            first_rain_min = None
-            
-            interval_keys = ["0 min", "5 min", "10 min", "15 min", "20 min", "25 min", "35 min", "45 min", "55 min"]
-            for k in interval_keys:
-                state_desc = forecast_raw.get(k, "Temps sec")
-                level = 0
-                desc_lower = state_desc.lower()
-                if "faible" in desc_lower:
-                    level = 1
-                    has_rain = True
-                elif "modérée" in desc_lower or "moderee" in desc_lower:
-                    level = 2
-                    has_rain = True
-                elif "forte" in desc_lower:
-                    level = 3
-                    has_rain = True
-                
-                if level > 0 and first_rain_min is None:
-                    first_rain_min = k.replace(" min", "")
-
-                rain_timeline.append({
-                    "min": k.replace(" min", ""),
-                    "desc": state_desc,
-                    "level": level
-                })
-            
-            rain_status = "Temps sec la prochaine heure"
-            if has_rain and first_rain_min:
-                rain_status = f"Pluie prévue dans {first_rain_min} min" if first_rain_min != "0" else "Pluie en cours"
+        # 2. Pluie dans l'heure (Météo-France v3 directe comme WeatherRainRadar, repli HA)
+        rain_info = fetch_rain_in_hour(by_id)
 
         # 3. Suivi des colis via ParcelTracker (Worker Cloudflare)
         colis_cleaned = fetch_parcel_tracker_colis()
@@ -631,9 +722,19 @@ def update_ha_data():
         # 7. Alertes voirie & manifs filtrées sur l'itinéraire (OpenData Paris)
         route_alerts = fetch_route_traffic_alerts((traffic_info or {}).get("geometry"))
 
+        # 8. Réveil automatique matinal (Lun-Ven 07:55 -> 08:15)
+        global _last_morning_wake_date
+        now_dt = datetime.datetime.now()
+        force_awake = is_morning_wake_window(now_dt)
+        if force_awake and _last_morning_wake_date != now_dt.date():
+            _last_morning_wake_date = now_dt.date()
+            set_screen_backlight(turn_off=False)
+            print("[Screen] Réveil matinal automatique activé (07:55-08:15)")
+
         with cache_lock:
             ha_cache["last_update"] = time.time()
             ha_cache["week_ab"] = week_ab
+            ha_cache["force_awake"] = force_awake
             if temps is not None:
                 ha_cache["temperatures"] = temps
             if colis_cleaned is not None:
@@ -641,12 +742,8 @@ def update_ha_data():
             ha_cache["traffic"] = traffic_info
             ha_cache["route_alerts"] = route_alerts
             ha_cache["trmnl"] = {"visible": False}
-            if rain_status is not None:
-                ha_cache["rain_hour"] = {
-                    "status": rain_status,
-                    "has_rain": has_rain,
-                    "timeline": rain_timeline
-                }
+            if rain_info is not None:
+                ha_cache["rain_hour"] = rain_info
             if meteo_cur:
                 ha_cache["weather"] = meteo_cur
 

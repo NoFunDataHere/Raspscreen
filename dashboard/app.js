@@ -124,7 +124,32 @@ function resetIdleTimer() {
     }
 }
 
+let wasInMorningWindow = false;
+
+function isMorningWakeWindow() {
+    const now = new Date();
+    const day = now.getDay(); // 1 (Lun) .. 5 (Ven)
+    if (day < 1 || day > 5) return false;
+    const mins = now.getHours() * 60 + now.getMinutes();
+    return mins >= (7 * 60 + 55) && mins < (8 * 60 + 15);
+}
+
 function updateIdleCountdown() {
+    if (isMorningWakeWindow()) {
+        if (!wasInMorningWindow) {
+            wasInMorningWindow = true;
+            if (isSleeping || isDimmed) {
+                wakeScreen();
+            }
+        }
+        idleSeconds = 0;
+        idleTimer.textContent = "Réveil 07h55-08h15";
+        return;
+    } else if (wasInMorningWindow) {
+        wasInMorningWindow = false;
+        idleSeconds = 0;
+    }
+
     idleSeconds++;
     
     if (idleSeconds >= CONFIG.DIM_TIMEOUT_SECONDS && !isDimmed && !isSleeping) {
@@ -615,12 +640,41 @@ function renderRouteAlerts(routeAlerts) {
 /* -------------------------------------------------------------------------- */
 /* Initialisation                                                             */
 /* -------------------------------------------------------------------------- */
+async function fetchSystemHealth() {
+    const el = document.getElementById('footerHealth');
+    if (!el) return;
+    try {
+        const res = await fetch('/api/system/health');
+        if (!res.ok) return;
+        const h = await res.json();
+        const parts = [];
+        if (h.cpu_temp !== null && h.cpu_temp !== undefined) parts.push(`${h.cpu_temp}°C`);
+        if (h.fan_rpm !== null && h.fan_rpm !== undefined) {
+            parts.push(`${h.fan_rpm} RPM`);
+        } else if (h.fan_percent !== null && h.fan_percent !== undefined) {
+            parts.push(`Fan ${h.fan_percent}%`);
+        }
+        if (h.disk_used_pct !== null && h.disk_used_pct !== undefined) {
+            parts.push(`SD ${h.disk_used_pct}%`);
+        }
+        if (h.sd_readonly) parts.push('RO!');
+
+        el.textContent = parts.join(' · ');
+        el.classList.remove('warn', 'crit');
+        if (h.status === 'warn' || h.status === 'crit') {
+            el.classList.add(h.status);
+        }
+    } catch (e) {}
+}
+
 initRouteMap();
 updateClock();
 setInterval(updateClock, 1000);
 setInterval(updateIdleCountdown, 1000);
 fetchData();
 setInterval(fetchData, CONFIG.REFRESH_INTERVAL);
+fetchSystemHealth();
+setInterval(fetchSystemHealth, 30000);
 
 // Support URL params pour tests d'affichage (?modal=1, ?cat=1)
 const urlParams = new URLSearchParams(window.location.search);
