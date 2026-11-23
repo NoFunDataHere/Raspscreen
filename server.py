@@ -527,13 +527,13 @@ _last_morning_wake_date = None
 
 
 def is_morning_wake_window(now=None):
-    """Retourne True du lundi au vendredi entre 07:55 et 08:15."""
+    """Retourne True du lundi au vendredi entre 07:45 et 08:15."""
     if now is None:
         now = datetime.datetime.now()
     if now.weekday() >= 5:  # Samedi (5) ou Dimanche (6)
         return False
     hhmm = now.hour * 60 + now.minute
-    return (7 * 60 + 55) <= hhmm < (8 * 60 + 15)
+    return (7 * 60 + 45) <= hhmm < (8 * 60 + 15)
 
 
 def update_ha_data():

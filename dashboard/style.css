@@ -2015,21 +2015,23 @@ body {
         font-size: 0.92rem;
     }
 
-    /* Modale Zoom Pluie 1h */
-    .rain-modal-body {
-        display: flex;
+    /* Modale Zoom Pluie 1h - Split Screen */
+    .modal-body.rain-modal-body {
+        display: grid;
+        grid-template-columns: 440px 1fr;
         align-items: center;
         gap: 36px;
-        padding: 24px 32px;
+        padding: 24px 36px;
         overflow-y: auto;
     }
 
     .rain-modal-dial-wrap {
-        flex: 0 0 380px;
-        height: 380px;
+        width: 440px;
+        height: 440px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 auto;
     }
 
     .rain-modal-details {

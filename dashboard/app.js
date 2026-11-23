@@ -131,7 +131,7 @@ function isMorningWakeWindow() {
     const day = now.getDay(); // 1 (Lun) .. 5 (Ven)
     if (day < 1 || day > 5) return false;
     const mins = now.getHours() * 60 + now.getMinutes();
-    return mins >= (7 * 60 + 55) && mins < (8 * 60 + 15);
+    return mins >= (7 * 60 + 45) && mins < (8 * 60 + 15);
 }
 
 function updateIdleCountdown() {
@@ -143,7 +143,7 @@ function updateIdleCountdown() {
             }
         }
         idleSeconds = 0;
-        idleTimer.textContent = "Réveil 07h55-08h15";
+        idleTimer.textContent = "Réveil 07h45-08h15";
         return;
     } else if (wasInMorningWindow) {
         wasInMorningWindow = false;
@@ -255,7 +255,10 @@ async function fetchData() {
         const res = await fetch('/api/home');
         if (!res.ok) throw new Error("Erreur API Home");
         const data = await res.json();
-        
+
+        if (data.force_awake && (isSleeping || isDimmed)) {
+            wakeScreen();
+        }
         if (data.week_ab) {
             weekBadge.textContent = data.week_ab;
         }
